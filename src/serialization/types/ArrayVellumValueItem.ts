@@ -11,6 +11,8 @@ import { JsonVellumValue } from "./JsonVellumValue";
 import { ImageVellumValue } from "./ImageVellumValue";
 import { FunctionCallVellumValue } from "./FunctionCallVellumValue";
 import { ErrorVellumValue } from "./ErrorVellumValue";
+import { ChatHistoryVellumValue } from "./ChatHistoryVellumValue";
+import { SearchResultsVellumValue } from "./SearchResultsVellumValue";
 
 export const ArrayVellumValueItem: core.serialization.Schema<
     serializers.ArrayVellumValueItem.Raw,
@@ -22,6 +24,9 @@ export const ArrayVellumValueItem: core.serialization.Schema<
     ImageVellumValue,
     FunctionCallVellumValue,
     ErrorVellumValue,
+    ChatHistoryVellumValue,
+    SearchResultsVellumValue,
+    core.serialization.lazyObject(() => serializers.ArrayVellumValue),
 ]);
 
 export declare namespace ArrayVellumValueItem {
@@ -31,5 +36,8 @@ export declare namespace ArrayVellumValueItem {
         | JsonVellumValue.Raw
         | ImageVellumValue.Raw
         | FunctionCallVellumValue.Raw
-        | ErrorVellumValue.Raw;
+        | ErrorVellumValue.Raw
+        | ChatHistoryVellumValue.Raw
+        | SearchResultsVellumValue.Raw
+        | serializers.ArrayVellumValue.Raw;
 }

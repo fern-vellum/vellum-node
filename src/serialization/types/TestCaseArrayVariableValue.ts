@@ -5,7 +5,6 @@
 import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
-import { ArrayVellumValueItem } from "./ArrayVellumValueItem";
 
 export const TestCaseArrayVariableValue: core.serialization.ObjectSchema<
     serializers.TestCaseArrayVariableValue.Raw,
@@ -14,7 +13,7 @@ export const TestCaseArrayVariableValue: core.serialization.ObjectSchema<
     variableId: core.serialization.property("variable_id", core.serialization.string()),
     name: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(ArrayVellumValueItem).optional(),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVellumValueItem)).optional(),
 });
 
 export declare namespace TestCaseArrayVariableValue {
@@ -22,6 +21,6 @@ export declare namespace TestCaseArrayVariableValue {
         variable_id: string;
         name: string;
         type: "ARRAY";
-        value?: ArrayVellumValueItem.Raw[] | null;
+        value?: serializers.ArrayVellumValueItem.Raw[] | null;
     }
 }

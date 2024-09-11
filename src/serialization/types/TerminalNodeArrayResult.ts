@@ -5,7 +5,6 @@
 import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
-import { ArrayVariableValueItem } from "./ArrayVariableValueItem";
 
 export const TerminalNodeArrayResult: core.serialization.ObjectSchema<
     serializers.TerminalNodeArrayResult.Raw,
@@ -14,7 +13,7 @@ export const TerminalNodeArrayResult: core.serialization.ObjectSchema<
     id: core.serialization.string().optional(),
     name: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(ArrayVariableValueItem).optional(),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVariableValueItem)).optional(),
 });
 
 export declare namespace TerminalNodeArrayResult {
@@ -22,6 +21,6 @@ export declare namespace TerminalNodeArrayResult {
         id?: string | null;
         name: string;
         type: "ARRAY";
-        value?: ArrayVariableValueItem.Raw[] | null;
+        value?: serializers.ArrayVariableValueItem.Raw[] | null;
     }
 }

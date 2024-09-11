@@ -10,4 +10,7 @@ export type ArrayVellumValueItem =
     | Vellum.JsonVellumValue
     | Vellum.ImageVellumValue
     | Vellum.FunctionCallVellumValue
-    | Vellum.ErrorVellumValue;
+    | Vellum.ErrorVellumValue
+    | Vellum.ChatHistoryVellumValue
+    | Vellum.SearchResultsVellumValue
+    | Vellum.ArrayVellumValue;
