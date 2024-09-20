@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const IterationStateEnum: core.serialization.Schema<
     serializers.IterationStateEnum.Raw,
     Vellum.IterationStateEnum
-> = core.serialization.enum_(["INITIATED", "FULFILLED"]);
+> = core.serialization.enum_(["INITIATED", "FULFILLED", "REJECTED"]);
 
 export declare namespace IterationStateEnum {
-    type Raw = "INITIATED" | "FULFILLED";
+    type Raw = "INITIATED" | "FULFILLED" | "REJECTED";
 }
