@@ -1,6 +1,6 @@
 {
     "name": "vellum-ai",
-    "version": "0.8.11",
+    "version": "0.8.12",
     "private": false,
     "repository": "https://github.com/vellum-ai/vellum-client-node",
     "license": "MIT",
