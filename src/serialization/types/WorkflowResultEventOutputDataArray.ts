@@ -6,7 +6,6 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { WorkflowNodeResultEventState } from "./WorkflowNodeResultEventState";
-import { ArrayVariableValueItem } from "./ArrayVariableValueItem";
 
 export const WorkflowResultEventOutputDataArray: core.serialization.ObjectSchema<
     serializers.WorkflowResultEventOutputDataArray.Raw,
@@ -18,7 +17,7 @@ export const WorkflowResultEventOutputDataArray: core.serialization.ObjectSchema
     nodeId: core.serialization.property("node_id", core.serialization.string()),
     delta: core.serialization.string().optional(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(ArrayVariableValueItem).optional(),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVariableValueItem)).optional(),
 });
 
 export declare namespace WorkflowResultEventOutputDataArray {
@@ -29,6 +28,6 @@ export declare namespace WorkflowResultEventOutputDataArray {
         node_id: string;
         delta?: string | null;
         type: "ARRAY";
-        value?: ArrayVariableValueItem.Raw[] | null;
+        value?: serializers.ArrayVariableValueItem.Raw[] | null;
     }
 }

@@ -6,21 +6,17 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 
-export const TestSuiteRunExecutionArrayOutput: core.serialization.ObjectSchema<
-    serializers.TestSuiteRunExecutionArrayOutput.Raw,
-    Vellum.TestSuiteRunExecutionArrayOutput
+export const ArrayVellumValue: core.serialization.ObjectSchema<
+    serializers.ArrayVellumValue.Raw,
+    Vellum.ArrayVellumValue
 > = core.serialization.object({
-    name: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
     value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVellumValueItem)).optional(),
-    outputVariableId: core.serialization.property("output_variable_id", core.serialization.string()),
 });
 
-export declare namespace TestSuiteRunExecutionArrayOutput {
+export declare namespace ArrayVellumValue {
     interface Raw {
-        name: string;
         type: "ARRAY";
         value?: serializers.ArrayVellumValueItem.Raw[] | null;
-        output_variable_id: string;
     }
 }

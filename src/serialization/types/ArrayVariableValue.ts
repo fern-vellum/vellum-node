@@ -6,18 +6,16 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 
-export const TemplatingNodeArrayResult: core.serialization.ObjectSchema<
-    serializers.TemplatingNodeArrayResult.Raw,
-    Vellum.TemplatingNodeArrayResult
+export const ArrayVariableValue: core.serialization.ObjectSchema<
+    serializers.ArrayVariableValue.Raw,
+    Vellum.ArrayVariableValue
 > = core.serialization.object({
-    id: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
     value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVariableValueItem)).optional(),
 });
 
-export declare namespace TemplatingNodeArrayResult {
+export declare namespace ArrayVariableValue {
     interface Raw {
-        id: string;
         type: "ARRAY";
         value?: serializers.ArrayVariableValueItem.Raw[] | null;
     }
