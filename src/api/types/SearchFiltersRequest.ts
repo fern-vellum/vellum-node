@@ -8,5 +8,5 @@ export interface SearchFiltersRequest {
     /** The document external IDs to filter by */
     externalIds?: string[];
     /** The metadata filters to apply to the search */
-    metadata?: Vellum.MetadataFilterConfigRequest;
+    metadata?: Vellum.LegacySupportingMetadataFiltersRequest;
 }
