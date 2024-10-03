@@ -57,8 +57,8 @@ export class FolderEntities {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
