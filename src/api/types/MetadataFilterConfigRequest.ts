@@ -4,6 +4,9 @@
 
 import * as Vellum from "../index";
 
+/**
+ * A deprecated pattern for filtering on metadata. Please use MetadataFilters instead.
+ */
 export interface MetadataFilterConfigRequest {
     combinator?: Vellum.MetadataFilterRuleCombinator;
     negated?: boolean;
