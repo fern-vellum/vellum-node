@@ -32,7 +32,7 @@ export class TestSuites {
     /**
      * List the Test Cases associated with a Test Suite
      *
-     * @param {string} id - A UUID string identifying this test suite.
+     * @param {string} id - Either the Test Suites' ID or its unique name
      * @param {Vellum.ListTestSuiteTestCasesRequest} request
      * @param {TestSuites.RequestOptions} requestOptions - Request-specific configuration.
      *
@@ -64,8 +64,8 @@ export class TestSuites {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -117,7 +117,7 @@ export class TestSuites {
      * Note that a full replacement of the test case is performed, so any fields not provided will be removed
      * or overwritten with default values.
      *
-     * @param {string} id - A UUID string identifying this test suite.
+     * @param {string} id - Either the Test Suites' ID or its unique name
      * @param {Vellum.UpsertTestSuiteTestCaseRequest} request
      * @param {TestSuites.RequestOptions} requestOptions - Request-specific configuration.
      *
@@ -148,8 +148,8 @@ export class TestSuites {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -210,8 +210,8 @@ export class TestSuites {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -270,7 +270,7 @@ export class TestSuites {
     /**
      * Deletes an existing test case for a test suite, keying off of the test case id.
      *
-     * @param {string} id - A UUID string identifying this test suite.
+     * @param {string} id - Either the Test Suites' ID or its unique name
      * @param {string} testCaseId - An id identifying the test case that you'd like to delete
      * @param {TestSuites.RequestOptions} requestOptions - Request-specific configuration.
      *
@@ -292,8 +292,8 @@ export class TestSuites {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

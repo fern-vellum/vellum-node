@@ -2000,7 +2000,7 @@ await client.testSuites.listTestSuiteTestCases("id");
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
@@ -2090,7 +2090,7 @@ await client.testSuites.upsertTestSuiteTestCase("id", {
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
@@ -2184,7 +2184,7 @@ await client.testSuites.testSuiteTestCasesBulk("string", [
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
@@ -2255,7 +2255,7 @@ await client.testSuites.deleteTestSuiteTestCase("id", "test_case_id");
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
