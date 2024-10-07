@@ -5,9 +5,9 @@
 import * as environments from "./environments";
 import * as core from "./core";
 import * as Vellum from "./api/index";
-import * as serializers from "./serialization/index";
 import urlJoin from "url-join";
 import * as errors from "./errors/index";
+import * as serializers from "./serialization/index";
 import * as stream from "stream";
 import { AdHoc } from "./api/resources/adHoc/client/Client";
 import { Deployments } from "./api/resources/deployments/client/Client";
@@ -38,6 +38,74 @@ export declare namespace VellumClient {
 
 export class VellumClient {
     constructor(protected readonly _options: VellumClient.Options) {}
+
+    /**
+     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+     *
+     * @param {unknown} request
+     * @param {VellumClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link Vellum.BadRequestError}
+     *
+     * @example
+     *     await client.executeCode({
+     *         "key": "value"
+     *     })
+     */
+    public async executeCode(request?: unknown, requestOptions?: VellumClient.RequestOptions): Promise<unknown> {
+        const _response = await core.fetcher({
+            url: urlJoin(
+                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                    .default,
+                "v1/execute-code"
+            ),
+            method: "POST",
+            headers: {
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "vellum-ai",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...(await this._getCustomAuthorizationHeaders()),
+            },
+            contentType: "application/json",
+            requestType: "json",
+            body: request,
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
+            maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+        });
+        if (_response.ok) {
+            return _response.body;
+        }
+
+        if (_response.error.reason === "status-code") {
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new Vellum.BadRequestError(_response.error.body);
+                default:
+                    throw new errors.VellumError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.VellumError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.VellumTimeoutError();
+            case "unknown":
+                throw new errors.VellumError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
 
     /**
      * Executes a deployed Prompt and returns the result.
@@ -73,8 +141,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -145,8 +213,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -244,8 +312,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -314,8 +382,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -415,8 +483,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -490,8 +558,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -585,8 +653,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -667,8 +735,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -744,8 +812,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.16",
-                "User-Agent": "vellum-ai/0.8.16",
+                "X-Fern-SDK-Version": "0.8.17",
+                "User-Agent": "vellum-ai/0.8.17",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

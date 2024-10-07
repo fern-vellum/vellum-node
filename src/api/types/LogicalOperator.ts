@@ -21,6 +21,8 @@
  * - `notIn` - NOT_IN
  * - `between` - BETWEEN
  * - `notBetween` - NOT_BETWEEN
+ * - `blank` - BLANK
+ * - `notBlank` - NOT_BLANK
  */
 export type LogicalOperator =
     /**
@@ -76,7 +78,9 @@ export type LogicalOperator =
     | "between"
     /**
      * Not between */
-    | "notBetween";
+    | "notBetween"
+    | "blank"
+    | "notBlank";
 
 export const LogicalOperator = {
     Equals: "=",
@@ -97,4 +101,6 @@ export const LogicalOperator = {
     NotIn: "notIn",
     Between: "between",
     NotBetween: "notBetween",
+    Blank: "blank",
+    NotBlank: "notBlank",
 } as const;
