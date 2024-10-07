@@ -1534,6 +1534,87 @@ await client.folderEntities.addEntityToFolder("folder_id", {
 </dl>
 </details>
 
+## MetricDefinitions
+
+<details><summary><code>client.metricDefinitions.<a href="/src/api/resources/metricDefinitions/client/Client.ts">executeMetricDefinition</a>(id, { ...params }) -> Vellum.MetricDefinitionExecution</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.metricDefinitions.executeMetricDefinition("id", {
+    inputs: [
+        {
+            name: "name",
+            type: "STRING",
+            value: "value",
+        },
+    ],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` — Either the Metric Definition's ID or its unique name
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Vellum.ExecuteMetricDefinitionRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `MetricDefinitions.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Sandboxes
 
 <details><summary><code>client.sandboxes.<a href="/src/api/resources/sandboxes/client/Client.ts">deployPrompt</a>(id, promptVariantId, { ...params }) -> Vellum.DeploymentRead</code></summary>
@@ -2000,7 +2081,7 @@ await client.testSuites.listTestSuiteTestCases("id");
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
@@ -2090,7 +2171,7 @@ await client.testSuites.upsertTestSuiteTestCase("id", {
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
@@ -2184,7 +2265,7 @@ await client.testSuites.testSuiteTestCasesBulk("string", [
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
@@ -2255,7 +2336,7 @@ await client.testSuites.deleteTestSuiteTestCase("id", "test_case_id");
 <dl>
 <dd>
 
-**id:** `string` — A UUID string identifying this test suite.
+**id:** `string` — Either the Test Suites' ID or its unique name
 
 </dd>
 </dl>
