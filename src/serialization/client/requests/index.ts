@@ -1,3 +1,4 @@
+export { CodeExecutorRequest } from "./CodeExecutorRequest";
 export { ExecutePromptRequest } from "./ExecutePromptRequest";
 export { ExecutePromptStreamRequest } from "./ExecutePromptStreamRequest";
 export { ExecuteWorkflowRequest } from "./ExecuteWorkflowRequest";

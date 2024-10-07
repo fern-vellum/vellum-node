@@ -5,7 +5,7 @@
 import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
-import { MetadataFilterConfigRequest } from "./MetadataFilterConfigRequest";
+import { MetadataFiltersRequest } from "./MetadataFiltersRequest";
 
 export const SearchFiltersRequest: core.serialization.ObjectSchema<
     serializers.SearchFiltersRequest.Raw,
@@ -15,12 +15,12 @@ export const SearchFiltersRequest: core.serialization.ObjectSchema<
         "external_ids",
         core.serialization.list(core.serialization.string()).optional()
     ),
-    metadata: MetadataFilterConfigRequest.optional(),
+    metadata: MetadataFiltersRequest.optional(),
 });
 
 export declare namespace SearchFiltersRequest {
     interface Raw {
         external_ids?: string[] | null;
-        metadata?: MetadataFilterConfigRequest.Raw | null;
+        metadata?: MetadataFiltersRequest.Raw | null;
     }
 }
