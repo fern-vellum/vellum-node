@@ -6,7 +6,7 @@
  * A user input representing a string value
  */
 export interface StringInputRequest {
-    /** The variable's name, as defined in the deployment. */
+    /** The variable's name */
     name: string;
     type: "STRING";
     value: string;

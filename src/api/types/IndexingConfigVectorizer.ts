@@ -11,4 +11,6 @@ export type IndexingConfigVectorizer =
     | Vellum.BasicVectorizerIntfloatMultilingualE5Large
     | Vellum.BasicVectorizerSentenceTransformersMultiQaMpnetBaseCosV1
     | Vellum.BasicVectorizerSentenceTransformersMultiQaMpnetBaseDotV1
-    | Vellum.HkunlpInstructorXlVectorizer;
+    | Vellum.HkunlpInstructorXlVectorizer
+    | Vellum.GoogleVertexAiVectorizerTextEmbedding004
+    | Vellum.GoogleVertexAiVectorizerTextMultilingualEmbedding002;

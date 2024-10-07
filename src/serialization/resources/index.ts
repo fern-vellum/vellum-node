@@ -13,6 +13,8 @@ export * as documents from "./documents";
 export * from "./documents/client/requests";
 export * as folderEntities from "./folderEntities";
 export * from "./folderEntities/client/requests";
+export * as metricDefinitions from "./metricDefinitions";
+export * from "./metricDefinitions/client/requests";
 export * as sandboxes from "./sandboxes";
 export * from "./sandboxes/client/requests";
 export * as testSuiteRuns from "./testSuiteRuns";
