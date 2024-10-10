@@ -1,6 +1,6 @@
 {
     "name": "vellum-ai",
-    "version": "0.8.19",
+    "version": "0.8.20",
     "private": false,
     "repository": "https://github.com/vellum-ai/vellum-client-node",
     "license": "MIT",
@@ -20,7 +20,7 @@
         "qs": "6.11.2",
         "form-data-encoder": "^4.0.2",
         "cdktf": "^0.20.5",
-        "constructs": "^10.3.0"
+        "constructs": "10.3.0"
     },
     "devDependencies": {
         "@types/url-join": "4.0.1",
