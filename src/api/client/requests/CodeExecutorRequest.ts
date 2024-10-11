@@ -8,7 +8,7 @@ import * as Vellum from "../../index";
  * @example
  *     {
  *         code: "code",
- *         runtime: Vellum.CodeExecutionRuntime.Python3116,
+ *         runtime: "PYTHON_3_11_6",
  *         inputValues: [{
  *                 name: "name",
  *                 type: "STRING",
@@ -18,7 +18,7 @@ import * as Vellum from "../../index";
  *                 version: "version",
  *                 name: "name"
  *             }],
- *         outputType: Vellum.VellumVariableType.String
+ *         outputType: "STRING"
  *     }
  */
 export interface CodeExecutorRequest {

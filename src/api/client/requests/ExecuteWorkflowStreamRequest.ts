@@ -19,7 +19,7 @@ import * as Vellum from "../../index";
  *         workflowDeploymentName: "string",
  *         releaseTag: "string",
  *         externalId: "string",
- *         eventTypes: [Vellum.WorkflowExecutionEventType.Node],
+ *         eventTypes: ["NODE"],
  *         metadata: {
  *             "string": {
  *                 "key": "value"

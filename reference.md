@@ -116,7 +116,7 @@ await client.adHoc.adhocExecutePromptStream({
         {
             id: "string",
             key: "string",
-            type: Vellum.VellumVariableType.String,
+            type: "STRING",
         },
     ],
     parameters: {
@@ -143,10 +143,10 @@ await client.adHoc.adhocExecutePromptStream({
             blockType: "JINJA",
             properties: {
                 template: "string",
-                templateType: Vellum.VellumVariableType.String,
+                templateType: "STRING",
             },
             id: "string",
-            state: Vellum.PromptBlockState.Enabled,
+            state: "ENABLED",
             cacheConfig: {
                 type: {
                     key: "value",

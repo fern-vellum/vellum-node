@@ -26,10 +26,10 @@ import * as Vellum from "../../../../index";
  *                 type: "CHAT_HISTORY",
  *                 value: [{
  *                         text: "What's your favorite color?",
- *                         role: Vellum.ChatMessageRole.User
+ *                         role: "USER"
  *                     }, {
  *                         text: "AI's don't have a favorite color.... Yet.",
- *                         role: Vellum.ChatMessageRole.Assistant
+ *                         role: "ASSISTANT"
  *                     }],
  *                 name: "chat_history"
  *             }]

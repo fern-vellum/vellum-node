@@ -16,7 +16,7 @@ import * as Vellum from "../../../../index";
  *         inputVariables: [{
  *                 id: "string",
  *                 key: "string",
- *                 type: Vellum.VellumVariableType.String
+ *                 type: "STRING"
  *             }],
  *         parameters: {
  *             stop: ["string"],
@@ -41,10 +41,10 @@ import * as Vellum from "../../../../index";
  *                 blockType: "JINJA",
  *                 properties: {
  *                     template: "string",
- *                     templateType: Vellum.VellumVariableType.String
+ *                     templateType: "STRING"
  *                 },
  *                 id: "string",
- *                 state: Vellum.PromptBlockState.Enabled,
+ *                 state: "ENABLED",
  *                 cacheConfig: {
  *                     type: {
  *                         "key": "value"

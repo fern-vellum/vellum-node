@@ -53,8 +53,8 @@ export class Sandboxes {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.19",
-                "User-Agent": "vellum-ai/0.8.19",
+                "X-Fern-SDK-Version": "0.8.20",
+                "User-Agent": "vellum-ai/0.8.20",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -131,10 +131,10 @@ export class Sandboxes {
      *                 type: "CHAT_HISTORY",
      *                 value: [{
      *                         text: "What's your favorite color?",
-     *                         role: Vellum.ChatMessageRole.User
+     *                         role: "USER"
      *                     }, {
      *                         text: "AI's don't have a favorite color.... Yet.",
-     *                         role: Vellum.ChatMessageRole.Assistant
+     *                         role: "ASSISTANT"
      *                     }],
      *                 name: "chat_history"
      *             }]
@@ -155,8 +155,8 @@ export class Sandboxes {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.19",
-                "User-Agent": "vellum-ai/0.8.19",
+                "X-Fern-SDK-Version": "0.8.20",
+                "User-Agent": "vellum-ai/0.8.20",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -224,8 +224,8 @@ export class Sandboxes {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.19",
-                "User-Agent": "vellum-ai/0.8.19",
+                "X-Fern-SDK-Version": "0.8.20",
+                "User-Agent": "vellum-ai/0.8.20",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

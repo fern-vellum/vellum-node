@@ -17,7 +17,7 @@ import * as Vellum from "../../index";
  *                 },
  *                 chatHistory: [{
  *                         text: "string",
- *                         role: Vellum.ChatMessageRole.System,
+ *                         role: "SYSTEM",
  *                         content: {
  *                             type: "STRING",
  *                             value: "string"
@@ -27,7 +27,7 @@ import * as Vellum from "../../index";
  *                 externalIds: ["string"]
  *             }],
  *         options: {
- *             logprobs: Vellum.LogprobsEnum.All
+ *             logprobs: "ALL"
  *         }
  *     }
  */
