@@ -16,7 +16,15 @@ import * as Vellum from "../../../../index";
  *         inputVariables: [{
  *                 id: "string",
  *                 key: "string",
- *                 type: Vellum.VellumVariableType.String
+ *                 type: Vellum.VellumVariableType.String,
+ *                 required: true,
+ *                 default: {
+ *                     type: "STRING",
+ *                     value: "string"
+ *                 },
+ *                 extensions: {
+ *                     color: "string"
+ *                 }
  *             }],
  *         parameters: {
  *             stop: ["string"],

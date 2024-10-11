@@ -117,6 +117,14 @@ await client.adHoc.adhocExecutePromptStream({
             id: "string",
             key: "string",
             type: Vellum.VellumVariableType.String,
+            required: true,
+            default: {
+                type: "STRING",
+                value: "string",
+            },
+            extensions: {
+                color: "string",
+            },
         },
     ],
     parameters: {
