@@ -7,7 +7,6 @@ import * as Vellum from "../../../../index";
 /**
  * @example
  *     {
- *         testSuiteId: "test_suite_id",
  *         execConfig: {
  *             type: "DEPLOYMENT_RELEASE_TAG",
  *             data: {
@@ -18,7 +17,7 @@ import * as Vellum from "../../../../index";
  */
 export interface TestSuiteRunCreateRequest {
     /** The ID of the Test Suite to run. Must provide either this or test_suite_id. */
-    testSuiteId: string;
+    testSuiteId?: string;
     /** The name of the Test Suite to run. Must provide either this or test_suite_id. */
     testSuiteName?: string;
     /** Configuration that defines how the Test Suite should be run */

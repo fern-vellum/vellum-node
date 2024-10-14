@@ -11,14 +11,14 @@ export const TestSuiteRunCreateRequest: core.serialization.Schema<
     serializers.TestSuiteRunCreateRequest.Raw,
     Vellum.TestSuiteRunCreateRequest
 > = core.serialization.object({
-    testSuiteId: core.serialization.property("test_suite_id", core.serialization.string()),
+    testSuiteId: core.serialization.property("test_suite_id", core.serialization.string().optional()),
     testSuiteName: core.serialization.property("test_suite_name", core.serialization.string().optional()),
     execConfig: core.serialization.property("exec_config", TestSuiteRunExecConfigRequest),
 });
 
 export declare namespace TestSuiteRunCreateRequest {
     interface Raw {
-        test_suite_id: string;
+        test_suite_id?: string | null;
         test_suite_name?: string | null;
         exec_config: TestSuiteRunExecConfigRequest.Raw;
     }

@@ -1882,7 +1882,6 @@ Trigger a Test Suite and create a new Test Suite Run
 
 ```typescript
 await client.testSuiteRuns.create({
-    testSuiteId: "test_suite_id",
     execConfig: {
         type: "DEPLOYMENT_RELEASE_TAG",
         data: {
