@@ -404,6 +404,8 @@ export * from "./VellumValueLogicalConditionRequest";
 export * from "./VellumValueLogicalExpressionRequest";
 export * from "./VellumValueRequest";
 export * from "./VellumVariable";
+export * from "./VellumVariableExtensions";
+export * from "./VellumVariableExtensionsRequest";
 export * from "./VellumVariableRequest";
 export * from "./VellumVariableType";
 export * from "./WorkflowDeploymentRead";
