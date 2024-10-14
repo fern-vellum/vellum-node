@@ -6,6 +6,8 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { VellumVariableType } from "./VellumVariableType";
+import { VellumValueRequest } from "./VellumValueRequest";
+import { VellumVariableExtensionsRequest } from "./VellumVariableExtensionsRequest";
 
 export const VellumVariableRequest: core.serialization.ObjectSchema<
     serializers.VellumVariableRequest.Raw,
@@ -14,6 +16,9 @@ export const VellumVariableRequest: core.serialization.ObjectSchema<
     id: core.serialization.string(),
     key: core.serialization.string(),
     type: VellumVariableType,
+    required: core.serialization.boolean().optional(),
+    default: VellumValueRequest.optional(),
+    extensions: VellumVariableExtensionsRequest.optional(),
 });
 
 export declare namespace VellumVariableRequest {
@@ -21,5 +26,8 @@ export declare namespace VellumVariableRequest {
         id: string;
         key: string;
         type: VellumVariableType.Raw;
+        required?: boolean | null;
+        default?: VellumValueRequest.Raw | null;
+        extensions?: VellumVariableExtensionsRequest.Raw | null;
     }
 }

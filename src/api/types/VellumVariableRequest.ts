@@ -8,4 +8,7 @@ export interface VellumVariableRequest {
     id: string;
     key: string;
     type: Vellum.VellumVariableType;
+    required?: boolean;
+    default?: Vellum.VellumValueRequest;
+    extensions?: Vellum.VellumVariableExtensionsRequest;
 }

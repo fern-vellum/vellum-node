@@ -17,8 +17,10 @@ import * as Vellum from "../../../../index";
  *     }
  */
 export interface TestSuiteRunCreateRequest {
-    /** The ID of the Test Suite to run */
+    /** The ID of the Test Suite to run. Must provide either this or test_suite_id. */
     testSuiteId: string;
+    /** The name of the Test Suite to run. Must provide either this or test_suite_id. */
+    testSuiteName?: string;
     /** Configuration that defines how the Test Suite should be run */
     execConfig: Vellum.TestSuiteRunExecConfigRequest;
 }

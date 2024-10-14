@@ -59,8 +59,8 @@ export class TestSuiteRuns {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.21",
-                "User-Agent": "vellum-ai/0.8.21",
+                "X-Fern-SDK-Version": "0.8.22",
+                "User-Agent": "vellum-ai/0.8.22",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -123,8 +123,8 @@ export class TestSuiteRuns {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.21",
-                "User-Agent": "vellum-ai/0.8.21",
+                "X-Fern-SDK-Version": "0.8.22",
+                "User-Agent": "vellum-ai/0.8.22",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -207,8 +207,8 @@ export class TestSuiteRuns {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.21",
-                "User-Agent": "vellum-ai/0.8.21",
+                "X-Fern-SDK-Version": "0.8.22",
+                "User-Agent": "vellum-ai/0.8.22",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

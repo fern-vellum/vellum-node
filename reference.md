@@ -117,6 +117,14 @@ await client.adHoc.adhocExecutePromptStream({
             id: "string",
             key: "string",
             type: "STRING",
+            required: true,
+            default: {
+                type: "STRING",
+                value: "string",
+            },
+            extensions: {
+                color: "string",
+            },
         },
     ],
     parameters: {
