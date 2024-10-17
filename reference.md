@@ -1467,6 +1467,71 @@ await client.documents.upload(fs.createReadStream("/path/to/your/file"), {
 
 ## FolderEntities
 
+<details><summary><code>client.folderEntities.<a href="/src/api/resources/folderEntities/client/Client.ts">list</a>({ ...params }) -> Vellum.PaginatedFolderEntityList</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+List all folder entities within a specified folder.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.folderEntities.list({
+    parentFolderId: "parent_folder_id",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Vellum.FolderEntitiesListRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `FolderEntities.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.folderEntities.<a href="/src/api/resources/folderEntities/client/Client.ts">addEntityToFolder</a>(folderId, { ...params }) -> void</code></summary>
 <dl>
 <dd>
@@ -1515,7 +1580,15 @@ await client.folderEntities.addEntityToFolder("folder_id", {
 <dl>
 <dd>
 
-**folderId:** `string` — The ID of the folder to which the entity should be added. This can be a UUID of a folder, or the name of a root directory (e.g. "PROMPT_SANDBOX").
+**folderId:** `string`
+
+The ID of the folder to which the entity should be added. This can be a UUID of a folder, or the name of a root
+directory. Supported root directories include:
+
+-   PROMPT_SANDBOX
+-   WORKFLOW_SANDBOX
+-   DOCUMENT_INDEX
+-   TEST_SUITE
 
 </dd>
 </dl>
