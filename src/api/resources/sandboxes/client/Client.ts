@@ -12,7 +12,7 @@ import * as errors from "../../../../errors/index";
 export declare namespace Sandboxes {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey: core.Supplier<string>;
+        apiKey?: core.Supplier<string | undefined>;
     }
 
     interface RequestOptions {
@@ -26,7 +26,7 @@ export declare namespace Sandboxes {
 }
 
 export class Sandboxes {
-    constructor(protected readonly _options: Sandboxes.Options) {}
+    constructor(protected readonly _options: Sandboxes.Options = {}) {}
 
     /**
      * @param {string} id - A UUID string identifying this sandbox.
@@ -53,8 +53,8 @@ export class Sandboxes {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.24",
-                "User-Agent": "vellum-ai/0.8.24",
+                "X-Fern-SDK-Version": "0.8.25",
+                "User-Agent": "vellum-ai/0.8.25",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -155,8 +155,8 @@ export class Sandboxes {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.24",
-                "User-Agent": "vellum-ai/0.8.24",
+                "X-Fern-SDK-Version": "0.8.25",
+                "User-Agent": "vellum-ai/0.8.25",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -224,8 +224,8 @@ export class Sandboxes {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.24",
-                "User-Agent": "vellum-ai/0.8.24",
+                "X-Fern-SDK-Version": "0.8.25",
+                "User-Agent": "vellum-ai/0.8.25",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
