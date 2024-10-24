@@ -9,7 +9,7 @@ import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
-export declare namespace MetricDefinitions {
+export declare namespace Workflows {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
         apiKey?: core.Supplier<string | undefined>;
@@ -25,35 +25,32 @@ export declare namespace MetricDefinitions {
     }
 }
 
-export class MetricDefinitions {
-    constructor(protected readonly _options: MetricDefinitions.Options = {}) {}
+export class Workflows {
+    constructor(protected readonly _options: Workflows.Options = {}) {}
 
     /**
      * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
      *
-     * @param {string} id - Either the Metric Definition's ID or its unique name
-     * @param {Vellum.ExecuteMetricDefinitionRequest} request
-     * @param {MetricDefinitions.RequestOptions} requestOptions - Request-specific configuration.
+     * @param {Vellum.WorkflowPushRequest} request
+     * @param {Workflows.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.metricDefinitions.executeMetricDefinition("id", {
-     *         inputs: [{
-     *                 name: "name",
-     *                 type: "STRING",
-     *                 value: "value"
-     *             }]
+     *     await client.workflows.push({
+     *         execConfig: {
+     *             "key": "value"
+     *         },
+     *         label: "label"
      *     })
      */
-    public async executeMetricDefinition(
-        id: string,
-        request: Vellum.ExecuteMetricDefinitionRequest,
-        requestOptions?: MetricDefinitions.RequestOptions
-    ): Promise<Vellum.MetricDefinitionExecution> {
+    public async push(
+        request: Vellum.WorkflowPushRequest,
+        requestOptions?: Workflows.RequestOptions
+    ): Promise<Vellum.WorkflowPushResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
                     .default,
-                `v1/metric-definitions/${encodeURIComponent(id)}/execute`
+                "v1/workflows/push"
             ),
             method: "POST",
             headers: {
@@ -67,13 +64,13 @@ export class MetricDefinitions {
             },
             contentType: "application/json",
             requestType: "json",
-            body: serializers.ExecuteMetricDefinitionRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            body: serializers.WorkflowPushRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.MetricDefinitionExecution.parseOrThrow(_response.body, {
+            return serializers.WorkflowPushResponse.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,

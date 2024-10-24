@@ -3,10 +3,10 @@
  */
 
 export interface ApiNodeResultData {
+    json?: Record<string, unknown>;
     textOutputId: string;
     text?: string;
     jsonOutputId: string;
-    json?: Record<string, unknown>;
     statusCodeOutputId: string;
     statusCode: number;
 }
