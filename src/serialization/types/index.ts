@@ -257,6 +257,7 @@ export * from "./PromptRequestChatHistoryInputRequest";
 export * from "./PromptRequestInputRequest";
 export * from "./PromptRequestJsonInputRequest";
 export * from "./PromptRequestStringInputRequest";
+export * from "./PromptSettingsRequest";
 export * from "./RawPromptExecutionOverridesRequest";
 export * from "./ReductoChunkerConfig";
 export * from "./ReductoChunkerConfigRequest";
