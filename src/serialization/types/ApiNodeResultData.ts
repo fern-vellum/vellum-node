@@ -10,20 +10,20 @@ export const ApiNodeResultData: core.serialization.ObjectSchema<
     serializers.ApiNodeResultData.Raw,
     Vellum.ApiNodeResultData
 > = core.serialization.object({
+    json: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     textOutputId: core.serialization.property("text_output_id", core.serialization.string()),
     text: core.serialization.string().optional(),
     jsonOutputId: core.serialization.property("json_output_id", core.serialization.string()),
-    json: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     statusCodeOutputId: core.serialization.property("status_code_output_id", core.serialization.string()),
     statusCode: core.serialization.property("status_code", core.serialization.number()),
 });
 
 export declare namespace ApiNodeResultData {
     interface Raw {
+        json?: Record<string, unknown> | null;
         text_output_id: string;
         text?: string | null;
         json_output_id: string;
-        json?: Record<string, unknown> | null;
         status_code_output_id: string;
         status_code: number;
     }

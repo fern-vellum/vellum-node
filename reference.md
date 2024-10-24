@@ -146,6 +146,9 @@ await client.adHoc.adhocExecutePromptStream({
             },
         },
     },
+    settings: {
+        timeout: 1.1,
+    },
     blocks: [
         {
             blockType: "JINJA",
