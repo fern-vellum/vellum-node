@@ -20,6 +20,7 @@ import { TestSuiteRuns } from "./api/resources/testSuiteRuns/client/Client";
 import { TestSuites } from "./api/resources/testSuites/client/Client";
 import { WorkflowDeployments } from "./api/resources/workflowDeployments/client/Client";
 import { WorkflowSandboxes } from "./api/resources/workflowSandboxes/client/Client";
+import { WorkspaceSecrets } from "./api/resources/workspaceSecrets/client/Client";
 
 export declare namespace VellumClient {
     interface Options {
@@ -78,8 +79,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -161,8 +162,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -233,8 +234,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -332,8 +333,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -402,8 +403,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -503,8 +504,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -578,8 +579,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -673,8 +674,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -755,8 +756,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -832,8 +833,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.8.25",
-                "User-Agent": "vellum-ai/0.8.25",
+                "X-Fern-SDK-Version": "0.8.26",
+                "User-Agent": "vellum-ai/0.8.26",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -937,6 +938,12 @@ export class VellumClient {
 
     public get workflowSandboxes(): WorkflowSandboxes {
         return (this._workflowSandboxes ??= new WorkflowSandboxes(this._options));
+    }
+
+    protected _workspaceSecrets: WorkspaceSecrets | undefined;
+
+    public get workspaceSecrets(): WorkspaceSecrets {
+        return (this._workspaceSecrets ??= new WorkspaceSecrets(this._options));
     }
 
     protected async _getCustomAuthorizationHeaders() {

@@ -8,6 +8,7 @@ import * as core from "../../../../../core";
 import { PromptRequestInputRequest } from "../../../../types/PromptRequestInputRequest";
 import { VellumVariableRequest } from "../../../../types/VellumVariableRequest";
 import { PromptParametersRequest } from "../../../../types/PromptParametersRequest";
+import { PromptSettingsRequest } from "../../../../types/PromptSettingsRequest";
 import { AdHocExpandMetaRequest } from "../../../../types/AdHocExpandMetaRequest";
 
 export const AdHocExecutePromptStreamRequest: core.serialization.Schema<
@@ -18,6 +19,7 @@ export const AdHocExecutePromptStreamRequest: core.serialization.Schema<
     inputValues: core.serialization.property("input_values", core.serialization.list(PromptRequestInputRequest)),
     inputVariables: core.serialization.property("input_variables", core.serialization.list(VellumVariableRequest)),
     parameters: PromptParametersRequest,
+    settings: PromptSettingsRequest.optional(),
     blocks: core.serialization.list(core.serialization.lazy(() => serializers.PromptBlockRequest)),
     expandMeta: core.serialization.property("expand_meta", AdHocExpandMetaRequest.optional()),
 });
@@ -28,6 +30,7 @@ export declare namespace AdHocExecutePromptStreamRequest {
         input_values: PromptRequestInputRequest.Raw[];
         input_variables: VellumVariableRequest.Raw[];
         parameters: PromptParametersRequest.Raw;
+        settings?: PromptSettingsRequest.Raw | null;
         blocks: serializers.PromptBlockRequest.Raw[];
         expand_meta?: AdHocExpandMetaRequest.Raw | null;
     }
