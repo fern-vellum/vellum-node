@@ -45,6 +45,9 @@ import * as Vellum from "../../../../index";
  *                 }
  *             }
  *         },
+ *         settings: {
+ *             timeout: 1.1
+ *         },
  *         blocks: [{
  *                 blockType: "JINJA",
  *                 properties: {
@@ -72,6 +75,7 @@ export interface AdHocExecutePromptStreamRequest {
     inputValues: Vellum.PromptRequestInputRequest[];
     inputVariables: Vellum.VellumVariableRequest[];
     parameters: Vellum.PromptParametersRequest;
+    settings?: Vellum.PromptSettingsRequest;
     blocks: Vellum.PromptBlockRequest[];
     expandMeta?: Vellum.AdHocExpandMetaRequest;
 }
