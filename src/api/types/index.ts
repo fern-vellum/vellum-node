@@ -445,6 +445,8 @@ export * from "./WorkflowOutputJson";
 export * from "./WorkflowOutputNumber";
 export * from "./WorkflowOutputSearchResults";
 export * from "./WorkflowOutputString";
+export * from "./WorkflowPushExecConfig";
+export * from "./WorkflowPushResponse";
 export * from "./WorkflowReleaseTagRead";
 export * from "./WorkflowReleaseTagWorkflowDeploymentHistoryItem";
 export * from "./WorkflowRequestChatHistoryInputRequest";

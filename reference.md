@@ -2790,6 +2790,76 @@ await client.workflowSandboxes.deployWorkflow("id", "workflow_id");
 </dl>
 </details>
 
+## Workflows
+
+<details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">push</a>({ ...params }) -> Vellum.WorkflowPushResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.workflows.push({
+    execConfig: {
+        key: "value",
+    },
+    label: "label",
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Vellum.WorkflowPushRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Workflows.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## WorkspaceSecrets
 
 <details><summary><code>client.workspaceSecrets.<a href="/src/api/resources/workspaceSecrets/client/Client.ts">retrieve</a>(id) -> Vellum.WorkspaceSecretRead</code></summary>
