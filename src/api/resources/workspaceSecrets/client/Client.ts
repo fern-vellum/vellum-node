@@ -5,11 +5,11 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Vellum from "../../../index";
-import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
+import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
-export declare namespace MetricDefinitions {
+export declare namespace WorkspaceSecrets {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
         apiKey?: core.Supplier<string | undefined>;
@@ -25,37 +25,29 @@ export declare namespace MetricDefinitions {
     }
 }
 
-export class MetricDefinitions {
-    constructor(protected readonly _options: MetricDefinitions.Options = {}) {}
+export class WorkspaceSecrets {
+    constructor(protected readonly _options: WorkspaceSecrets.Options = {}) {}
 
     /**
-     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+     * Used to retrieve a Workspace Secret given its ID or name.
      *
-     * @param {string} id - Either the Metric Definition's ID or its unique name
-     * @param {Vellum.ExecuteMetricDefinitionRequest} request
-     * @param {MetricDefinitions.RequestOptions} requestOptions - Request-specific configuration.
+     * @param {string} id - Either the Workspace Secret's ID or its unique name
+     * @param {WorkspaceSecrets.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.metricDefinitions.executeMetricDefinition("id", {
-     *         inputs: [{
-     *                 name: "name",
-     *                 type: "STRING",
-     *                 value: "value"
-     *             }]
-     *     })
+     *     await client.workspaceSecrets.retrieve("id")
      */
-    public async executeMetricDefinition(
+    public async retrieve(
         id: string,
-        request: Vellum.ExecuteMetricDefinitionRequest,
-        requestOptions?: MetricDefinitions.RequestOptions
-    ): Promise<Vellum.MetricDefinitionExecution> {
+        requestOptions?: WorkspaceSecrets.RequestOptions
+    ): Promise<Vellum.WorkspaceSecretRead> {
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
                     .default,
-                `v1/metric-definitions/${encodeURIComponent(id)}/execute`
+                `v1/workspace-secrets/${encodeURIComponent(id)}`
             ),
-            method: "POST",
+            method: "GET",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
@@ -67,13 +59,12 @@ export class MetricDefinitions {
             },
             contentType: "application/json",
             requestType: "json",
-            body: serializers.ExecuteMetricDefinitionRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.MetricDefinitionExecution.parseOrThrow(_response.body, {
+            return serializers.WorkspaceSecretRead.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,

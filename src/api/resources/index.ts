@@ -13,6 +13,7 @@ export * as sandboxes from "./sandboxes";
 export * as testSuiteRuns from "./testSuiteRuns";
 export * as testSuites from "./testSuites";
 export * as workflowSandboxes from "./workflowSandboxes";
+export * as workspaceSecrets from "./workspaceSecrets";
 export * from "./adHoc/client/requests";
 export * from "./deployments/client/requests";
 export * from "./documentIndexes/client/requests";
