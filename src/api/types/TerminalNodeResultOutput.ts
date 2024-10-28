@@ -10,6 +10,6 @@ export type TerminalNodeResultOutput =
     | Vellum.TerminalNodeJsonResult
     | Vellum.TerminalNodeChatHistoryResult
     | Vellum.TerminalNodeSearchResultsResult
+    | Vellum.TerminalNodeErrorResult
     | Vellum.TerminalNodeArrayResult
-    | Vellum.TerminalNodeFunctionCallResult
-    | Vellum.TerminalNodeErrorResult;
+    | Vellum.TerminalNodeFunctionCallResult;

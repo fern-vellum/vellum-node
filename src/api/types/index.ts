@@ -201,7 +201,7 @@ export * from "./NamedTestCaseVariableValueRequest";
 export * from "./NodeInputCompiledArrayValue";
 export * from "./NodeInputCompiledChatHistoryValue";
 export * from "./NodeInputCompiledErrorValue";
-export * from "./NodeInputCompiledFunctionCall";
+export * from "./NodeInputCompiledFunctionCallValue";
 export * from "./NodeInputCompiledJsonValue";
 export * from "./NodeInputCompiledNumberValue";
 export * from "./NodeInputCompiledSearchResultsValue";

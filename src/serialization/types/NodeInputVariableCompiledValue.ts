@@ -12,7 +12,7 @@ import { NodeInputCompiledChatHistoryValue } from "./NodeInputCompiledChatHistor
 import { NodeInputCompiledSearchResultsValue } from "./NodeInputCompiledSearchResultsValue";
 import { NodeInputCompiledErrorValue } from "./NodeInputCompiledErrorValue";
 import { NodeInputCompiledArrayValue } from "./NodeInputCompiledArrayValue";
-import { NodeInputCompiledFunctionCall } from "./NodeInputCompiledFunctionCall";
+import { NodeInputCompiledFunctionCallValue } from "./NodeInputCompiledFunctionCallValue";
 
 export const NodeInputVariableCompiledValue: core.serialization.Schema<
     serializers.NodeInputVariableCompiledValue.Raw,
@@ -25,7 +25,7 @@ export const NodeInputVariableCompiledValue: core.serialization.Schema<
     NodeInputCompiledSearchResultsValue,
     NodeInputCompiledErrorValue,
     NodeInputCompiledArrayValue,
-    NodeInputCompiledFunctionCall,
+    NodeInputCompiledFunctionCallValue,
 ]);
 
 export declare namespace NodeInputVariableCompiledValue {
@@ -37,5 +37,5 @@ export declare namespace NodeInputVariableCompiledValue {
         | NodeInputCompiledSearchResultsValue.Raw
         | NodeInputCompiledErrorValue.Raw
         | NodeInputCompiledArrayValue.Raw
-        | NodeInputCompiledFunctionCall.Raw;
+        | NodeInputCompiledFunctionCallValue.Raw;
 }

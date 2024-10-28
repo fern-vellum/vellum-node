@@ -7,9 +7,9 @@ import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { FunctionCall } from "./FunctionCall";
 
-export const NodeInputCompiledFunctionCall: core.serialization.ObjectSchema<
-    serializers.NodeInputCompiledFunctionCall.Raw,
-    Vellum.NodeInputCompiledFunctionCall
+export const NodeInputCompiledFunctionCallValue: core.serialization.ObjectSchema<
+    serializers.NodeInputCompiledFunctionCallValue.Raw,
+    Vellum.NodeInputCompiledFunctionCallValue
 > = core.serialization.object({
     nodeInputId: core.serialization.property("node_input_id", core.serialization.string()),
     key: core.serialization.string(),
@@ -17,7 +17,7 @@ export const NodeInputCompiledFunctionCall: core.serialization.ObjectSchema<
     value: FunctionCall.optional(),
 });
 
-export declare namespace NodeInputCompiledFunctionCall {
+export declare namespace NodeInputCompiledFunctionCallValue {
     interface Raw {
         node_input_id: string;
         key: string;

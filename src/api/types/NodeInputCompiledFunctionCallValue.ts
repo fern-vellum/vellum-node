@@ -4,7 +4,7 @@
 
 import * as Vellum from "../index";
 
-export interface NodeInputCompiledFunctionCall {
+export interface NodeInputCompiledFunctionCallValue {
     nodeInputId: string;
     key: string;
     type: "FUNCTION_CALL";

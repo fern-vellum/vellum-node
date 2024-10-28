@@ -7,5 +7,5 @@ import * as Vellum from "../index";
 export interface CodeExecutionNodeArrayResult {
     id: string;
     type: "ARRAY";
-    value?: Vellum.ArrayVariableValueItem[];
+    value?: Vellum.ArrayVellumValueItem[];
 }

@@ -8,5 +8,5 @@ export interface NodeInputCompiledArrayValue {
     nodeInputId: string;
     key: string;
     type: "ARRAY";
-    value?: Vellum.ArrayVariableValueItem[];
+    value?: Vellum.ArrayVellumValueItem[];
 }

@@ -10,9 +10,9 @@ import { TerminalNodeNumberResult } from "./TerminalNodeNumberResult";
 import { TerminalNodeJsonResult } from "./TerminalNodeJsonResult";
 import { TerminalNodeChatHistoryResult } from "./TerminalNodeChatHistoryResult";
 import { TerminalNodeSearchResultsResult } from "./TerminalNodeSearchResultsResult";
+import { TerminalNodeErrorResult } from "./TerminalNodeErrorResult";
 import { TerminalNodeArrayResult } from "./TerminalNodeArrayResult";
 import { TerminalNodeFunctionCallResult } from "./TerminalNodeFunctionCallResult";
-import { TerminalNodeErrorResult } from "./TerminalNodeErrorResult";
 
 export const TerminalNodeResultOutput: core.serialization.Schema<
     serializers.TerminalNodeResultOutput.Raw,
@@ -23,9 +23,9 @@ export const TerminalNodeResultOutput: core.serialization.Schema<
     TerminalNodeJsonResult,
     TerminalNodeChatHistoryResult,
     TerminalNodeSearchResultsResult,
+    TerminalNodeErrorResult,
     TerminalNodeArrayResult,
     TerminalNodeFunctionCallResult,
-    TerminalNodeErrorResult,
 ]);
 
 export declare namespace TerminalNodeResultOutput {
@@ -35,7 +35,7 @@ export declare namespace TerminalNodeResultOutput {
         | TerminalNodeJsonResult.Raw
         | TerminalNodeChatHistoryResult.Raw
         | TerminalNodeSearchResultsResult.Raw
+        | TerminalNodeErrorResult.Raw
         | TerminalNodeArrayResult.Raw
-        | TerminalNodeFunctionCallResult.Raw
-        | TerminalNodeErrorResult.Raw;
+        | TerminalNodeFunctionCallResult.Raw;
 }

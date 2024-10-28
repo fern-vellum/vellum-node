@@ -13,7 +13,7 @@ export const TerminalNodeArrayResult: core.serialization.ObjectSchema<
     id: core.serialization.string().optional(),
     name: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVariableValueItem)).optional(),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVellumValueItem)).optional(),
 });
 
 export declare namespace TerminalNodeArrayResult {
@@ -21,6 +21,6 @@ export declare namespace TerminalNodeArrayResult {
         id?: string | null;
         name: string;
         type: "ARRAY";
-        value?: serializers.ArrayVariableValueItem.Raw[] | null;
+        value?: serializers.ArrayVellumValueItem.Raw[] | null;
     }
 }
