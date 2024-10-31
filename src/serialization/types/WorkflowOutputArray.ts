@@ -13,7 +13,7 @@ export const WorkflowOutputArray: core.serialization.ObjectSchema<
     id: core.serialization.string(),
     name: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVellumValueItem)).optional(),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.VellumValue)).optional(),
 });
 
 export declare namespace WorkflowOutputArray {
@@ -21,6 +21,6 @@ export declare namespace WorkflowOutputArray {
         id: string;
         name: string;
         type: "ARRAY";
-        value?: serializers.ArrayVellumValueItem.Raw[] | null;
+        value?: serializers.VellumValue.Raw[] | null;
     }
 }

@@ -11,5 +11,5 @@ export interface ArrayInputRequest {
     /** The variable's name */
     name: string;
     type: "ARRAY";
-    value: Vellum.ArrayVellumValueItemRequest[];
+    value: Vellum.VellumValueRequest[];
 }
