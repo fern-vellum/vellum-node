@@ -11,5 +11,5 @@ export interface TestCaseArrayVariableValue {
     variableId: string;
     name: string;
     type: "ARRAY";
-    value?: Vellum.ArrayVellumValueItem[];
+    value?: Vellum.VellumValue[];
 }

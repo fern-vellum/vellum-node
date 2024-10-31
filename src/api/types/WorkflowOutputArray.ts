@@ -12,5 +12,5 @@ export interface WorkflowOutputArray {
     /** The output's name, as defined in the workflow */
     name: string;
     type: "ARRAY";
-    value?: Vellum.ArrayVellumValueItem[];
+    value?: Vellum.VellumValue[];
 }

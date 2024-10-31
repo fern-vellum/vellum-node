@@ -12,13 +12,13 @@ export const ArrayInputRequest: core.serialization.ObjectSchema<
 > = core.serialization.object({
     name: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVellumValueItemRequest)),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.VellumValueRequest)),
 });
 
 export declare namespace ArrayInputRequest {
     interface Raw {
         name: string;
         type: "ARRAY";
-        value: serializers.ArrayVellumValueItemRequest.Raw[];
+        value: serializers.VellumValueRequest.Raw[];
     }
 }

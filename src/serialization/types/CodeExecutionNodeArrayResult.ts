@@ -12,13 +12,13 @@ export const CodeExecutionNodeArrayResult: core.serialization.ObjectSchema<
 > = core.serialization.object({
     id: core.serialization.string(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVellumValueItem)).optional(),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.VellumValue)).optional(),
 });
 
 export declare namespace CodeExecutionNodeArrayResult {
     interface Raw {
         id: string;
         type: "ARRAY";
-        value?: serializers.ArrayVellumValueItem.Raw[] | null;
+        value?: serializers.VellumValue.Raw[] | null;
     }
 }

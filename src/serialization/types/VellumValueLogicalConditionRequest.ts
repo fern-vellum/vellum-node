@@ -5,7 +5,6 @@
 import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
-import { VellumValueRequest } from "./VellumValueRequest";
 import { LogicalOperator } from "./LogicalOperator";
 
 export const VellumValueLogicalConditionRequest: core.serialization.ObjectSchema<
@@ -13,16 +12,22 @@ export const VellumValueLogicalConditionRequest: core.serialization.ObjectSchema
     Vellum.VellumValueLogicalConditionRequest
 > = core.serialization.object({
     type: core.serialization.stringLiteral("LOGICAL_CONDITION"),
-    lhsVariable: core.serialization.property("lhs_variable", VellumValueRequest),
+    lhsVariable: core.serialization.property(
+        "lhs_variable",
+        core.serialization.lazy(() => serializers.VellumValueRequest)
+    ),
     operator: LogicalOperator,
-    rhsVariable: core.serialization.property("rhs_variable", VellumValueRequest),
+    rhsVariable: core.serialization.property(
+        "rhs_variable",
+        core.serialization.lazy(() => serializers.VellumValueRequest)
+    ),
 });
 
 export declare namespace VellumValueLogicalConditionRequest {
     interface Raw {
         type: "LOGICAL_CONDITION";
-        lhs_variable: VellumValueRequest.Raw;
+        lhs_variable: serializers.VellumValueRequest.Raw;
         operator: LogicalOperator.Raw;
-        rhs_variable: VellumValueRequest.Raw;
+        rhs_variable: serializers.VellumValueRequest.Raw;
     }
 }

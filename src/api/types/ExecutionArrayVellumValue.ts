@@ -12,5 +12,5 @@ export interface ExecutionArrayVellumValue {
     id: string;
     name: string;
     type: "ARRAY";
-    value?: Vellum.ArrayVellumValueItem[];
+    value?: Vellum.VellumValue[];
 }

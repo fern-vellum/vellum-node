@@ -9,5 +9,5 @@ export interface TerminalNodeArrayResult {
     /** The unique name given to the terminal node that produced this output. */
     name: string;
     type: "ARRAY";
-    value?: Vellum.ArrayVellumValueItem[];
+    value?: Vellum.VellumValue[];
 }

@@ -9,7 +9,7 @@ import * as Vellum from "../index";
  */
 export interface NodeOutputCompiledArrayValue {
     type: "ARRAY";
-    value?: Vellum.ArrayVellumValueItem[];
+    value?: Vellum.VellumValue[];
     nodeOutputId: string;
     state?: Vellum.WorkflowNodeResultEventState;
 }

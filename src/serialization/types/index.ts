@@ -15,8 +15,6 @@ export * from "./ArrayInputRequest";
 export * from "./ArrayVariableValue";
 export * from "./ArrayVariableValueItem";
 export * from "./ArrayVellumValue";
-export * from "./ArrayVellumValueItem";
-export * from "./ArrayVellumValueItemRequest";
 export * from "./ArrayVellumValueRequest";
 export * from "./BasicVectorizerIntfloatMultilingualE5Large";
 export * from "./BasicVectorizerIntfloatMultilingualE5LargeRequest";
