@@ -206,6 +206,201 @@ await client.adHoc.adhocExecutePromptStream({
 </dl>
 </details>
 
+## ContainerImages
+
+<details><summary><code>client.containerImages.<a href="/src/api/resources/containerImages/client/Client.ts">list</a>({ ...params }) -> Vellum.PaginatedContainerImageReadList</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a list of container images for the organization.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.containerImages.list();
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Vellum.ContainerImagesListRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ContainerImages.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.containerImages.<a href="/src/api/resources/containerImages/client/Client.ts">retrieve</a>(id) -> Vellum.ContainerImageRead</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a Container Image by its ID or name.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.containerImages.retrieve("id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` — Either the Container Image's ID or its unique name
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ContainerImages.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.containerImages.<a href="/src/api/resources/containerImages/client/Client.ts">pushContainerImage</a>({ ...params }) -> Vellum.ContainerImageRead</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.containerImages.pushContainerImage({
+    name: "name",
+    sha: "sha",
+    tags: ["tags"],
+});
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `Vellum.PushContainerImageRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `ContainerImages.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Deployments
 
 <details><summary><code>client.deployments.<a href="/src/api/resources/deployments/client/Client.ts">list</a>({ ...params }) -> Vellum.PaginatedSlimDeploymentReadList</code></summary>

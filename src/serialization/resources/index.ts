@@ -9,6 +9,8 @@ export * from "./workflowDeployments/types";
 export * as testSuites from "./testSuites";
 export * as adHoc from "./adHoc";
 export * from "./adHoc/client/requests";
+export * as containerImages from "./containerImages";
+export * from "./containerImages/client/requests";
 export * from "./deployments/client/requests";
 export * from "./documentIndexes/client/requests";
 export * as documents from "./documents";

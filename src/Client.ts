@@ -10,6 +10,7 @@ import urlJoin from "url-join";
 import * as errors from "./errors/index";
 import * as stream from "stream";
 import { AdHoc } from "./api/resources/adHoc/client/Client";
+import { ContainerImages } from "./api/resources/containerImages/client/Client";
 import { Deployments } from "./api/resources/deployments/client/Client";
 import { DocumentIndexes } from "./api/resources/documentIndexes/client/Client";
 import { Documents } from "./api/resources/documents/client/Client";
@@ -80,8 +81,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -163,8 +164,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -235,8 +236,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -334,8 +335,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -404,8 +405,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -505,8 +506,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -580,8 +581,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -675,8 +676,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -757,8 +758,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -834,8 +835,8 @@ export class VellumClient {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.0",
-                "User-Agent": "vellum-ai/0.9.0",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -879,6 +880,12 @@ export class VellumClient {
 
     public get adHoc(): AdHoc {
         return (this._adHoc ??= new AdHoc(this._options));
+    }
+
+    protected _containerImages: ContainerImages | undefined;
+
+    public get containerImages(): ContainerImages {
+        return (this._containerImages ??= new ContainerImages(this._options));
     }
 
     protected _deployments: Deployments | undefined;

@@ -9,7 +9,7 @@ import urlJoin from "url-join";
 import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
-export declare namespace WorkspaceSecrets {
+export declare namespace ContainerImages {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
         apiKey?: core.Supplier<string | undefined>;
@@ -25,27 +25,41 @@ export declare namespace WorkspaceSecrets {
     }
 }
 
-export class WorkspaceSecrets {
-    constructor(protected readonly _options: WorkspaceSecrets.Options = {}) {}
+export class ContainerImages {
+    constructor(protected readonly _options: ContainerImages.Options = {}) {}
 
     /**
-     * Used to retrieve a Workspace Secret given its ID or name.
+     * Retrieve a list of container images for the organization.
      *
-     * @param {string} id - Either the Workspace Secret's ID or its unique name
-     * @param {WorkspaceSecrets.RequestOptions} requestOptions - Request-specific configuration.
+     * @param {Vellum.ContainerImagesListRequest} request
+     * @param {ContainerImages.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.workspaceSecrets.retrieve("id")
+     *     await client.containerImages.list()
      */
-    public async retrieve(
-        id: string,
-        requestOptions?: WorkspaceSecrets.RequestOptions
-    ): Promise<Vellum.WorkspaceSecretRead> {
+    public async list(
+        request: Vellum.ContainerImagesListRequest = {},
+        requestOptions?: ContainerImages.RequestOptions
+    ): Promise<Vellum.PaginatedContainerImageReadList> {
+        const { limit, offset, ordering } = request;
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        if (limit != null) {
+            _queryParams["limit"] = limit.toString();
+        }
+
+        if (offset != null) {
+            _queryParams["offset"] = offset.toString();
+        }
+
+        if (ordering != null) {
+            _queryParams["ordering"] = ordering;
+        }
+
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
                     .default,
-                `v1/workspace-secrets/${encodeURIComponent(id)}`
+                "v1/container-images"
             ),
             method: "GET",
             headers: {
@@ -58,13 +72,14 @@ export class WorkspaceSecrets {
                 ...(await this._getCustomAuthorizationHeaders()),
             },
             contentType: "application/json",
+            queryParameters: _queryParams,
             requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.WorkspaceSecretRead.parseOrThrow(_response.body, {
+            return serializers.PaginatedContainerImageReadList.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -95,27 +110,25 @@ export class WorkspaceSecrets {
     }
 
     /**
-     * Used to update a Workspace Secret given its ID or name.
+     * Retrieve a Container Image by its ID or name.
      *
-     * @param {string} id - Either the Workspace Secret's ID or its unique name
-     * @param {Vellum.PatchedWorkspaceSecretUpdateRequest} request
-     * @param {WorkspaceSecrets.RequestOptions} requestOptions - Request-specific configuration.
+     * @param {string} id - Either the Container Image's ID or its unique name
+     * @param {ContainerImages.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.workspaceSecrets.partialUpdate("id")
+     *     await client.containerImages.retrieve("id")
      */
-    public async partialUpdate(
+    public async retrieve(
         id: string,
-        request: Vellum.PatchedWorkspaceSecretUpdateRequest = {},
-        requestOptions?: WorkspaceSecrets.RequestOptions
-    ): Promise<Vellum.WorkspaceSecretRead> {
+        requestOptions?: ContainerImages.RequestOptions
+    ): Promise<Vellum.ContainerImageRead> {
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
                     .default,
-                `v1/workspace-secrets/${encodeURIComponent(id)}`
+                `v1/container-images/${encodeURIComponent(id)}`
             ),
-            method: "PATCH",
+            method: "GET",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
@@ -127,15 +140,83 @@ export class WorkspaceSecrets {
             },
             contentType: "application/json",
             requestType: "json",
-            body: serializers.PatchedWorkspaceSecretUpdateRequest.jsonOrThrow(request, {
-                unrecognizedObjectKeys: "strip",
-            }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.WorkspaceSecretRead.parseOrThrow(_response.body, {
+            return serializers.ContainerImageRead.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            throw new errors.VellumError({
+                statusCode: _response.error.statusCode,
+                body: _response.error.body,
+            });
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.VellumError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.VellumTimeoutError();
+            case "unknown":
+                throw new errors.VellumError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
+     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+     *
+     * @param {Vellum.PushContainerImageRequest} request
+     * @param {ContainerImages.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @example
+     *     await client.containerImages.pushContainerImage({
+     *         name: "name",
+     *         sha: "sha",
+     *         tags: ["tags"]
+     *     })
+     */
+    public async pushContainerImage(
+        request: Vellum.PushContainerImageRequest,
+        requestOptions?: ContainerImages.RequestOptions
+    ): Promise<Vellum.ContainerImageRead> {
+        const _response = await core.fetcher({
+            url: urlJoin(
+                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                    .default,
+                "v1/container-images/push"
+            ),
+            method: "POST",
+            headers: {
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "vellum-ai",
+                "X-Fern-SDK-Version": "0.9.1",
+                "User-Agent": "vellum-ai/0.9.1",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...(await this._getCustomAuthorizationHeaders()),
+            },
+            contentType: "application/json",
+            requestType: "json",
+            body: serializers.PushContainerImageRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
+            maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+        });
+        if (_response.ok) {
+            return serializers.ContainerImageRead.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
