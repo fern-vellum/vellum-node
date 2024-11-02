@@ -8,6 +8,7 @@ import * as core from "../../core";
 import { StringChatMessageContent } from "./StringChatMessageContent";
 import { FunctionCallChatMessageContent } from "./FunctionCallChatMessageContent";
 import { ImageChatMessageContent } from "./ImageChatMessageContent";
+import { AudioChatMessageContent } from "./AudioChatMessageContent";
 
 export const ArrayChatMessageContentItem: core.serialization.Schema<
     serializers.ArrayChatMessageContentItem.Raw,
@@ -16,8 +17,13 @@ export const ArrayChatMessageContentItem: core.serialization.Schema<
     StringChatMessageContent,
     FunctionCallChatMessageContent,
     ImageChatMessageContent,
+    AudioChatMessageContent,
 ]);
 
 export declare namespace ArrayChatMessageContentItem {
-    type Raw = StringChatMessageContent.Raw | FunctionCallChatMessageContent.Raw | ImageChatMessageContent.Raw;
+    type Raw =
+        | StringChatMessageContent.Raw
+        | FunctionCallChatMessageContent.Raw
+        | ImageChatMessageContent.Raw
+        | AudioChatMessageContent.Raw;
 }

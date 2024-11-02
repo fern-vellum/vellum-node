@@ -16,4 +16,5 @@ import * as Vellum from "../../../../index";
 export interface WorkflowPushRequest {
     execConfig: Vellum.WorkflowPushExecConfig;
     label: string;
+    workflowSandboxId?: string;
 }

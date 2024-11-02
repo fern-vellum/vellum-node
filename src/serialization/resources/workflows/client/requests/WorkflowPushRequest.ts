@@ -13,11 +13,13 @@ export const WorkflowPushRequest: core.serialization.Schema<
 > = core.serialization.object({
     execConfig: core.serialization.property("exec_config", WorkflowPushExecConfig),
     label: core.serialization.string(),
+    workflowSandboxId: core.serialization.property("workflow_sandbox_id", core.serialization.string().optional()),
 });
 
 export declare namespace WorkflowPushRequest {
     interface Raw {
         exec_config: WorkflowPushExecConfig.Raw;
         label: string;
+        workflow_sandbox_id?: string | null;
     }
 }

@@ -8,4 +8,5 @@ export type ChatMessageContentRequest =
     | Vellum.StringChatMessageContentRequest
     | Vellum.FunctionCallChatMessageContentRequest
     | Vellum.ArrayChatMessageContentRequest
-    | Vellum.ImageChatMessageContentRequest;
+    | Vellum.ImageChatMessageContentRequest
+    | Vellum.AudioChatMessageContentRequest;

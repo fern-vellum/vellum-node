@@ -8,6 +8,7 @@ import * as core from "../../core";
 import { StringChatMessageContentRequest } from "./StringChatMessageContentRequest";
 import { FunctionCallChatMessageContentRequest } from "./FunctionCallChatMessageContentRequest";
 import { ImageChatMessageContentRequest } from "./ImageChatMessageContentRequest";
+import { AudioChatMessageContentRequest } from "./AudioChatMessageContentRequest";
 
 export const ArrayChatMessageContentItemRequest: core.serialization.Schema<
     serializers.ArrayChatMessageContentItemRequest.Raw,
@@ -16,11 +17,13 @@ export const ArrayChatMessageContentItemRequest: core.serialization.Schema<
     StringChatMessageContentRequest,
     FunctionCallChatMessageContentRequest,
     ImageChatMessageContentRequest,
+    AudioChatMessageContentRequest,
 ]);
 
 export declare namespace ArrayChatMessageContentItemRequest {
     type Raw =
         | StringChatMessageContentRequest.Raw
         | FunctionCallChatMessageContentRequest.Raw
-        | ImageChatMessageContentRequest.Raw;
+        | ImageChatMessageContentRequest.Raw
+        | AudioChatMessageContentRequest.Raw;
 }
