@@ -22,7 +22,7 @@ export interface EnrichedNormalizedCompletion {
     /** The logprobs of the completion. Only present if specified in the original request options. */
     logprobs?: Vellum.NormalizedLogProbs;
     /** The ID of the model version used to generate this completion. */
-    modelVersionId: string;
+    modelVersionId?: string;
     promptVersionId: string;
     type?: Vellum.VellumVariableType;
     deploymentReleaseTag: string;
