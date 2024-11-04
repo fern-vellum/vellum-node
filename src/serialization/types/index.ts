@@ -63,6 +63,7 @@ export * from "./DeploymentProviderPayloadResponse";
 export * from "./DeploymentRead";
 export * from "./DeploymentReleaseTagDeploymentHistoryItem";
 export * from "./DeploymentReleaseTagRead";
+export * from "./DockerServiceToken";
 export * from "./DocumentDocumentToDocumentIndex";
 export * from "./DocumentIndexChunking";
 export * from "./DocumentIndexChunkingRequest";

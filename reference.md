@@ -334,6 +334,61 @@ await client.containerImages.retrieve("id");
 </dl>
 </details>
 
+<details><summary><code>client.containerImages.<a href="/src/api/resources/containerImages/client/Client.ts">dockerServiceToken</a>() -> Vellum.DockerServiceToken</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.containerImages.dockerServiceToken();
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**requestOptions:** `ContainerImages.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.containerImages.<a href="/src/api/resources/containerImages/client/Client.ts">pushContainerImage</a>({ ...params }) -> Vellum.ContainerImageRead</code></summary>
 <dl>
 <dd>
@@ -2986,6 +3041,69 @@ await client.workflowSandboxes.deployWorkflow("id", "workflow_id");
 </details>
 
 ## Workflows
+
+<details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">pull</a>(id) -> stream.Readable</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.workflows.pull("string");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` — The ID of the Workflow to pull from
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Workflows.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
 
 <details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">push</a>({ ...params }) -> Vellum.WorkflowPushResponse</code></summary>
 <dl>
