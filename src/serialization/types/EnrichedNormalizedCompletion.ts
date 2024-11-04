@@ -18,7 +18,7 @@ export const EnrichedNormalizedCompletion: core.serialization.ObjectSchema<
     text: core.serialization.string(),
     finishReason: core.serialization.property("finish_reason", FinishReasonEnum.optional()),
     logprobs: NormalizedLogProbs.optional(),
-    modelVersionId: core.serialization.property("model_version_id", core.serialization.string()),
+    modelVersionId: core.serialization.property("model_version_id", core.serialization.string().optional()),
     promptVersionId: core.serialization.property("prompt_version_id", core.serialization.string()),
     type: VellumVariableType.optional(),
     deploymentReleaseTag: core.serialization.property("deployment_release_tag", core.serialization.string()),
@@ -32,7 +32,7 @@ export declare namespace EnrichedNormalizedCompletion {
         text: string;
         finish_reason?: FinishReasonEnum.Raw | null;
         logprobs?: NormalizedLogProbs.Raw | null;
-        model_version_id: string;
+        model_version_id?: string | null;
         prompt_version_id: string;
         type?: VellumVariableType.Raw | null;
         deployment_release_tag: string;
