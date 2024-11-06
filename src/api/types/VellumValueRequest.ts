@@ -9,6 +9,7 @@ export type VellumValueRequest =
     | Vellum.NumberVellumValueRequest
     | Vellum.JsonVellumValueRequest
     | Vellum.ImageVellumValueRequest
+    | Vellum.AudioVellumValueRequest
     | Vellum.FunctionCallVellumValueRequest
     | Vellum.ErrorVellumValueRequest
     | Vellum.ArrayVellumValueRequest
