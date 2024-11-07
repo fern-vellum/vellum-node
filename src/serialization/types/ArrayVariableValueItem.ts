@@ -11,6 +11,7 @@ import { JsonVariableValue } from "./JsonVariableValue";
 import { ErrorVariableValue } from "./ErrorVariableValue";
 import { FunctionCallVariableValue } from "./FunctionCallVariableValue";
 import { ImageVariableValue } from "./ImageVariableValue";
+import { AudioVariableValue } from "./AudioVariableValue";
 import { ChatHistoryVariableValue } from "./ChatHistoryVariableValue";
 import { SearchResultsVariableValue } from "./SearchResultsVariableValue";
 
@@ -24,6 +25,7 @@ export const ArrayVariableValueItem: core.serialization.Schema<
     ErrorVariableValue,
     FunctionCallVariableValue,
     ImageVariableValue,
+    AudioVariableValue,
     ChatHistoryVariableValue,
     SearchResultsVariableValue,
     core.serialization.lazyObject(() => serializers.ArrayVariableValue),
@@ -37,6 +39,7 @@ export declare namespace ArrayVariableValueItem {
         | ErrorVariableValue.Raw
         | FunctionCallVariableValue.Raw
         | ImageVariableValue.Raw
+        | AudioVariableValue.Raw
         | ChatHistoryVariableValue.Raw
         | SearchResultsVariableValue.Raw
         | serializers.ArrayVariableValue.Raw;

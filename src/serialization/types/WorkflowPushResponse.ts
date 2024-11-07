@@ -11,10 +11,12 @@ export const WorkflowPushResponse: core.serialization.ObjectSchema<
     Vellum.WorkflowPushResponse
 > = core.serialization.object({
     workflowSandboxId: core.serialization.property("workflow_sandbox_id", core.serialization.string()),
+    workflowDeploymentId: core.serialization.property("workflow_deployment_id", core.serialization.string().optional()),
 });
 
 export declare namespace WorkflowPushResponse {
     interface Raw {
         workflow_sandbox_id: string;
+        workflow_deployment_id?: string | null;
     }
 }

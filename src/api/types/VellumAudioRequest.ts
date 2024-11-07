@@ -3,6 +3,7 @@
  */
 
 export interface VellumAudioRequest {
+    /** A valid data URL containing the audio data. */
     src: string;
     metadata?: Record<string, unknown>;
 }

@@ -17,4 +17,5 @@ export interface WorkflowPushRequest {
     execConfig: Vellum.WorkflowPushExecConfig;
     label: string;
     workflowSandboxId?: string;
+    deploymentConfig?: Vellum.WorkflowPushDeploymentConfigRequest;
 }

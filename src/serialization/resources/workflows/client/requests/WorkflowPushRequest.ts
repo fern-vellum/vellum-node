@@ -6,6 +6,7 @@ import * as serializers from "../../../../index";
 import * as Vellum from "../../../../../api/index";
 import * as core from "../../../../../core";
 import { WorkflowPushExecConfig } from "../../../../types/WorkflowPushExecConfig";
+import { WorkflowPushDeploymentConfigRequest } from "../../../../types/WorkflowPushDeploymentConfigRequest";
 
 export const WorkflowPushRequest: core.serialization.Schema<
     serializers.WorkflowPushRequest.Raw,
@@ -14,6 +15,7 @@ export const WorkflowPushRequest: core.serialization.Schema<
     execConfig: core.serialization.property("exec_config", WorkflowPushExecConfig),
     label: core.serialization.string(),
     workflowSandboxId: core.serialization.property("workflow_sandbox_id", core.serialization.string().optional()),
+    deploymentConfig: core.serialization.property("deployment_config", WorkflowPushDeploymentConfigRequest.optional()),
 });
 
 export declare namespace WorkflowPushRequest {
@@ -21,5 +23,6 @@ export declare namespace WorkflowPushRequest {
         exec_config: WorkflowPushExecConfig.Raw;
         label: string;
         workflow_sandbox_id?: string | null;
+        deployment_config?: WorkflowPushDeploymentConfigRequest.Raw | null;
     }
 }

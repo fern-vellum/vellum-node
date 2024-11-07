@@ -9,6 +9,7 @@ import { StringVellumValue } from "./StringVellumValue";
 import { NumberVellumValue } from "./NumberVellumValue";
 import { JsonVellumValue } from "./JsonVellumValue";
 import { ImageVellumValue } from "./ImageVellumValue";
+import { AudioVellumValue } from "./AudioVellumValue";
 import { FunctionCallVellumValue } from "./FunctionCallVellumValue";
 import { ErrorVellumValue } from "./ErrorVellumValue";
 import { ChatHistoryVellumValue } from "./ChatHistoryVellumValue";
@@ -20,6 +21,7 @@ export const VellumValue: core.serialization.Schema<serializers.VellumValue.Raw,
         NumberVellumValue,
         JsonVellumValue,
         ImageVellumValue,
+        AudioVellumValue,
         FunctionCallVellumValue,
         ErrorVellumValue,
         core.serialization.lazyObject(() => serializers.ArrayVellumValue),
@@ -33,6 +35,7 @@ export declare namespace VellumValue {
         | NumberVellumValue.Raw
         | JsonVellumValue.Raw
         | ImageVellumValue.Raw
+        | AudioVellumValue.Raw
         | FunctionCallVellumValue.Raw
         | ErrorVellumValue.Raw
         | serializers.ArrayVellumValue.Raw

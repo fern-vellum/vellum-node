@@ -11,6 +11,7 @@ export type ArrayVariableValueItem =
     | Vellum.ErrorVariableValue
     | Vellum.FunctionCallVariableValue
     | Vellum.ImageVariableValue
+    | Vellum.AudioVariableValue
     | Vellum.ChatHistoryVariableValue
     | Vellum.SearchResultsVariableValue
     | Vellum.ArrayVariableValue;
