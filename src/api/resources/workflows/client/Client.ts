@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
+import * as Vellum from "../../../index";
 import * as stream from "stream";
 import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
-import * as Vellum from "../../../index";
 import * as serializers from "../../../../serialization/index";
 
 export declare namespace Workflows {
@@ -31,8 +31,19 @@ export class Workflows {
 
     /**
      * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+     * @throws {@link Vellum.BadRequestError}
      */
-    public async pull(id: string, requestOptions?: Workflows.RequestOptions): Promise<stream.Readable> {
+    public async pull(
+        id: string,
+        request: Vellum.WorkflowsPullRequest = {},
+        requestOptions?: Workflows.RequestOptions
+    ): Promise<stream.Readable> {
+        const { format } = request;
+        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        if (format != null) {
+            _queryParams["format"] = format;
+        }
+
         const _response = await core.fetcher<stream.Readable>({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
@@ -43,13 +54,14 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.4",
-                "User-Agent": "vellum-ai/0.9.4",
+                "X-Fern-SDK-Version": "0.9.5",
+                "User-Agent": "vellum-ai/0.9.5",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
             },
             contentType: "application/json",
+            queryParameters: _queryParams,
             requestType: "json",
             responseType: "streaming",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
@@ -61,10 +73,15 @@ export class Workflows {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.VellumError({
-                statusCode: _response.error.statusCode,
-                body: _response.error.body,
-            });
+            switch (_response.error.statusCode) {
+                case 400:
+                    throw new Vellum.BadRequestError(_response.error.body);
+                default:
+                    throw new errors.VellumError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.body,
+                    });
+            }
         }
 
         switch (_response.error.reason) {
@@ -110,8 +127,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.4",
-                "User-Agent": "vellum-ai/0.9.4",
+                "X-Fern-SDK-Version": "0.9.5",
+                "User-Agent": "vellum-ai/0.9.5",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

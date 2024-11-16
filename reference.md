@@ -584,6 +584,77 @@ await client.deployments.retrieve("id");
 </dl>
 </details>
 
+<details><summary><code>client.deployments.<a href="/src/api/resources/deployments/client/Client.ts">listDeploymentReleaseTags</a>(id, { ...params }) -> Vellum.PaginatedDeploymentReleaseTagReadList</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+List Release Tags associated with the specified Prompt Deployment
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.deployments.listDeploymentReleaseTags("id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` — Either the Prompt Deployment's ID or its unique name
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Vellum.ListDeploymentReleaseTagsRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Deployments.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.deployments.<a href="/src/api/resources/deployments/client/Client.ts">retrieveDeploymentReleaseTag</a>(id, name) -> Vellum.DeploymentReleaseTagRead</code></summary>
 <dl>
 <dd>
@@ -667,7 +738,7 @@ await client.deployments.retrieveDeploymentReleaseTag("id", "name");
 <dl>
 <dd>
 
-Updates an existing Release Tag associated with the specified Deployment.
+Updates an existing Release Tag associated with the specified Prompt Deployment.
 
 </dd>
 </dl>
@@ -2824,6 +2895,77 @@ await client.workflowDeployments.retrieve("id");
 </dl>
 </details>
 
+<details><summary><code>client.workflowDeployments.<a href="/src/api/resources/workflowDeployments/client/Client.ts">listWorkflowReleaseTags</a>(id, { ...params }) -> Vellum.PaginatedWorkflowReleaseTagReadList</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+List Release Tags associated with the specified Workflow Deployment
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.workflowDeployments.listWorkflowReleaseTags("id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` — Either the Workflow Deployment's ID or its unique name
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Vellum.ListWorkflowReleaseTagsRequest`
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `WorkflowDeployments.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.workflowDeployments.<a href="/src/api/resources/workflowDeployments/client/Client.ts">retrieveWorkflowReleaseTag</a>(id, name) -> Vellum.WorkflowReleaseTagRead</code></summary>
 <dl>
 <dd>
@@ -3042,7 +3184,7 @@ await client.workflowSandboxes.deployWorkflow("id", "workflow_id");
 
 ## Workflows
 
-<details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">pull</a>(id) -> stream.Readable</code></summary>
+<details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">pull</a>(id, { ...params }) -> stream.Readable</code></summary>
 <dl>
 <dd>
 
@@ -3070,7 +3212,9 @@ An internal-only endpoint that's subject to breaking changes without notice. Not
 <dd>
 
 ```typescript
-await client.workflows.pull("string");
+await client.workflows.pull("string", {
+    format: "json",
+});
 ```
 
 </dd>
@@ -3087,6 +3231,14 @@ await client.workflows.pull("string");
 <dd>
 
 **id:** `string` — The ID of the Workflow to pull from
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `Vellum.WorkflowsPullRequest`
 
 </dd>
 </dl>
