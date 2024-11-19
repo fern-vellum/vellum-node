@@ -20,10 +20,14 @@ import * as Vellum from "../../../../index";
  *                 required: true,
  *                 default: {
  *                     type: "STRING",
- *                     value: "string"
+ *                     value: {
+ *                         "key": "value"
+ *                     }
  *                 },
  *                 extensions: {
- *                     color: "string"
+ *                     color: {
+ *                         "key": "value"
+ *                     }
  *                 }
  *             }],
  *         parameters: {
@@ -49,17 +53,7 @@ import * as Vellum from "../../../../index";
  *             timeout: 1.1
  *         },
  *         blocks: [{
- *                 state: "ENABLED",
- *                 cacheConfig: {
- *                     type: {
- *                         "key": "value"
- *                     }
- *                 },
- *                 blockType: "JINJA",
- *                 properties: {
- *                     template: "string",
- *                     templateType: "STRING"
- *                 }
+ *                 "key": "value"
  *             }],
  *         expandMeta: {
  *             cost: true,
@@ -69,12 +63,12 @@ import * as Vellum from "../../../../index";
  *         }
  *     }
  */
-export interface AdHocExecutePromptStreamRequest {
+export interface AdHocExecutePromptStream {
     mlModel: string;
-    inputValues: Vellum.PromptRequestInputRequest[];
-    inputVariables: Vellum.VellumVariableRequest[];
-    parameters: Vellum.PromptParametersRequest;
-    settings?: Vellum.PromptSettingsRequest;
-    blocks: Vellum.PromptBlockRequest[];
-    expandMeta?: Vellum.AdHocExpandMetaRequest;
+    inputValues: Vellum.PromptRequestInput[];
+    inputVariables: Vellum.VellumVariable[];
+    parameters: Vellum.PromptParameters;
+    settings?: Vellum.PromptSettings;
+    blocks: unknown[];
+    expandMeta?: Vellum.AdHocExpandMeta;
 }

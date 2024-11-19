@@ -1,1 +1,1 @@
-export { type AdHocExecutePromptStreamRequest } from "./AdHocExecutePromptStreamRequest";
+export { type AdHocExecutePromptStream } from "./AdHocExecutePromptStream";

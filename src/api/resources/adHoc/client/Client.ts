@@ -33,7 +33,7 @@ export class AdHoc {
      * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
      */
     public async adhocExecutePromptStream(
-        request: Vellum.AdHocExecutePromptStreamRequest,
+        request: Vellum.AdHocExecutePromptStream,
         requestOptions?: AdHoc.RequestOptions
     ): Promise<core.Stream<Vellum.AdHocExecutePromptEvent>> {
         const _response = await core.fetcher<stream.Readable>({
@@ -46,15 +46,15 @@ export class AdHoc {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.6",
-                "User-Agent": "vellum-ai/0.9.6",
+                "X-Fern-SDK-Version": "0.9.7",
+                "User-Agent": "vellum-ai/0.9.7",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
             },
             contentType: "application/json",
             requestType: "json",
-            body: serializers.AdHocExecutePromptStreamRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            body: serializers.AdHocExecutePromptStream.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             responseType: "sse",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,

@@ -4,9 +4,9 @@
 
 import * as Vellum from "../index";
 
-export interface PromptRequestChatHistoryInputRequest {
+export interface PromptRequestChatHistoryInput {
     /** The variable's name, as defined in the Prompt. */
     key: string;
     type: "CHAT_HISTORY";
-    value: Vellum.ChatMessageRequest[];
+    value: Vellum.ChatMessage[];
 }

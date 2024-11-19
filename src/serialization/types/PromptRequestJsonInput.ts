@@ -6,16 +6,16 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 
-export const PromptRequestJsonInputRequest: core.serialization.ObjectSchema<
-    serializers.PromptRequestJsonInputRequest.Raw,
-    Vellum.PromptRequestJsonInputRequest
+export const PromptRequestJsonInput: core.serialization.ObjectSchema<
+    serializers.PromptRequestJsonInput.Raw,
+    Vellum.PromptRequestJsonInput
 > = core.serialization.object({
     key: core.serialization.string(),
     type: core.serialization.stringLiteral("JSON"),
     value: core.serialization.record(core.serialization.string(), core.serialization.unknown()),
 });
 
-export declare namespace PromptRequestJsonInputRequest {
+export declare namespace PromptRequestJsonInput {
     interface Raw {
         key: string;
         type: "JSON";

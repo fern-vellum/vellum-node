@@ -6,9 +6,9 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 
-export const PromptParametersRequest: core.serialization.ObjectSchema<
-    serializers.PromptParametersRequest.Raw,
-    Vellum.PromptParametersRequest
+export const PromptParameters: core.serialization.ObjectSchema<
+    serializers.PromptParameters.Raw,
+    Vellum.PromptParameters
 > = core.serialization.object({
     stop: core.serialization.list(core.serialization.string()).optional(),
     temperature: core.serialization.number().optional(),
@@ -27,7 +27,7 @@ export const PromptParametersRequest: core.serialization.ObjectSchema<
     ),
 });
 
-export declare namespace PromptParametersRequest {
+export declare namespace PromptParameters {
     interface Raw {
         stop?: string[] | null;
         temperature?: number | null;
