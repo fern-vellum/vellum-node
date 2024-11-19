@@ -12,19 +12,17 @@ export const VariablePromptBlockRequest: core.serialization.ObjectSchema<
     serializers.VariablePromptBlockRequest.Raw,
     Vellum.VariablePromptBlockRequest
 > = core.serialization.object({
-    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("VARIABLE")),
-    id: core.serialization.string(),
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfigRequest.optional()),
+    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("VARIABLE")),
     inputVariableId: core.serialization.property("input_variable_id", core.serialization.string()),
 });
 
 export declare namespace VariablePromptBlockRequest {
     interface Raw {
-        block_type: "VARIABLE";
-        id: string;
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfigRequest.Raw | null;
+        block_type: "VARIABLE";
         input_variable_id: string;
     }
 }

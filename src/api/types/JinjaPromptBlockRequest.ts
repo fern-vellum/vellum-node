@@ -8,9 +8,8 @@ import * as Vellum from "../index";
  * A block of Jinja template code that is used to generate a prompt
  */
 export interface JinjaPromptBlockRequest {
-    blockType: "JINJA";
-    properties: Vellum.JinjaPromptBlockPropertiesRequest;
-    id: string;
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfigRequest;
+    blockType: "JINJA";
+    properties: Vellum.JinjaPromptBlockPropertiesRequest;
 }

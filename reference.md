@@ -151,17 +151,16 @@ await client.adHoc.adhocExecutePromptStream({
     },
     blocks: [
         {
-            blockType: "JINJA",
-            properties: {
-                template: "string",
-                templateType: "STRING",
-            },
-            id: "string",
             state: "ENABLED",
             cacheConfig: {
                 type: {
                     key: "value",
                 },
+            },
+            blockType: "JINJA",
+            properties: {
+                template: "string",
+                templateType: "STRING",
             },
         },
     ],

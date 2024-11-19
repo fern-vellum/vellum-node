@@ -12,19 +12,17 @@ export const ChatMessagePromptBlockRequest: core.serialization.ObjectSchema<
     serializers.ChatMessagePromptBlockRequest.Raw,
     Vellum.ChatMessagePromptBlockRequest
 > = core.serialization.object({
-    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("CHAT_MESSAGE")),
-    properties: core.serialization.lazyObject(() => serializers.ChatMessagePromptBlockPropertiesRequest),
-    id: core.serialization.string(),
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfigRequest.optional()),
+    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("CHAT_MESSAGE")),
+    properties: core.serialization.lazyObject(() => serializers.ChatMessagePromptBlockPropertiesRequest),
 });
 
 export declare namespace ChatMessagePromptBlockRequest {
     interface Raw {
-        block_type: "CHAT_MESSAGE";
-        properties: serializers.ChatMessagePromptBlockPropertiesRequest.Raw;
-        id: string;
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfigRequest.Raw | null;
+        block_type: "CHAT_MESSAGE";
+        properties: serializers.ChatMessagePromptBlockPropertiesRequest.Raw;
     }
 }

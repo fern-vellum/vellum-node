@@ -12,19 +12,17 @@ export const PlainTextPromptBlockRequest: core.serialization.ObjectSchema<
     serializers.PlainTextPromptBlockRequest.Raw,
     Vellum.PlainTextPromptBlockRequest
 > = core.serialization.object({
-    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("PLAIN_TEXT")),
-    text: core.serialization.string(),
-    id: core.serialization.string(),
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfigRequest.optional()),
+    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("PLAIN_TEXT")),
+    text: core.serialization.string(),
 });
 
 export declare namespace PlainTextPromptBlockRequest {
     interface Raw {
-        block_type: "PLAIN_TEXT";
-        text: string;
-        id: string;
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfigRequest.Raw | null;
+        block_type: "PLAIN_TEXT";
+        text: string;
     }
 }

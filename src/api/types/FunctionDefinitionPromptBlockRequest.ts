@@ -8,9 +8,8 @@ import * as Vellum from "../index";
  * A block that represents a function definition in a prompt template.
  */
 export interface FunctionDefinitionPromptBlockRequest {
-    blockType: "FUNCTION_DEFINITION";
-    properties: Vellum.FunctionDefinitionPromptBlockPropertiesRequest;
-    id: string;
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfigRequest;
+    blockType: "FUNCTION_DEFINITION";
+    properties: Vellum.FunctionDefinitionPromptBlockPropertiesRequest;
 }

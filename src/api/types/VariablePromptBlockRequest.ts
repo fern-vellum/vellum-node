@@ -8,9 +8,8 @@ import * as Vellum from "../index";
  * A block that represents a variable in a prompt template.
  */
 export interface VariablePromptBlockRequest {
-    blockType: "VARIABLE";
-    id: string;
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfigRequest;
+    blockType: "VARIABLE";
     inputVariableId: string;
 }
