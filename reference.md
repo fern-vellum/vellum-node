@@ -155,7 +155,15 @@ await client.adHoc.adhocExecutePromptStream({
     },
     blocks: [
         {
-            key: "value",
+            state: "ENABLED",
+            cacheConfig: {
+                type: "EPHEMERAL",
+            },
+            blockType: "JINJA",
+            properties: {
+                template: "string",
+                templateType: "STRING",
+            },
         },
     ],
     expandMeta: {

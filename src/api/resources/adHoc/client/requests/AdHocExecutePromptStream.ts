@@ -53,7 +53,15 @@ import * as Vellum from "../../../../index";
  *             timeout: 1.1
  *         },
  *         blocks: [{
- *                 "key": "value"
+ *                 state: "ENABLED",
+ *                 cacheConfig: {
+ *                     type: "EPHEMERAL"
+ *                 },
+ *                 blockType: "JINJA",
+ *                 properties: {
+ *                     template: "string",
+ *                     templateType: "STRING"
+ *                 }
  *             }],
  *         expandMeta: {
  *             cost: true,
@@ -69,6 +77,6 @@ export interface AdHocExecutePromptStream {
     inputVariables: Vellum.VellumVariable[];
     parameters: Vellum.PromptParameters;
     settings?: Vellum.PromptSettings;
-    blocks: unknown[];
+    blocks: Vellum.PromptBlock[];
     expandMeta?: Vellum.AdHocExpandMeta;
 }
