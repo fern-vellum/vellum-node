@@ -11,5 +11,8 @@ export interface ChatMessagePromptBlock {
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfig;
     blockType: "CHAT_MESSAGE";
-    properties: Vellum.ChatMessagePromptBlockProperties;
+    chatRole: Vellum.ChatMessageRole;
+    chatSource?: string;
+    chatMessageUnterminated?: boolean;
+    blocks: Vellum.PromptBlock[];
 }

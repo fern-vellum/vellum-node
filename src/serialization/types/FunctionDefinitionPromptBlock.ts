@@ -7,7 +7,6 @@ import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { PromptBlockState } from "./PromptBlockState";
 import { EphemeralPromptCacheConfig } from "./EphemeralPromptCacheConfig";
-import { FunctionDefinitionPromptBlockProperties } from "./FunctionDefinitionPromptBlockProperties";
 
 export const FunctionDefinitionPromptBlock: core.serialization.ObjectSchema<
     serializers.FunctionDefinitionPromptBlock.Raw,
@@ -16,7 +15,12 @@ export const FunctionDefinitionPromptBlock: core.serialization.ObjectSchema<
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfig.optional()),
     blockType: core.serialization.property("block_type", core.serialization.stringLiteral("FUNCTION_DEFINITION")),
-    properties: FunctionDefinitionPromptBlockProperties,
+    functionName: core.serialization.property("function_name", core.serialization.string().optional()),
+    functionDescription: core.serialization.property("function_description", core.serialization.string().optional()),
+    functionParameters: core.serialization.property(
+        "function_parameters",
+        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional()
+    ),
 });
 
 export declare namespace FunctionDefinitionPromptBlock {
@@ -24,6 +28,8 @@ export declare namespace FunctionDefinitionPromptBlock {
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;
         block_type: "FUNCTION_DEFINITION";
-        properties: FunctionDefinitionPromptBlockProperties.Raw;
+        function_name?: string | null;
+        function_description?: string | null;
+        function_parameters?: Record<string, unknown> | null;
     }
 }

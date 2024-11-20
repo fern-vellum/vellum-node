@@ -7,7 +7,7 @@ import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { PromptBlockState } from "./PromptBlockState";
 import { EphemeralPromptCacheConfig } from "./EphemeralPromptCacheConfig";
-import { JinjaPromptBlockProperties } from "./JinjaPromptBlockProperties";
+import { VellumVariableType } from "./VellumVariableType";
 
 export const JinjaPromptBlock: core.serialization.ObjectSchema<
     serializers.JinjaPromptBlock.Raw,
@@ -16,7 +16,8 @@ export const JinjaPromptBlock: core.serialization.ObjectSchema<
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfig.optional()),
     blockType: core.serialization.property("block_type", core.serialization.stringLiteral("JINJA")),
-    properties: JinjaPromptBlockProperties,
+    template: core.serialization.string(),
+    templateType: core.serialization.property("template_type", VellumVariableType),
 });
 
 export declare namespace JinjaPromptBlock {
@@ -24,6 +25,7 @@ export declare namespace JinjaPromptBlock {
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;
         block_type: "JINJA";
-        properties: JinjaPromptBlockProperties.Raw;
+        template: string;
+        template_type: VellumVariableType.Raw;
     }
 }

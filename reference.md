@@ -160,10 +160,8 @@ await client.adHoc.adhocExecutePromptStream({
                 type: "EPHEMERAL",
             },
             blockType: "JINJA",
-            properties: {
-                template: "string",
-                templateType: "STRING",
-            },
+            template: "string",
+            templateType: "STRING",
         },
     ],
     expandMeta: {

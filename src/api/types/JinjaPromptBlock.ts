@@ -11,5 +11,6 @@ export interface JinjaPromptBlock {
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfig;
     blockType: "JINJA";
-    properties: Vellum.JinjaPromptBlockProperties;
+    template: string;
+    templateType: Vellum.VellumVariableType;
 }

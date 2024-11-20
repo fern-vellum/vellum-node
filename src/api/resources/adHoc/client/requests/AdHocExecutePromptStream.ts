@@ -58,10 +58,8 @@ import * as Vellum from "../../../../index";
  *                     type: "EPHEMERAL"
  *                 },
  *                 blockType: "JINJA",
- *                 properties: {
- *                     template: "string",
- *                     templateType: "STRING"
- *                 }
+ *                 template: "string",
+ *                 templateType: "STRING"
  *             }],
  *         expandMeta: {
  *             cost: true,

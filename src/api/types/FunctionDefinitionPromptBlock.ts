@@ -11,5 +11,7 @@ export interface FunctionDefinitionPromptBlock {
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfig;
     blockType: "FUNCTION_DEFINITION";
-    properties: Vellum.FunctionDefinitionPromptBlockProperties;
+    functionName?: string;
+    functionDescription?: string;
+    functionParameters?: Record<string, unknown>;
 }
