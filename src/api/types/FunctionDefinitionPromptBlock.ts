@@ -14,4 +14,6 @@ export interface FunctionDefinitionPromptBlock {
     functionName?: string;
     functionDescription?: string;
     functionParameters?: Record<string, unknown>;
+    functionForced?: boolean;
+    functionStrict?: boolean;
 }

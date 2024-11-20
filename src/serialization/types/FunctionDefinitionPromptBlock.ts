@@ -21,6 +21,8 @@ export const FunctionDefinitionPromptBlock: core.serialization.ObjectSchema<
         "function_parameters",
         core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional()
     ),
+    functionForced: core.serialization.property("function_forced", core.serialization.boolean().optional()),
+    functionStrict: core.serialization.property("function_strict", core.serialization.boolean().optional()),
 });
 
 export declare namespace FunctionDefinitionPromptBlock {
@@ -31,5 +33,7 @@ export declare namespace FunctionDefinitionPromptBlock {
         function_name?: string | null;
         function_description?: string | null;
         function_parameters?: Record<string, unknown> | null;
+        function_forced?: boolean | null;
+        function_strict?: boolean | null;
     }
 }
