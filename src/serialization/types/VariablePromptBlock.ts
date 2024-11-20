@@ -15,7 +15,7 @@ export const VariablePromptBlock: core.serialization.ObjectSchema<
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfig.optional()),
     blockType: core.serialization.property("block_type", core.serialization.stringLiteral("VARIABLE")),
-    inputVariableId: core.serialization.property("input_variable_id", core.serialization.string()),
+    inputVariable: core.serialization.property("input_variable", core.serialization.string()),
 });
 
 export declare namespace VariablePromptBlock {
@@ -23,6 +23,6 @@ export declare namespace VariablePromptBlock {
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;
         block_type: "VARIABLE";
-        input_variable_id: string;
+        input_variable: string;
     }
 }

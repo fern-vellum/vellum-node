@@ -12,5 +12,4 @@ export interface JinjaPromptBlock {
     cacheConfig?: Vellum.EphemeralPromptCacheConfig;
     blockType: "JINJA";
     template: string;
-    templateType: Vellum.VellumVariableType;
 }

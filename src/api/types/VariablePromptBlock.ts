@@ -11,5 +11,5 @@ export interface VariablePromptBlock {
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfig;
     blockType: "VARIABLE";
-    inputVariableId: string;
+    inputVariable: string;
 }
