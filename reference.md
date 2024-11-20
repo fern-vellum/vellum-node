@@ -161,7 +161,6 @@ await client.adHoc.adhocExecutePromptStream({
             },
             blockType: "JINJA",
             template: "string",
-            templateType: "STRING",
         },
     ],
     expandMeta: {
