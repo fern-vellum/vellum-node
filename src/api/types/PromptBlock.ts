@@ -7,6 +7,5 @@ import * as Vellum from "../index";
 export type PromptBlock =
     | Vellum.JinjaPromptBlock
     | Vellum.ChatMessagePromptBlock
-    | Vellum.FunctionDefinitionPromptBlock
     | Vellum.VariablePromptBlock
     | Vellum.RichTextPromptBlock;

@@ -161,6 +161,23 @@ await client.adHoc.adhocExecutePromptStream({
             template: "string",
         },
     ],
+    functions: [
+        {
+            state: "ENABLED",
+            cacheConfig: {
+                type: "EPHEMERAL",
+            },
+            name: "string",
+            description: "string",
+            parameters: {
+                string: {
+                    key: "value",
+                },
+            },
+            forced: true,
+            strict: true,
+        },
+    ],
     expandMeta: {
         cost: true,
         modelName: true,

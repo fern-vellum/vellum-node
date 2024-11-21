@@ -6,7 +6,6 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { JinjaPromptBlock } from "./JinjaPromptBlock";
-import { FunctionDefinitionPromptBlock } from "./FunctionDefinitionPromptBlock";
 import { VariablePromptBlock } from "./VariablePromptBlock";
 import { RichTextPromptBlock } from "./RichTextPromptBlock";
 
@@ -14,7 +13,6 @@ export const PromptBlock: core.serialization.Schema<serializers.PromptBlock.Raw,
     core.serialization.undiscriminatedUnion([
         JinjaPromptBlock,
         core.serialization.lazyObject(() => serializers.ChatMessagePromptBlock),
-        FunctionDefinitionPromptBlock,
         VariablePromptBlock,
         RichTextPromptBlock,
     ]);
@@ -23,7 +21,6 @@ export declare namespace PromptBlock {
     type Raw =
         | JinjaPromptBlock.Raw
         | serializers.ChatMessagePromptBlock.Raw
-        | FunctionDefinitionPromptBlock.Raw
         | VariablePromptBlock.Raw
         | RichTextPromptBlock.Raw;
 }

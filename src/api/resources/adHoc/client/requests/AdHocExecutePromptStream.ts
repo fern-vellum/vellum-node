@@ -58,6 +58,21 @@ import * as Vellum from "../../../../index";
  *                 blockType: "JINJA",
  *                 template: "string"
  *             }],
+ *         functions: [{
+ *                 state: "ENABLED",
+ *                 cacheConfig: {
+ *                     type: "EPHEMERAL"
+ *                 },
+ *                 name: "string",
+ *                 description: "string",
+ *                 parameters: {
+ *                     "string": {
+ *                         "key": "value"
+ *                     }
+ *                 },
+ *                 forced: true,
+ *                 strict: true
+ *             }],
  *         expandMeta: {
  *             cost: true,
  *             modelName: true,
@@ -73,5 +88,6 @@ export interface AdHocExecutePromptStream {
     parameters: Vellum.PromptParameters;
     settings?: Vellum.PromptSettings;
     blocks: Vellum.PromptBlock[];
+    functions?: Vellum.FunctionDefinition[];
     expandMeta?: Vellum.AdHocExpandMeta;
 }

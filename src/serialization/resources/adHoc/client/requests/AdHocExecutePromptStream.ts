@@ -9,6 +9,7 @@ import { PromptRequestInput } from "../../../../types/PromptRequestInput";
 import { VellumVariable } from "../../../../types/VellumVariable";
 import { PromptParameters } from "../../../../types/PromptParameters";
 import { PromptSettings } from "../../../../types/PromptSettings";
+import { FunctionDefinition } from "../../../../types/FunctionDefinition";
 import { AdHocExpandMeta } from "../../../../types/AdHocExpandMeta";
 
 export const AdHocExecutePromptStream: core.serialization.Schema<
@@ -21,6 +22,7 @@ export const AdHocExecutePromptStream: core.serialization.Schema<
     parameters: PromptParameters,
     settings: PromptSettings.optional(),
     blocks: core.serialization.list(core.serialization.lazy(() => serializers.PromptBlock)),
+    functions: core.serialization.list(FunctionDefinition).optional(),
     expandMeta: core.serialization.property("expand_meta", AdHocExpandMeta.optional()),
 });
 
@@ -32,6 +34,7 @@ export declare namespace AdHocExecutePromptStream {
         parameters: PromptParameters.Raw;
         settings?: PromptSettings.Raw | null;
         blocks: serializers.PromptBlock.Raw[];
+        functions?: FunctionDefinition.Raw[] | null;
         expand_meta?: AdHocExpandMeta.Raw | null;
     }
 }

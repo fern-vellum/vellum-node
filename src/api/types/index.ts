@@ -130,7 +130,7 @@ export * from "./FunctionCallRequest";
 export * from "./FunctionCallVariableValue";
 export * from "./FunctionCallVellumValue";
 export * from "./FunctionCallVellumValueRequest";
-export * from "./FunctionDefinitionPromptBlock";
+export * from "./FunctionDefinition";
 export * from "./GenerateOptionsRequest";
 export * from "./GenerateRequest";
 export * from "./GenerateResponse";

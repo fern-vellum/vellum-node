@@ -7,13 +7,12 @@ import * as Vellum from "../index";
 /**
  * A block that represents a function definition in a prompt template.
  */
-export interface FunctionDefinitionPromptBlock {
+export interface FunctionDefinition {
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfig;
-    blockType: "FUNCTION_DEFINITION";
-    functionName?: string;
-    functionDescription?: string;
-    functionParameters?: Record<string, unknown>;
-    functionForced?: boolean;
-    functionStrict?: boolean;
+    name?: string;
+    description?: string;
+    parameters?: Record<string, unknown>;
+    forced?: boolean;
+    strict?: boolean;
 }
