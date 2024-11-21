@@ -161,6 +161,32 @@ await client.adHoc.adhocExecutePromptStream({
             template: "string",
         },
     ],
+    functions: [
+        {
+            state: {
+                key: "value",
+            },
+            cacheConfig: {
+                key: "value",
+            },
+            blockType: "FUNCTION_DEFINITION",
+            name: {
+                key: "value",
+            },
+            description: {
+                key: "value",
+            },
+            parameters: {
+                key: "value",
+            },
+            forced: {
+                key: "value",
+            },
+            strict: {
+                key: "value",
+            },
+        },
+    ],
     expandMeta: {
         cost: true,
         modelName: true,

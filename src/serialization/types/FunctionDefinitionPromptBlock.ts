@@ -15,14 +15,11 @@ export const FunctionDefinitionPromptBlock: core.serialization.ObjectSchema<
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfig.optional()),
     blockType: core.serialization.property("block_type", core.serialization.stringLiteral("FUNCTION_DEFINITION")),
-    functionName: core.serialization.property("function_name", core.serialization.string().optional()),
-    functionDescription: core.serialization.property("function_description", core.serialization.string().optional()),
-    functionParameters: core.serialization.property(
-        "function_parameters",
-        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional()
-    ),
-    functionForced: core.serialization.property("function_forced", core.serialization.boolean().optional()),
-    functionStrict: core.serialization.property("function_strict", core.serialization.boolean().optional()),
+    name: core.serialization.string().optional(),
+    description: core.serialization.string().optional(),
+    parameters: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
+    forced: core.serialization.boolean().optional(),
+    strict: core.serialization.boolean().optional(),
 });
 
 export declare namespace FunctionDefinitionPromptBlock {
@@ -30,10 +27,10 @@ export declare namespace FunctionDefinitionPromptBlock {
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;
         block_type: "FUNCTION_DEFINITION";
-        function_name?: string | null;
-        function_description?: string | null;
-        function_parameters?: Record<string, unknown> | null;
-        function_forced?: boolean | null;
-        function_strict?: boolean | null;
+        name?: string | null;
+        description?: string | null;
+        parameters?: Record<string, unknown> | null;
+        forced?: boolean | null;
+        strict?: boolean | null;
     }
 }

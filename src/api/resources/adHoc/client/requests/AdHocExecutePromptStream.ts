@@ -58,6 +58,30 @@ import * as Vellum from "../../../../index";
  *                 blockType: "JINJA",
  *                 template: "string"
  *             }],
+ *         functions: [{
+ *                 state: {
+ *                     "key": "value"
+ *                 },
+ *                 cacheConfig: {
+ *                     "key": "value"
+ *                 },
+ *                 blockType: "FUNCTION_DEFINITION",
+ *                 name: {
+ *                     "key": "value"
+ *                 },
+ *                 description: {
+ *                     "key": "value"
+ *                 },
+ *                 parameters: {
+ *                     "key": "value"
+ *                 },
+ *                 forced: {
+ *                     "key": "value"
+ *                 },
+ *                 strict: {
+ *                     "key": "value"
+ *                 }
+ *             }],
  *         expandMeta: {
  *             cost: true,
  *             modelName: true,
@@ -73,5 +97,6 @@ export interface AdHocExecutePromptStream {
     parameters: Vellum.PromptParameters;
     settings?: Vellum.PromptSettings;
     blocks: Vellum.PromptBlock[];
+    functions?: Vellum.FunctionDefinitionPromptBlock[];
     expandMeta?: Vellum.AdHocExpandMeta;
 }
