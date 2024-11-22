@@ -3270,7 +3270,7 @@ await client.workflows.pull("string", {
 </dl>
 </details>
 
-<details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">push</a>({ ...params }) -> Vellum.WorkflowPushResponse</code></summary>
+<details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">push</a>(artifact, { ...params }) -> Vellum.WorkflowPushResponse</code></summary>
 <dl>
 <dd>
 
@@ -3298,10 +3298,8 @@ An internal-only endpoint that's subject to breaking changes without notice. Not
 <dd>
 
 ```typescript
-await client.workflows.push({
-    execConfig: {
-        key: "value",
-    },
+await client.workflows.push(fs.createReadStream("/path/to/your/file"), {
+    execConfig: "exec_config",
     label: "label",
 });
 ```
@@ -3315,6 +3313,14 @@ await client.workflows.push({
 
 <dl>
 <dd>
+
+<dl>
+<dd>
+
+**artifact:** `File | fs.ReadStream | Blob | undefined`
+
+</dd>
+</dl>
 
 <dl>
 <dd>

@@ -7,13 +7,12 @@ import * as Vellum from "../../../../index";
 /**
  * @example
  *     {
- *         execConfig: {
- *             "key": "value"
- *         },
+ *         execConfig: "exec_config",
  *         label: "label"
  *     }
  */
 export interface WorkflowPushRequest {
+    /** The execution configuration of the workflow. */
     execConfig: Vellum.WorkflowPushExecConfig;
     label: string;
     workflowSandboxId?: string;

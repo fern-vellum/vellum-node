@@ -8,6 +8,8 @@ import * as Vellum from "../../../index";
 import * as stream from "stream";
 import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
+import * as fs from "fs";
+import { Blob } from "buffer";
 import * as serializers from "../../../../serialization/index";
 
 export declare namespace Workflows {
@@ -54,8 +56,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.13",
-                "User-Agent": "vellum-ai/0.9.13",
+                "X-Fern-SDK-Version": "0.9.14",
+                "User-Agent": "vellum-ai/0.9.14",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -102,21 +104,37 @@ export class Workflows {
     /**
      * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
      *
+     * @param {File | fs.ReadStream | Blob | undefined} artifact
      * @param {Vellum.WorkflowPushRequest} request
      * @param {Workflows.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.workflows.push({
-     *         execConfig: {
-     *             "key": "value"
-     *         },
+     *     await client.workflows.push(fs.createReadStream("/path/to/your/file"), {
+     *         execConfig: "exec_config",
      *         label: "label"
      *     })
      */
     public async push(
+        artifact: File | fs.ReadStream | Blob | undefined,
         request: Vellum.WorkflowPushRequest,
         requestOptions?: Workflows.RequestOptions
     ): Promise<Vellum.WorkflowPushResponse> {
+        const _request = await core.newFormData();
+        await _request.append("exec_config", request.execConfig);
+        await _request.append("label", request.label);
+        if (request.workflowSandboxId != null) {
+            await _request.append("workflow_sandbox_id", request.workflowSandboxId);
+        }
+
+        if (request.deploymentConfig != null) {
+            await _request.append("deployment_config", JSON.stringify(request.deploymentConfig));
+        }
+
+        if (artifact != null) {
+            await _request.appendFile("artifact", artifact);
+        }
+
+        const _maybeEncodedRequest = await _request.getRequest();
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
@@ -127,15 +145,16 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.13",
-                "User-Agent": "vellum-ai/0.9.13",
+                "X-Fern-SDK-Version": "0.9.14",
+                "User-Agent": "vellum-ai/0.9.14",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ..._maybeEncodedRequest.headers,
             },
-            contentType: "application/json",
-            requestType: "json",
-            body: serializers.WorkflowPushRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            requestType: "file",
+            duplex: _maybeEncodedRequest.duplex,
+            body: _maybeEncodedRequest.body,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,

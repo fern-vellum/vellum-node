@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const WorkflowPushExecConfig: core.serialization.Schema<
     serializers.WorkflowPushExecConfig.Raw,
     Vellum.WorkflowPushExecConfig
-> = core.serialization.record(core.serialization.string(), core.serialization.unknown());
+> = core.serialization.string();
 
 export declare namespace WorkflowPushExecConfig {
-    type Raw = Record<string, unknown>;
+    type Raw = string;
 }
