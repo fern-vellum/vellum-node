@@ -46,8 +46,8 @@ export class AdHoc {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.9.16-pre2",
-                "User-Agent": "vellum-ai/0.9.16-pre2",
+                "X-Fern-SDK-Version": "0.9.16",
+                "User-Agent": "vellum-ai/0.9.16",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
