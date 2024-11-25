@@ -597,6 +597,77 @@ await client.deployments.retrieve("id");
 </dl>
 </details>
 
+<details><summary><code>client.deployments.<a href="/src/api/resources/deployments/client/Client.ts">deploymentHistoryItemRetrieve</a>(historyIdOrReleaseTag, id) -> Vellum.DeploymentHistoryItem</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a specific Deployment History Item by either its UUID or the name of a Release Tag that points to it.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.deployments.deploymentHistoryItemRetrieve("history_id_or_release_tag", "id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**historyIdOrReleaseTag:** `string` — Either the UUID of Deployment History Item you'd like to retrieve, or the name of a Release Tag that's pointing to the Deployment History Item you'd like to retrieve.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**id:** `string` — A UUID string identifying this deployment.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Deployments.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.deployments.<a href="/src/api/resources/deployments/client/Client.ts">listDeploymentReleaseTags</a>(id, { ...params }) -> Vellum.PaginatedDeploymentReleaseTagReadList</code></summary>
 <dl>
 <dd>
@@ -2890,6 +2961,77 @@ await client.workflowDeployments.retrieve("id");
 <dd>
 
 **id:** `string` — Either the Workflow Deployment's ID or its unique name
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `WorkflowDeployments.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.workflowDeployments.<a href="/src/api/resources/workflowDeployments/client/Client.ts">workflowDeploymentHistoryItemRetrieve</a>(historyIdOrReleaseTag, id) -> Vellum.WorkflowDeploymentHistoryItem</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a specific Workflow Deployment History Item by either its UUID or the name of a Release Tag that points to it.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.workflowDeployments.workflowDeploymentHistoryItemRetrieve("history_id_or_release_tag", "id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**historyIdOrReleaseTag:** `string` — Either the UUID of Workflow Deployment History Item you'd like to retrieve, or the name of a Release Tag that's pointing to the Workflow Deployment History Item you'd like to retrieve.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**id:** `string` — A UUID string identifying this workflow deployment.
 
 </dd>
 </dl>
