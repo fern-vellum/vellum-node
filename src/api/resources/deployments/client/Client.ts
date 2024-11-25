@@ -69,8 +69,8 @@ export class Deployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.0",
-                "User-Agent": "vellum-ai/0.10.0",
+                "X-Fern-SDK-Version": "0.10.1",
+                "User-Agent": "vellum-ai/0.10.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -133,8 +133,8 @@ export class Deployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.0",
-                "User-Agent": "vellum-ai/0.10.0",
+                "X-Fern-SDK-Version": "0.10.1",
+                "User-Agent": "vellum-ai/0.10.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -147,6 +147,74 @@ export class Deployments {
         });
         if (_response.ok) {
             return serializers.DeploymentRead.parseOrThrow(_response.body, {
+                unrecognizedObjectKeys: "passthrough",
+                allowUnrecognizedUnionMembers: true,
+                allowUnrecognizedEnumValues: true,
+                breadcrumbsPrefix: ["response"],
+            });
+        }
+
+        if (_response.error.reason === "status-code") {
+            throw new errors.VellumError({
+                statusCode: _response.error.statusCode,
+                body: _response.error.body,
+            });
+        }
+
+        switch (_response.error.reason) {
+            case "non-json":
+                throw new errors.VellumError({
+                    statusCode: _response.error.statusCode,
+                    body: _response.error.rawBody,
+                });
+            case "timeout":
+                throw new errors.VellumTimeoutError();
+            case "unknown":
+                throw new errors.VellumError({
+                    message: _response.error.errorMessage,
+                });
+        }
+    }
+
+    /**
+     * Retrieve a specific Deployment History Item by either its UUID or the name of a Release Tag that points to it.
+     *
+     * @param {string} historyIdOrReleaseTag - Either the UUID of Deployment History Item you'd like to retrieve, or the name of a Release Tag that's pointing to the Deployment History Item you'd like to retrieve.
+     * @param {string} id - A UUID string identifying this deployment.
+     * @param {Deployments.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @example
+     *     await client.deployments.deploymentHistoryItemRetrieve("history_id_or_release_tag", "id")
+     */
+    public async deploymentHistoryItemRetrieve(
+        historyIdOrReleaseTag: string,
+        id: string,
+        requestOptions?: Deployments.RequestOptions
+    ): Promise<Vellum.DeploymentHistoryItem> {
+        const _response = await core.fetcher({
+            url: urlJoin(
+                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                    .default,
+                `v1/deployments/${encodeURIComponent(id)}/history/${encodeURIComponent(historyIdOrReleaseTag)}`
+            ),
+            method: "GET",
+            headers: {
+                "X-Fern-Language": "JavaScript",
+                "X-Fern-SDK-Name": "vellum-ai",
+                "X-Fern-SDK-Version": "0.10.1",
+                "User-Agent": "vellum-ai/0.10.1",
+                "X-Fern-Runtime": core.RUNTIME.type,
+                "X-Fern-Runtime-Version": core.RUNTIME.version,
+                ...(await this._getCustomAuthorizationHeaders()),
+            },
+            contentType: "application/json",
+            requestType: "json",
+            timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
+            maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
+        });
+        if (_response.ok) {
+            return serializers.DeploymentHistoryItem.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -219,8 +287,8 @@ export class Deployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.0",
-                "User-Agent": "vellum-ai/0.10.0",
+                "X-Fern-SDK-Version": "0.10.1",
+                "User-Agent": "vellum-ai/0.10.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -288,8 +356,8 @@ export class Deployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.0",
-                "User-Agent": "vellum-ai/0.10.0",
+                "X-Fern-SDK-Version": "0.10.1",
+                "User-Agent": "vellum-ai/0.10.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -358,8 +426,8 @@ export class Deployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.0",
-                "User-Agent": "vellum-ai/0.10.0",
+                "X-Fern-SDK-Version": "0.10.1",
+                "User-Agent": "vellum-ai/0.10.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -447,8 +515,8 @@ export class Deployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.0",
-                "User-Agent": "vellum-ai/0.10.0",
+                "X-Fern-SDK-Version": "0.10.1",
+                "User-Agent": "vellum-ai/0.10.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
