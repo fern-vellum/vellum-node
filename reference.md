@@ -597,6 +597,77 @@ await client.deployments.retrieve("id");
 </dl>
 </details>
 
+<details><summary><code>client.deployments.<a href="/src/api/resources/deployments/client/Client.ts">deploymentHistoryItemRetrieve</a>(historyIdOrReleaseTag, id) -> Vellum.DeploymentHistoryItem</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a specific Deployment History Item by either its UUID or the name of a Release Tag that points to it.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.deployments.deploymentHistoryItemRetrieve("history_id_or_release_tag", "id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**historyIdOrReleaseTag:** `string` — Either the UUID of Deployment History Item you'd like to retrieve, or the name of a Release Tag that's pointing to the Deployment History Item you'd like to retrieve.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**id:** `string` — A UUID string identifying this deployment.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `Deployments.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.deployments.<a href="/src/api/resources/deployments/client/Client.ts">listDeploymentReleaseTags</a>(id, { ...params }) -> Vellum.PaginatedDeploymentReleaseTagReadList</code></summary>
 <dl>
 <dd>
@@ -2033,6 +2104,71 @@ await client.metricDefinitions.executeMetricDefinition("id", {
 </dl>
 </details>
 
+## MlModels
+
+<details><summary><code>client.mlModels.<a href="/src/api/resources/mlModels/client/Client.ts">retrieve</a>(id) -> Vellum.MlModelRead</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve details about an ML Model
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.mlModels.retrieve("id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` — Either the ML Model's ID, its unique name, or its ID in the workspace.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `MlModels.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Sandboxes
 
 <details><summary><code>client.sandboxes.<a href="/src/api/resources/sandboxes/client/Client.ts">deployPrompt</a>(id, promptVariantId, { ...params }) -> Vellum.DeploymentRead</code></summary>
@@ -2890,6 +3026,77 @@ await client.workflowDeployments.retrieve("id");
 <dd>
 
 **id:** `string` — Either the Workflow Deployment's ID or its unique name
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**requestOptions:** `WorkflowDeployments.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.workflowDeployments.<a href="/src/api/resources/workflowDeployments/client/Client.ts">workflowDeploymentHistoryItemRetrieve</a>(historyIdOrReleaseTag, id) -> Vellum.WorkflowDeploymentHistoryItem</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieve a specific Workflow Deployment History Item by either its UUID or the name of a Release Tag that points to it.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.workflowDeployments.workflowDeploymentHistoryItemRetrieve("history_id_or_release_tag", "id");
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**historyIdOrReleaseTag:** `string` — Either the UUID of Workflow Deployment History Item you'd like to retrieve, or the name of a Release Tag that's pointing to the Workflow Deployment History Item you'd like to retrieve.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**id:** `string` — A UUID string identifying this workflow deployment.
 
 </dd>
 </dl>

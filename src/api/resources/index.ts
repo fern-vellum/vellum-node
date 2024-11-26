@@ -12,6 +12,7 @@ export * as adHoc from "./adHoc";
 export * as containerImages from "./containerImages";
 export * as documents from "./documents";
 export * as metricDefinitions from "./metricDefinitions";
+export * as mlModels from "./mlModels";
 export * as sandboxes from "./sandboxes";
 export * as testSuiteRuns from "./testSuiteRuns";
 export * as testSuites from "./testSuites";

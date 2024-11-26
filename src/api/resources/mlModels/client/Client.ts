@@ -5,11 +5,11 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Vellum from "../../../index";
-import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
+import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
-export declare namespace MetricDefinitions {
+export declare namespace MlModels {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
         apiKey?: core.Supplier<string | undefined>;
@@ -25,37 +25,26 @@ export declare namespace MetricDefinitions {
     }
 }
 
-export class MetricDefinitions {
-    constructor(protected readonly _options: MetricDefinitions.Options = {}) {}
+export class MlModels {
+    constructor(protected readonly _options: MlModels.Options = {}) {}
 
     /**
-     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
+     * Retrieve details about an ML Model
      *
-     * @param {string} id - Either the Metric Definition's ID or its unique name
-     * @param {Vellum.ExecuteMetricDefinition} request
-     * @param {MetricDefinitions.RequestOptions} requestOptions - Request-specific configuration.
+     * @param {string} id - Either the ML Model's ID, its unique name, or its ID in the workspace.
+     * @param {MlModels.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.metricDefinitions.executeMetricDefinition("id", {
-     *         inputs: [{
-     *                 name: "name",
-     *                 type: "STRING",
-     *                 value: "value"
-     *             }]
-     *     })
+     *     await client.mlModels.retrieve("id")
      */
-    public async executeMetricDefinition(
-        id: string,
-        request: Vellum.ExecuteMetricDefinition,
-        requestOptions?: MetricDefinitions.RequestOptions
-    ): Promise<Vellum.MetricDefinitionExecution> {
+    public async retrieve(id: string, requestOptions?: MlModels.RequestOptions): Promise<Vellum.MlModelRead> {
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
                     .default,
-                `v1/metric-definitions/${encodeURIComponent(id)}/execute`
+                `v1/ml-models/${encodeURIComponent(id)}`
             ),
-            method: "POST",
+            method: "GET",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
@@ -67,13 +56,12 @@ export class MetricDefinitions {
             },
             contentType: "application/json",
             requestType: "json",
-            body: serializers.ExecuteMetricDefinition.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.MetricDefinitionExecution.parseOrThrow(_response.body, {
+            return serializers.MlModelRead.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
