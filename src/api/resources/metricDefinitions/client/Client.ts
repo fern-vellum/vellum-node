@@ -59,8 +59,8 @@ export class MetricDefinitions {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.4",
-                "User-Agent": "vellum-ai/0.10.4",
+                "X-Fern-SDK-Version": "0.10.5",
+                "User-Agent": "vellum-ai/0.10.5",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
