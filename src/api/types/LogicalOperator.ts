@@ -23,6 +23,8 @@
  * - `notBetween` - NOT_BETWEEN
  * - `blank` - BLANK
  * - `notBlank` - NOT_BLANK
+ * - `coalesce` - COALESCE
+ * - `accessField` - ACCESS_FIELD
  */
 export type LogicalOperator =
     /**
@@ -80,7 +82,9 @@ export type LogicalOperator =
      * Not between */
     | "notBetween"
     | "blank"
-    | "notBlank";
+    | "notBlank"
+    | "coalesce"
+    | "accessField";
 
 export const LogicalOperator = {
     Equals: "=",
@@ -103,4 +107,6 @@ export const LogicalOperator = {
     NotBetween: "notBetween",
     Blank: "blank",
     NotBlank: "notBlank",
+    Coalesce: "coalesce",
+    AccessField: "accessField",
 } as const;

@@ -65,8 +65,8 @@ export class ContainerImages {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.8",
-                "User-Agent": "vellum-ai/0.10.8",
+                "X-Fern-SDK-Version": "0.10.9",
+                "User-Agent": "vellum-ai/0.10.9",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -132,8 +132,8 @@ export class ContainerImages {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.8",
-                "User-Agent": "vellum-ai/0.10.8",
+                "X-Fern-SDK-Version": "0.10.9",
+                "User-Agent": "vellum-ai/0.10.9",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -196,8 +196,8 @@ export class ContainerImages {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.8",
-                "User-Agent": "vellum-ai/0.10.8",
+                "X-Fern-SDK-Version": "0.10.9",
+                "User-Agent": "vellum-ai/0.10.9",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -266,8 +266,8 @@ export class ContainerImages {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.10.8",
-                "User-Agent": "vellum-ai/0.10.8",
+                "X-Fern-SDK-Version": "0.10.9",
+                "User-Agent": "vellum-ai/0.10.9",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
