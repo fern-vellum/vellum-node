@@ -6,5 +6,7 @@ import * as Vellum from "../index";
 
 export type TestSuiteRunExecConfigRequest =
     | Vellum.TestSuiteRunDeploymentReleaseTagExecConfigRequest
+    | Vellum.TestSuiteRunPromptSandboxHistoryItemExecConfigRequest
     | Vellum.TestSuiteRunWorkflowReleaseTagExecConfigRequest
+    | Vellum.TestSuiteRunWorkflowSandboxHistoryItemExecConfigRequest
     | Vellum.TestSuiteRunExternalExecConfigRequest;

@@ -6,7 +6,9 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { TestSuiteRunDeploymentReleaseTagExecConfigRequest } from "./TestSuiteRunDeploymentReleaseTagExecConfigRequest";
+import { TestSuiteRunPromptSandboxHistoryItemExecConfigRequest } from "./TestSuiteRunPromptSandboxHistoryItemExecConfigRequest";
 import { TestSuiteRunWorkflowReleaseTagExecConfigRequest } from "./TestSuiteRunWorkflowReleaseTagExecConfigRequest";
+import { TestSuiteRunWorkflowSandboxHistoryItemExecConfigRequest } from "./TestSuiteRunWorkflowSandboxHistoryItemExecConfigRequest";
 import { TestSuiteRunExternalExecConfigRequest } from "./TestSuiteRunExternalExecConfigRequest";
 
 export const TestSuiteRunExecConfigRequest: core.serialization.Schema<
@@ -14,13 +16,17 @@ export const TestSuiteRunExecConfigRequest: core.serialization.Schema<
     Vellum.TestSuiteRunExecConfigRequest
 > = core.serialization.undiscriminatedUnion([
     TestSuiteRunDeploymentReleaseTagExecConfigRequest,
+    TestSuiteRunPromptSandboxHistoryItemExecConfigRequest,
     TestSuiteRunWorkflowReleaseTagExecConfigRequest,
+    TestSuiteRunWorkflowSandboxHistoryItemExecConfigRequest,
     TestSuiteRunExternalExecConfigRequest,
 ]);
 
 export declare namespace TestSuiteRunExecConfigRequest {
     type Raw =
         | TestSuiteRunDeploymentReleaseTagExecConfigRequest.Raw
+        | TestSuiteRunPromptSandboxHistoryItemExecConfigRequest.Raw
         | TestSuiteRunWorkflowReleaseTagExecConfigRequest.Raw
+        | TestSuiteRunWorkflowSandboxHistoryItemExecConfigRequest.Raw
         | TestSuiteRunExternalExecConfigRequest.Raw;
 }
