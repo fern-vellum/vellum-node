@@ -316,6 +316,7 @@ export * from "./SentenceChunking";
 export * from "./SentenceChunkingRequest";
 export * from "./SlimDeploymentRead";
 export * from "./SlimDocument";
+export * from "./SlimDocumentDocumentToDocumentIndex";
 export * from "./SlimWorkflowDeployment";
 export * from "./StreamingAdHocExecutePromptEvent";
 export * from "./StreamingExecutePromptEvent";

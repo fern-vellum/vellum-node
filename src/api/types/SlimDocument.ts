@@ -31,5 +31,5 @@ export interface SlimDocument {
     keywords?: string[];
     /** A previously supplied JSON object containing metadata that can be filtered on when searching. */
     metadata?: Record<string, unknown>;
-    documentToDocumentIndexes: Vellum.DocumentDocumentToDocumentIndex[];
+    documentToDocumentIndexes: Vellum.SlimDocumentDocumentToDocumentIndex[];
 }

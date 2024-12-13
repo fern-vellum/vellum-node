@@ -8,7 +8,7 @@ import * as core from "../../core";
 import { DocumentProcessingState } from "./DocumentProcessingState";
 import { ProcessingFailureReasonEnum } from "./ProcessingFailureReasonEnum";
 import { DocumentStatus } from "./DocumentStatus";
-import { DocumentDocumentToDocumentIndex } from "./DocumentDocumentToDocumentIndex";
+import { SlimDocumentDocumentToDocumentIndex } from "./SlimDocumentDocumentToDocumentIndex";
 
 export const SlimDocument: core.serialization.ObjectSchema<serializers.SlimDocument.Raw, Vellum.SlimDocument> =
     core.serialization.object({
@@ -26,7 +26,7 @@ export const SlimDocument: core.serialization.ObjectSchema<serializers.SlimDocum
         metadata: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
         documentToDocumentIndexes: core.serialization.property(
             "document_to_document_indexes",
-            core.serialization.list(DocumentDocumentToDocumentIndex)
+            core.serialization.list(SlimDocumentDocumentToDocumentIndex)
         ),
     });
 
@@ -41,6 +41,6 @@ export declare namespace SlimDocument {
         status?: DocumentStatus.Raw | null;
         keywords?: string[] | null;
         metadata?: Record<string, unknown> | null;
-        document_to_document_indexes: DocumentDocumentToDocumentIndex.Raw[];
+        document_to_document_indexes: SlimDocumentDocumentToDocumentIndex.Raw[];
     }
 }

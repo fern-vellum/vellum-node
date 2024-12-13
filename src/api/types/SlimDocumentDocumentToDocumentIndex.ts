@@ -5,9 +5,9 @@
 import * as Vellum from "../index";
 
 /**
- * A detailed representation of the link between a Document and a Document Index it's a member of.
+ * A slim representation of the link between a Document and a Document Index it's a member of.
  */
-export interface DocumentDocumentToDocumentIndex {
+export interface SlimDocumentDocumentToDocumentIndex {
     /** Vellum-generated ID that uniquely identifies this link. */
     id: string;
     /** Vellum-generated ID that uniquely identifies the index this document is included in. */
@@ -22,5 +22,4 @@ export interface DocumentDocumentToDocumentIndex {
      * - `FAILED` - Failed
      */
     indexingState?: Vellum.IndexingStateEnum;
-    extractedTextFileUrl?: string;
 }

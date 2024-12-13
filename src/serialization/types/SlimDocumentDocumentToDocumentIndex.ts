@@ -7,24 +7,19 @@ import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { IndexingStateEnum } from "./IndexingStateEnum";
 
-export const DocumentDocumentToDocumentIndex: core.serialization.ObjectSchema<
-    serializers.DocumentDocumentToDocumentIndex.Raw,
-    Vellum.DocumentDocumentToDocumentIndex
+export const SlimDocumentDocumentToDocumentIndex: core.serialization.ObjectSchema<
+    serializers.SlimDocumentDocumentToDocumentIndex.Raw,
+    Vellum.SlimDocumentDocumentToDocumentIndex
 > = core.serialization.object({
     id: core.serialization.string(),
     documentIndexId: core.serialization.property("document_index_id", core.serialization.string()),
     indexingState: core.serialization.property("indexing_state", IndexingStateEnum.optional()),
-    extractedTextFileUrl: core.serialization.property(
-        "extracted_text_file_url",
-        core.serialization.string().optional()
-    ),
 });
 
-export declare namespace DocumentDocumentToDocumentIndex {
+export declare namespace SlimDocumentDocumentToDocumentIndex {
     interface Raw {
         id: string;
         document_index_id: string;
         indexing_state?: IndexingStateEnum.Raw | null;
-        extracted_text_file_url?: string | null;
     }
 }
