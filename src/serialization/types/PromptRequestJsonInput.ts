@@ -12,13 +12,13 @@ export const PromptRequestJsonInput: core.serialization.ObjectSchema<
 > = core.serialization.object({
     key: core.serialization.string(),
     type: core.serialization.stringLiteral("JSON"),
-    value: core.serialization.record(core.serialization.string(), core.serialization.unknown()),
+    value: core.serialization.unknown(),
 });
 
 export declare namespace PromptRequestJsonInput {
     interface Raw {
         key: string;
         type: "JSON";
-        value: Record<string, unknown>;
+        value?: unknown;
     }
 }
