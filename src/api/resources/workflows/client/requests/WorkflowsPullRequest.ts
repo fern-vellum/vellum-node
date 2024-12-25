@@ -5,5 +5,9 @@
 import * as Vellum from "../../../../index";
 
 export interface WorkflowsPullRequest {
+    excludeCode?: boolean;
     format?: Vellum.WorkflowsPullRequestFormat;
+    includeJson?: boolean;
+    includeSandbox?: boolean;
+    strict?: boolean;
 }

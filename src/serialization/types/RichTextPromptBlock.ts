@@ -13,17 +13,17 @@ export const RichTextPromptBlock: core.serialization.ObjectSchema<
     serializers.RichTextPromptBlock.Raw,
     Vellum.RichTextPromptBlock
 > = core.serialization.object({
+    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("RICH_TEXT")),
     state: PromptBlockState.optional(),
     cacheConfig: core.serialization.property("cache_config", EphemeralPromptCacheConfig.optional()),
-    blockType: core.serialization.property("block_type", core.serialization.stringLiteral("RICH_TEXT")),
     blocks: core.serialization.list(RichTextChildBlock),
 });
 
 export declare namespace RichTextPromptBlock {
     interface Raw {
+        block_type: "RICH_TEXT";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;
-        block_type: "RICH_TEXT";
         blocks: RichTextChildBlock.Raw[];
     }
 }

@@ -8,8 +8,8 @@ import * as Vellum from "../index";
  * A block that includes a combination of plain text and variable blocks.
  */
 export interface RichTextPromptBlock {
+    blockType: "RICH_TEXT";
     state?: Vellum.PromptBlockState;
     cacheConfig?: Vellum.EphemeralPromptCacheConfig;
-    blockType: "RICH_TEXT";
     blocks: Vellum.RichTextChildBlock[];
 }

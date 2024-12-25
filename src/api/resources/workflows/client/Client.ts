@@ -40,10 +40,26 @@ export class Workflows {
         request: Vellum.WorkflowsPullRequest = {},
         requestOptions?: Workflows.RequestOptions
     ): Promise<stream.Readable> {
-        const { format } = request;
+        const { excludeCode, format, includeJson, includeSandbox, strict } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        if (excludeCode != null) {
+            _queryParams["exclude_code"] = excludeCode.toString();
+        }
+
         if (format != null) {
             _queryParams["format"] = format;
+        }
+
+        if (includeJson != null) {
+            _queryParams["include_json"] = includeJson.toString();
+        }
+
+        if (includeSandbox != null) {
+            _queryParams["include_sandbox"] = includeSandbox.toString();
+        }
+
+        if (strict != null) {
+            _queryParams["strict"] = strict.toString();
         }
 
         const _response = await core.fetcher<stream.Readable>({
@@ -56,8 +72,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.4",
-                "User-Agent": "vellum-ai/0.12.4",
+                "X-Fern-SDK-Version": "0.12.5",
+                "User-Agent": "vellum-ai/0.12.5",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -145,8 +161,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.4",
-                "User-Agent": "vellum-ai/0.12.4",
+                "X-Fern-SDK-Version": "0.12.5",
+                "User-Agent": "vellum-ai/0.12.5",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
