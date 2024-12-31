@@ -15,6 +15,7 @@ export const SearchRequestBodyRequest: core.serialization.Schema<
     indexName: core.serialization.property("index_name", core.serialization.string().optional()),
     query: core.serialization.string(),
     options: SearchRequestOptionsRequest.optional(),
+    documentIndex: core.serialization.property("document_index", core.serialization.string().optional()),
 });
 
 export declare namespace SearchRequestBodyRequest {
@@ -23,5 +24,6 @@ export declare namespace SearchRequestBodyRequest {
         index_name?: string | null;
         query: string;
         options?: SearchRequestOptionsRequest.Raw | null;
+        document_index?: string | null;
     }
 }

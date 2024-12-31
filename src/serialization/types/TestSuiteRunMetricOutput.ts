@@ -9,6 +9,7 @@ import { TestSuiteRunMetricStringOutput } from "./TestSuiteRunMetricStringOutput
 import { TestSuiteRunMetricNumberOutput } from "./TestSuiteRunMetricNumberOutput";
 import { TestSuiteRunMetricJsonOutput } from "./TestSuiteRunMetricJsonOutput";
 import { TestSuiteRunMetricErrorOutput } from "./TestSuiteRunMetricErrorOutput";
+import { TestSuiteRunMetricArrayOutput } from "./TestSuiteRunMetricArrayOutput";
 
 export const TestSuiteRunMetricOutput: core.serialization.Schema<
     serializers.TestSuiteRunMetricOutput.Raw,
@@ -18,6 +19,7 @@ export const TestSuiteRunMetricOutput: core.serialization.Schema<
     TestSuiteRunMetricNumberOutput,
     TestSuiteRunMetricJsonOutput,
     TestSuiteRunMetricErrorOutput,
+    TestSuiteRunMetricArrayOutput,
 ]);
 
 export declare namespace TestSuiteRunMetricOutput {
@@ -25,5 +27,6 @@ export declare namespace TestSuiteRunMetricOutput {
         | TestSuiteRunMetricStringOutput.Raw
         | TestSuiteRunMetricNumberOutput.Raw
         | TestSuiteRunMetricJsonOutput.Raw
-        | TestSuiteRunMetricErrorOutput.Raw;
+        | TestSuiteRunMetricErrorOutput.Raw
+        | TestSuiteRunMetricArrayOutput.Raw;
 }

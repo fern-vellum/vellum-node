@@ -8,4 +8,5 @@ export type TestSuiteRunMetricOutput =
     | Vellum.TestSuiteRunMetricStringOutput
     | Vellum.TestSuiteRunMetricNumberOutput
     | Vellum.TestSuiteRunMetricJsonOutput
-    | Vellum.TestSuiteRunMetricErrorOutput;
+    | Vellum.TestSuiteRunMetricErrorOutput
+    | Vellum.TestSuiteRunMetricArrayOutput;
