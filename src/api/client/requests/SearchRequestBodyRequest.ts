@@ -11,12 +11,14 @@ import * as Vellum from "../../index";
  *     }
  */
 export interface SearchRequestBodyRequest {
-    /** The ID of the index to search against. Must provide either this or index_name. */
+    /** The ID of the index to search against. Must provide either this, index_name or document_index. */
     indexId?: string;
-    /** The name of the index to search against. Must provide either this or index_id. */
+    /** The name of the index to search against. Must provide either this, index_id or document_index. */
     indexName?: string;
     /** The query to search for. */
     query: string;
     /** Configuration options for the search. */
     options?: Vellum.SearchRequestOptionsRequest;
+    /** Either the index name or index ID to search against. Must provide either this, index_id or index_name. */
+    documentIndex?: string;
 }

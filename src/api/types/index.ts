@@ -386,6 +386,7 @@ export * from "./TestSuiteRunExternalExecConfig";
 export * from "./TestSuiteRunExternalExecConfigData";
 export * from "./TestSuiteRunExternalExecConfigDataRequest";
 export * from "./TestSuiteRunExternalExecConfigRequest";
+export * from "./TestSuiteRunMetricArrayOutput";
 export * from "./TestSuiteRunMetricErrorOutput";
 export * from "./TestSuiteRunMetricJsonOutput";
 export * from "./TestSuiteRunMetricNumberOutput";
