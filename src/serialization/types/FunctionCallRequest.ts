@@ -5,7 +5,6 @@
 import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
-import { FulfilledEnum } from "./FulfilledEnum";
 
 export const FunctionCallRequest: core.serialization.ObjectSchema<
     serializers.FunctionCallRequest.Raw,
@@ -14,7 +13,6 @@ export const FunctionCallRequest: core.serialization.ObjectSchema<
     arguments: core.serialization.record(core.serialization.string(), core.serialization.unknown()),
     id: core.serialization.string().optional(),
     name: core.serialization.string(),
-    state: FulfilledEnum.optional(),
 });
 
 export declare namespace FunctionCallRequest {
@@ -22,6 +20,5 @@ export declare namespace FunctionCallRequest {
         arguments: Record<string, unknown>;
         id?: string | null;
         name: string;
-        state?: FulfilledEnum.Raw | null;
     }
 }

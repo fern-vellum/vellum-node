@@ -115,7 +115,6 @@ export * from "./FolderEntityTestSuiteData";
 export * from "./FolderEntityWorkflowSandbox";
 export * from "./FolderEntityWorkflowSandboxData";
 export * from "./FulfilledAdHocExecutePromptEvent";
-export * from "./FulfilledEnum";
 export * from "./FulfilledExecutePromptEvent";
 export * from "./FulfilledExecutePromptResponse";
 export * from "./FulfilledExecuteWorkflowWorkflowResultEvent";
