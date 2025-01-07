@@ -79,21 +79,6 @@ await client.submitWorkflowExecutionActuals({
 <dl>
 <dd>
 
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-
-</dd>
-</dl>
-</dd>
-</dl>
-
 #### 🔌 Usage
 
 <dl>
@@ -293,21 +278,6 @@ await client.containerImages.retrieve("id");
 <dl>
 <dd>
 
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-
-</dd>
-</dl>
-</dd>
-</dl>
-
 #### 🔌 Usage
 
 <dl>
@@ -347,21 +317,6 @@ await client.containerImages.dockerServiceToken();
 <details><summary><code>client.containerImages.<a href="/src/api/resources/containerImages/client/Client.ts">pushContainerImage</a>({ ...params }) -> Vellum.ContainerImageRead</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 
@@ -1971,21 +1926,6 @@ directory. Supported root directories include:
 <dl>
 <dd>
 
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-
-</dd>
-</dl>
-</dd>
-</dl>
-
 #### 🔌 Usage
 
 <dl>
@@ -3401,21 +3341,6 @@ await client.workflowSandboxes.deployWorkflow("id", "workflow_id");
 <details><summary><code>client.workflows.<a href="/src/api/resources/workflows/client/Client.ts">push</a>(artifact, { ...params }) -> Vellum.WorkflowPushResponse</code></summary>
 <dl>
 <dd>
-
-#### 📝 Description
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-
-</dd>
-</dl>
-</dd>
-</dl>
 
 #### 🔌 Usage
 

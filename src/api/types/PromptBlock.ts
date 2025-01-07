@@ -8,4 +8,7 @@ export type PromptBlock =
     | Vellum.JinjaPromptBlock
     | Vellum.ChatMessagePromptBlock
     | Vellum.VariablePromptBlock
-    | Vellum.RichTextPromptBlock;
+    | Vellum.RichTextPromptBlock
+    | Vellum.AudioPromptBlock
+    | Vellum.FunctionCallPromptBlock
+    | Vellum.ImagePromptBlock;

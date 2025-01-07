@@ -12,11 +12,16 @@ export const WorkflowPushResponse: core.serialization.ObjectSchema<
 > = core.serialization.object({
     workflowSandboxId: core.serialization.property("workflow_sandbox_id", core.serialization.string()),
     workflowDeploymentId: core.serialization.property("workflow_deployment_id", core.serialization.string().optional()),
+    proposedDiffs: core.serialization.property(
+        "proposed_diffs",
+        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional()
+    ),
 });
 
 export declare namespace WorkflowPushResponse {
     interface Raw {
         workflow_sandbox_id: string;
         workflow_deployment_id?: string | null;
+        proposed_diffs?: Record<string, unknown> | null;
     }
 }

@@ -12,7 +12,7 @@ import * as errors from "../../../../errors/index";
 export declare namespace MetricDefinitions {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey?: core.Supplier<string | undefined>;
+        apiKey: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -26,11 +26,9 @@ export declare namespace MetricDefinitions {
 }
 
 export class MetricDefinitions {
-    constructor(protected readonly _options: MetricDefinitions.Options = {}) {}
+    constructor(protected readonly _options: MetricDefinitions.Options) {}
 
     /**
-     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-     *
      * @param {string} id - Either the Metric Definition's ID or its unique name
      * @param {Vellum.ExecuteMetricDefinition} request
      * @param {MetricDefinitions.RequestOptions} requestOptions - Request-specific configuration.
@@ -52,15 +50,15 @@ export class MetricDefinitions {
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
+                    .predict,
                 `v1/metric-definitions/${encodeURIComponent(id)}/execute`
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -126,8 +124,8 @@ export class MetricDefinitions {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

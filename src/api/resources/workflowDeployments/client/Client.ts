@@ -12,7 +12,7 @@ import * as errors from "../../../../errors/index";
 export declare namespace WorkflowDeployments {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey?: core.Supplier<string | undefined>;
+        apiKey: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -26,7 +26,7 @@ export declare namespace WorkflowDeployments {
 }
 
 export class WorkflowDeployments {
-    constructor(protected readonly _options: WorkflowDeployments.Options = {}) {}
+    constructor(protected readonly _options: WorkflowDeployments.Options) {}
 
     /**
      * Used to list all Workflow Deployments.
@@ -69,8 +69,8 @@ export class WorkflowDeployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -136,8 +136,8 @@ export class WorkflowDeployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -204,8 +204,8 @@ export class WorkflowDeployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -290,8 +290,8 @@ export class WorkflowDeployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -359,8 +359,8 @@ export class WorkflowDeployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -429,8 +429,8 @@ export class WorkflowDeployments {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

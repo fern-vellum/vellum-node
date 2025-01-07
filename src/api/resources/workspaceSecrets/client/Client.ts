@@ -12,7 +12,7 @@ import * as errors from "../../../../errors/index";
 export declare namespace WorkspaceSecrets {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey?: core.Supplier<string | undefined>;
+        apiKey: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -26,7 +26,7 @@ export declare namespace WorkspaceSecrets {
 }
 
 export class WorkspaceSecrets {
-    constructor(protected readonly _options: WorkspaceSecrets.Options = {}) {}
+    constructor(protected readonly _options: WorkspaceSecrets.Options) {}
 
     /**
      * Used to retrieve a Workspace Secret given its ID or name.
@@ -51,8 +51,8 @@ export class WorkspaceSecrets {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -119,8 +119,8 @@ export class WorkspaceSecrets {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

@@ -4,15 +4,15 @@
 
 export interface VellumEnvironmentUrls {
     default: string;
-    documents: string;
     predict: string;
+    documents: string;
 }
 
 export const VellumEnvironment = {
     Production: {
         default: "https://api.vellum.ai",
-        documents: "https://documents.vellum.ai",
         predict: "https://predict.vellum.ai",
+        documents: "https://documents.vellum.ai",
     },
 } as const;
 

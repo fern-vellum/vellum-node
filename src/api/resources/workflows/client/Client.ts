@@ -15,7 +15,7 @@ import * as serializers from "../../../../serialization/index";
 export declare namespace Workflows {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey?: core.Supplier<string | undefined>;
+        apiKey: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -29,10 +29,9 @@ export declare namespace Workflows {
 }
 
 export class Workflows {
-    constructor(protected readonly _options: Workflows.Options = {}) {}
+    constructor(protected readonly _options: Workflows.Options) {}
 
     /**
-     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
      * @throws {@link Vellum.BadRequestError}
      */
     public async pull(
@@ -72,8 +71,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -118,8 +117,6 @@ export class Workflows {
     }
 
     /**
-     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-     *
      * @param {File | fs.ReadStream | Blob | undefined} artifact
      * @param {Vellum.WorkflowPushRequest} request
      * @param {Workflows.RequestOptions} requestOptions - Request-specific configuration.
@@ -150,6 +147,10 @@ export class Workflows {
             await _request.appendFile("artifact", artifact);
         }
 
+        if (request.dryRun != null) {
+            await _request.append("dry_run", request.dryRun.toString());
+        }
+
         const _maybeEncodedRequest = await _request.getRequest();
         const _response = await core.fetcher({
             url: urlJoin(
@@ -161,8 +162,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

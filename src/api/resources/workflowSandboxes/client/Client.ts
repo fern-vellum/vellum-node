@@ -12,7 +12,7 @@ import * as errors from "../../../../errors/index";
 export declare namespace WorkflowSandboxes {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey?: core.Supplier<string | undefined>;
+        apiKey: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -26,7 +26,7 @@ export declare namespace WorkflowSandboxes {
 }
 
 export class WorkflowSandboxes {
-    constructor(protected readonly _options: WorkflowSandboxes.Options = {}) {}
+    constructor(protected readonly _options: WorkflowSandboxes.Options) {}
 
     /**
      * @param {string} id - A UUID string identifying this workflow sandbox.
@@ -53,8 +53,8 @@ export class WorkflowSandboxes {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
