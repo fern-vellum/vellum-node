@@ -8,6 +8,9 @@ import * as core from "../../core";
 import { JinjaPromptBlock } from "./JinjaPromptBlock";
 import { VariablePromptBlock } from "./VariablePromptBlock";
 import { RichTextPromptBlock } from "./RichTextPromptBlock";
+import { AudioPromptBlock } from "./AudioPromptBlock";
+import { FunctionCallPromptBlock } from "./FunctionCallPromptBlock";
+import { ImagePromptBlock } from "./ImagePromptBlock";
 
 export const PromptBlock: core.serialization.Schema<serializers.PromptBlock.Raw, Vellum.PromptBlock> =
     core.serialization.undiscriminatedUnion([
@@ -15,6 +18,9 @@ export const PromptBlock: core.serialization.Schema<serializers.PromptBlock.Raw,
         core.serialization.lazyObject(() => serializers.ChatMessagePromptBlock),
         VariablePromptBlock,
         RichTextPromptBlock,
+        AudioPromptBlock,
+        FunctionCallPromptBlock,
+        ImagePromptBlock,
     ]);
 
 export declare namespace PromptBlock {
@@ -22,5 +28,8 @@ export declare namespace PromptBlock {
         | JinjaPromptBlock.Raw
         | serializers.ChatMessagePromptBlock.Raw
         | VariablePromptBlock.Raw
-        | RichTextPromptBlock.Raw;
+        | RichTextPromptBlock.Raw
+        | AudioPromptBlock.Raw
+        | FunctionCallPromptBlock.Raw
+        | ImagePromptBlock.Raw;
 }

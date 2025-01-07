@@ -13,7 +13,7 @@ import * as errors from "../../../../errors/index";
 export declare namespace AdHoc {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey?: core.Supplier<string | undefined>;
+        apiKey: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -27,11 +27,8 @@ export declare namespace AdHoc {
 }
 
 export class AdHoc {
-    constructor(protected readonly _options: AdHoc.Options = {}) {}
+    constructor(protected readonly _options: AdHoc.Options) {}
 
-    /**
-     * An internal-only endpoint that's subject to breaking changes without notice. Not intended for public use.
-     */
     public async adhocExecutePromptStream(
         request: Vellum.AdHocExecutePromptStream,
         requestOptions?: AdHoc.RequestOptions
@@ -39,15 +36,15 @@ export class AdHoc {
         const _response = await core.fetcher<stream.Readable>({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
+                    .predict,
                 "v1/ad-hoc/execute-prompt-stream"
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),

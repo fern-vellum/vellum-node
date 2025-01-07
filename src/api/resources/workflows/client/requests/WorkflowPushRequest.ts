@@ -17,4 +17,5 @@ export interface WorkflowPushRequest {
     label: string;
     workflowSandboxId?: string;
     deploymentConfig?: Vellum.WorkflowPushDeploymentConfigRequest;
+    dryRun?: boolean;
 }

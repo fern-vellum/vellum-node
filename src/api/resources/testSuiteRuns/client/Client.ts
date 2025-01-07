@@ -12,7 +12,7 @@ import * as errors from "../../../../errors/index";
 export declare namespace TestSuiteRuns {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey?: core.Supplier<string | undefined>;
+        apiKey: core.Supplier<string>;
     }
 
     interface RequestOptions {
@@ -26,7 +26,7 @@ export declare namespace TestSuiteRuns {
 }
 
 export class TestSuiteRuns {
-    constructor(protected readonly _options: TestSuiteRuns.Options = {}) {}
+    constructor(protected readonly _options: TestSuiteRuns.Options) {}
 
     /**
      * Trigger a Test Suite and create a new Test Suite Run
@@ -58,8 +58,8 @@ export class TestSuiteRuns {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -122,8 +122,8 @@ export class TestSuiteRuns {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -206,8 +206,8 @@ export class TestSuiteRuns {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.14",
-                "User-Agent": "vellum-ai/0.12.14",
+                "X-Fern-SDK-Version": "0.12.15",
+                "User-Agent": "vellum-ai/0.12.15",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
