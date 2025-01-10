@@ -2107,6 +2107,63 @@ await client.mlModels.retrieve("id");
 </dl>
 </details>
 
+## Organizations
+
+<details><summary><code>client.organizations.<a href="/src/api/resources/organizations/client/Client.ts">organizationIdentity</a>() -> Vellum.OrganizationRead</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves information about the active Organization
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.organizations.organizationIdentity();
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**requestOptions:** `Organizations.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
 ## Sandboxes
 
 <details><summary><code>client.sandboxes.<a href="/src/api/resources/sandboxes/client/Client.ts">deployPrompt</a>(id, promptVariantId, { ...params }) -> Vellum.DeploymentRead</code></summary>
@@ -3523,6 +3580,63 @@ await client.workspaceSecrets.partialUpdate("id");
 <dd>
 
 **requestOptions:** `WorkspaceSecrets.RequestOptions`
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+</dd>
+</dl>
+</details>
+
+## Workspaces
+
+<details><summary><code>client.workspaces.<a href="/src/api/resources/workspaces/client/Client.ts">workspaceIdentity</a>() -> Vellum.WorkspaceRead</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves information about the active Workspace
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```typescript
+await client.workspaces.workspaceIdentity();
+```
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**requestOptions:** `Workspaces.RequestOptions`
 
 </dd>
 </dl>
