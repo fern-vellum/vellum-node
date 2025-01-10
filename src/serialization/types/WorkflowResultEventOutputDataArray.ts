@@ -17,7 +17,7 @@ export const WorkflowResultEventOutputDataArray: core.serialization.ObjectSchema
     nodeId: core.serialization.property("node_id", core.serialization.string()),
     delta: core.serialization.string().optional(),
     type: core.serialization.stringLiteral("ARRAY"),
-    value: core.serialization.list(core.serialization.lazy(() => serializers.ArrayVariableValueItem)).optional(),
+    value: core.serialization.list(core.serialization.lazy(() => serializers.VellumValue)).optional(),
 });
 
 export declare namespace WorkflowResultEventOutputDataArray {
@@ -28,6 +28,6 @@ export declare namespace WorkflowResultEventOutputDataArray {
         node_id: string;
         delta?: string | null;
         type: "ARRAY";
-        value?: serializers.ArrayVariableValueItem.Raw[] | null;
+        value?: serializers.VellumValue.Raw[] | null;
     }
 }

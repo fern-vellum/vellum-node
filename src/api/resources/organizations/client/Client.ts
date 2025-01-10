@@ -5,11 +5,11 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Vellum from "../../../index";
-import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
+import * as serializers from "../../../../serialization/index";
 import * as errors from "../../../../errors/index";
 
-export declare namespace WorkflowSandboxes {
+export declare namespace Organizations {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
         apiKey?: core.Supplier<string | undefined>;
@@ -25,31 +25,25 @@ export declare namespace WorkflowSandboxes {
     }
 }
 
-export class WorkflowSandboxes {
-    constructor(protected readonly _options: WorkflowSandboxes.Options = {}) {}
+export class Organizations {
+    constructor(protected readonly _options: Organizations.Options = {}) {}
 
     /**
-     * @param {string} id - A UUID string identifying this workflow sandbox.
-     * @param {string} workflowId - An ID identifying the Workflow you'd like to deploy.
-     * @param {Vellum.DeploySandboxWorkflowRequest} request
-     * @param {WorkflowSandboxes.RequestOptions} requestOptions - Request-specific configuration.
+     * Retrieves information about the active Organization
+     *
+     * @param {Organizations.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await client.workflowSandboxes.deployWorkflow("id", "workflow_id")
+     *     await client.organizations.organizationIdentity()
      */
-    public async deployWorkflow(
-        id: string,
-        workflowId: string,
-        request: Vellum.DeploySandboxWorkflowRequest = {},
-        requestOptions?: WorkflowSandboxes.RequestOptions
-    ): Promise<Vellum.WorkflowDeploymentRead> {
+    public async organizationIdentity(requestOptions?: Organizations.RequestOptions): Promise<Vellum.OrganizationRead> {
         const _response = await core.fetcher({
             url: urlJoin(
                 ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
                     .default,
-                `v1/workflow-sandboxes/${encodeURIComponent(id)}/workflows/${encodeURIComponent(workflowId)}/deploy`
+                "v1/organizations/identity"
             ),
-            method: "POST",
+            method: "GET",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
@@ -61,13 +55,12 @@ export class WorkflowSandboxes {
             },
             contentType: "application/json",
             requestType: "json",
-            body: serializers.DeploySandboxWorkflowRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : undefined,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return serializers.WorkflowDeploymentRead.parseOrThrow(_response.body, {
+            return serializers.OrganizationRead.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,

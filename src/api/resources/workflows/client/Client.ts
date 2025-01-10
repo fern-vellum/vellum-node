@@ -15,7 +15,7 @@ import * as serializers from "../../../../serialization/index";
 export declare namespace Workflows {
     interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
-        apiKey: core.Supplier<string>;
+        apiKey?: core.Supplier<string | undefined>;
     }
 
     interface RequestOptions {
@@ -29,7 +29,7 @@ export declare namespace Workflows {
 }
 
 export class Workflows {
-    constructor(protected readonly _options: Workflows.Options) {}
+    constructor(protected readonly _options: Workflows.Options = {}) {}
 
     /**
      * @throws {@link Vellum.BadRequestError}
@@ -71,8 +71,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.17",
-                "User-Agent": "vellum-ai/0.12.17",
+                "X-Fern-SDK-Version": "0.12.18",
+                "User-Agent": "vellum-ai/0.12.18",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -162,8 +162,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.12.17",
-                "User-Agent": "vellum-ai/0.12.17",
+                "X-Fern-SDK-Version": "0.12.18",
+                "User-Agent": "vellum-ai/0.12.18",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
