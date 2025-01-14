@@ -30,6 +30,8 @@ export const LogicalOperator: core.serialization.Schema<serializers.LogicalOpera
         "notBlank",
         "coalesce",
         "accessField",
+        "and",
+        "or",
     ]);
 
 export declare namespace LogicalOperator {
@@ -55,5 +57,7 @@ export declare namespace LogicalOperator {
         | "blank"
         | "notBlank"
         | "coalesce"
-        | "accessField";
+        | "accessField"
+        | "and"
+        | "or";
 }

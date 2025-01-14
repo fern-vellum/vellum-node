@@ -25,6 +25,8 @@
  * - `notBlank` - NOT_BLANK
  * - `coalesce` - COALESCE
  * - `accessField` - ACCESS_FIELD
+ * - `and` - AND
+ * - `or` - OR
  */
 export type LogicalOperator =
     /**
@@ -84,7 +86,9 @@ export type LogicalOperator =
     | "blank"
     | "notBlank"
     | "coalesce"
-    | "accessField";
+    | "accessField"
+    | "and"
+    | "or";
 
 export const LogicalOperator = {
     Equals: "=",
@@ -109,4 +113,6 @@ export const LogicalOperator = {
     NotBlank: "notBlank",
     Coalesce: "coalesce",
     AccessField: "accessField",
+    And: "and",
+    Or: "or",
 } as const;
