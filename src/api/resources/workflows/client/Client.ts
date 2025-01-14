@@ -71,8 +71,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.0",
-                "User-Agent": "vellum-ai/0.13.0",
+                "X-Fern-SDK-Version": "0.13.1",
+                "User-Agent": "vellum-ai/0.13.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
@@ -151,6 +151,10 @@ export class Workflows {
             await _request.append("dry_run", request.dryRun.toString());
         }
 
+        if (request.strict != null) {
+            await _request.append("strict", request.strict.toString());
+        }
+
         const _maybeEncodedRequest = await _request.getRequest();
         const _response = await core.fetcher({
             url: urlJoin(
@@ -162,8 +166,8 @@ export class Workflows {
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.0",
-                "User-Agent": "vellum-ai/0.13.0",
+                "X-Fern-SDK-Version": "0.13.1",
+                "User-Agent": "vellum-ai/0.13.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
