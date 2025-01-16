@@ -6,16 +6,21 @@ import * as serializers from "../index";
 import * as Vellum from "../../api/index";
 import * as core from "../../core";
 import { MlModelUsage } from "./MlModelUsage";
+import { Price } from "./Price";
 
 export const PromptNodeExecutionMeta: core.serialization.ObjectSchema<
     serializers.PromptNodeExecutionMeta.Raw,
     Vellum.PromptNodeExecutionMeta
 > = core.serialization.object({
     usage: MlModelUsage.optional(),
+    cost: Price.optional(),
+    modelName: core.serialization.property("model_name", core.serialization.string().optional()),
 });
 
 export declare namespace PromptNodeExecutionMeta {
     export interface Raw {
         usage?: MlModelUsage.Raw | null;
+        cost?: Price.Raw | null;
+        model_name?: string | null;
     }
 }

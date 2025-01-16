@@ -9,4 +9,6 @@ import * as Vellum from "../index";
  */
 export interface PromptNodeExecutionMeta {
     usage?: Vellum.MlModelUsage;
+    cost?: Vellum.Price;
+    modelName?: string;
 }
