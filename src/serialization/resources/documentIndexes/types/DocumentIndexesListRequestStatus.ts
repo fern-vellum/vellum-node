@@ -12,5 +12,5 @@ export const DocumentIndexesListRequestStatus: core.serialization.Schema<
 > = core.serialization.enum_(["ACTIVE", "ARCHIVED"]);
 
 export declare namespace DocumentIndexesListRequestStatus {
-    type Raw = "ACTIVE" | "ARCHIVED";
+    export type Raw = "ACTIVE" | "ARCHIVED";
 }

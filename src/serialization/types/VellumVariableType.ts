@@ -24,7 +24,7 @@ export const VellumVariableType: core.serialization.Schema<
 ]);
 
 export declare namespace VellumVariableType {
-    type Raw =
+    export type Raw =
         | "STRING"
         | "NUMBER"
         | "JSON"

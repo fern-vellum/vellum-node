@@ -17,7 +17,7 @@ export const InitiatedExecutePromptEvent: core.serialization.ObjectSchema<
 });
 
 export declare namespace InitiatedExecutePromptEvent {
-    interface Raw {
+    export interface Raw {
         state: "INITIATED";
         meta?: InitiatedPromptExecutionMeta.Raw | null;
         execution_id: string;

@@ -16,7 +16,7 @@ export const CompilePromptMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace CompilePromptMeta {
-    interface Raw {
+    export interface Raw {
         model_name?: string | null;
         deployment_release_tag?: string | null;
         prompt_version_id?: string | null;

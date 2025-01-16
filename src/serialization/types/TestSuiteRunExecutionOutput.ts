@@ -29,7 +29,7 @@ export const TestSuiteRunExecutionOutput: core.serialization.Schema<
 ]);
 
 export declare namespace TestSuiteRunExecutionOutput {
-    type Raw =
+    export type Raw =
         | TestSuiteRunExecutionStringOutput.Raw
         | TestSuiteRunExecutionNumberOutput.Raw
         | TestSuiteRunExecutionJsonOutput.Raw

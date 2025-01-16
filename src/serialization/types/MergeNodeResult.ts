@@ -14,7 +14,7 @@ export const MergeNodeResult: core.serialization.ObjectSchema<serializers.MergeN
     });
 
 export declare namespace MergeNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "MERGE";
         data: MergeNodeResultData.Raw;
     }

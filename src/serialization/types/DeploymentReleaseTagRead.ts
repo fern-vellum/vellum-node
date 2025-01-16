@@ -18,7 +18,7 @@ export const DeploymentReleaseTagRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace DeploymentReleaseTagRead {
-    interface Raw {
+    export interface Raw {
         name: string;
         source: ReleaseTagSource.Raw;
         history_item: DeploymentReleaseTagDeploymentHistoryItem.Raw;

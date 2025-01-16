@@ -18,7 +18,7 @@ export const TestCaseChatHistoryVariableValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestCaseChatHistoryVariableValue {
-    interface Raw {
+    export interface Raw {
         variable_id: string;
         name: string;
         type: "CHAT_HISTORY";

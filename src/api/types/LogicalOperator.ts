@@ -89,7 +89,6 @@ export type LogicalOperator =
     | "accessField"
     | "and"
     | "or";
-
 export const LogicalOperator = {
     Equals: "=",
     DoesNotEqual: "!=",

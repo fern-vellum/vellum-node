@@ -13,7 +13,7 @@ export const SearchResponse: core.serialization.ObjectSchema<serializers.SearchR
     });
 
 export declare namespace SearchResponse {
-    interface Raw {
+    export interface Raw {
         results: SearchResult.Raw[];
     }
 }

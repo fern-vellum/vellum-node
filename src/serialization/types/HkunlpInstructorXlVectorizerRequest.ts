@@ -16,7 +16,7 @@ export const HkunlpInstructorXlVectorizerRequest: core.serialization.ObjectSchem
 });
 
 export declare namespace HkunlpInstructorXlVectorizerRequest {
-    interface Raw {
+    export interface Raw {
         model_name: "hkunlp/instructor-xl";
         config: InstructorVectorizerConfigRequest.Raw;
     }

@@ -17,7 +17,7 @@ export const ExecuteWorkflowRequest: core.serialization.Schema<
     workflowDeploymentId: core.serialization.property("workflow_deployment_id", core.serialization.string().optional()),
     workflowDeploymentName: core.serialization.property(
         "workflow_deployment_name",
-        core.serialization.string().optional()
+        core.serialization.string().optional(),
     ),
     releaseTag: core.serialization.property("release_tag", core.serialization.string().optional()),
     externalId: core.serialization.property("external_id", core.serialization.string().optional()),
@@ -25,7 +25,7 @@ export const ExecuteWorkflowRequest: core.serialization.Schema<
 });
 
 export declare namespace ExecuteWorkflowRequest {
-    interface Raw {
+    export interface Raw {
         inputs: WorkflowRequestInputRequest.Raw[];
         expand_meta?: WorkflowExpandMetaRequest.Raw | null;
         workflow_deployment_id?: string | null;

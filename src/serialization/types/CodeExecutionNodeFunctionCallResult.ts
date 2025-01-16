@@ -17,7 +17,7 @@ export const CodeExecutionNodeFunctionCallResult: core.serialization.ObjectSchem
 });
 
 export declare namespace CodeExecutionNodeFunctionCallResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "FUNCTION_CALL";
         value?: FunctionCall.Raw | null;

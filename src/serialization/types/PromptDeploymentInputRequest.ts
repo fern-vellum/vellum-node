@@ -15,5 +15,5 @@ export const PromptDeploymentInputRequest: core.serialization.Schema<
 > = core.serialization.undiscriminatedUnion([StringInputRequest, JsonInputRequest, ChatHistoryInputRequest]);
 
 export declare namespace PromptDeploymentInputRequest {
-    type Raw = StringInputRequest.Raw | JsonInputRequest.Raw | ChatHistoryInputRequest.Raw;
+    export type Raw = StringInputRequest.Raw | JsonInputRequest.Raw | ChatHistoryInputRequest.Raw;
 }

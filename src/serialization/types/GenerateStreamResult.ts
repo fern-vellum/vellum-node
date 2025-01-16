@@ -18,7 +18,7 @@ export const GenerateStreamResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace GenerateStreamResult {
-    interface Raw {
+    export interface Raw {
         request_index: number;
         data?: GenerateStreamResultData.Raw | null;
         error?: GenerateResultError.Raw | null;

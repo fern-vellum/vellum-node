@@ -17,7 +17,7 @@ export const FunctionCallInput: core.serialization.ObjectSchema<
 });
 
 export declare namespace FunctionCallInput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "FUNCTION_CALL";
         value: FunctionCall.Raw;

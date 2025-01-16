@@ -17,7 +17,7 @@ export const CodeExecutionNodeErrorResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutionNodeErrorResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "ERROR";
         value?: VellumError.Raw | null;

@@ -18,7 +18,7 @@ export const WorkflowOutputChatHistory: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowOutputChatHistory {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "CHAT_HISTORY";

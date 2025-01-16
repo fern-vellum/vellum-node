@@ -12,5 +12,5 @@ export const ConditionCombinator: core.serialization.Schema<
 > = core.serialization.enum_(["OR", "AND"]);
 
 export declare namespace ConditionCombinator {
-    type Raw = "OR" | "AND";
+    export type Raw = "OR" | "AND";
 }

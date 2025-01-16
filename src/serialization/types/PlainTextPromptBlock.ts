@@ -19,7 +19,7 @@ export const PlainTextPromptBlock: core.serialization.ObjectSchema<
 });
 
 export declare namespace PlainTextPromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "PLAIN_TEXT";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

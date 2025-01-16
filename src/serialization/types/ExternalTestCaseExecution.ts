@@ -16,7 +16,7 @@ export const ExternalTestCaseExecution: core.serialization.ObjectSchema<
 });
 
 export declare namespace ExternalTestCaseExecution {
-    interface Raw {
+    export interface Raw {
         outputs: NamedTestCaseVariableValue.Raw[];
         test_case_id: string;
     }

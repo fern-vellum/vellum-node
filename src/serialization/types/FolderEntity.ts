@@ -21,7 +21,7 @@ export const FolderEntity: core.serialization.Schema<serializers.FolderEntity.Ra
     ]);
 
 export declare namespace FolderEntity {
-    type Raw =
+    export type Raw =
         | FolderEntityFolder.Raw
         | FolderEntityPromptSandbox.Raw
         | FolderEntityWorkflowSandbox.Raw

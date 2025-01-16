@@ -18,7 +18,7 @@ export const WorkflowReleaseTagRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowReleaseTagRead {
-    interface Raw {
+    export interface Raw {
         name: string;
         source: ReleaseTagSource.Raw;
         history_item: WorkflowReleaseTagWorkflowDeploymentHistoryItem.Raw;

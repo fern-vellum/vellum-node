@@ -22,7 +22,7 @@ export const WorkflowDeploymentRead: core.serialization.ObjectSchema<
     lastDeployedOn: core.serialization.property("last_deployed_on", core.serialization.date()),
     lastDeployedHistoryItemId: core.serialization.property(
         "last_deployed_history_item_id",
-        core.serialization.string()
+        core.serialization.string(),
     ),
     inputVariables: core.serialization.property("input_variables", core.serialization.list(VellumVariable)),
     outputVariables: core.serialization.property("output_variables", core.serialization.list(VellumVariable)),
@@ -30,7 +30,7 @@ export const WorkflowDeploymentRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowDeploymentRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         label: string;

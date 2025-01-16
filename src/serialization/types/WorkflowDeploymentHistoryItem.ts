@@ -22,7 +22,7 @@ export const WorkflowDeploymentHistoryItem: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowDeploymentHistoryItem {
-    interface Raw {
+    export interface Raw {
         id: string;
         workflow_deployment_id: string;
         timestamp: string;

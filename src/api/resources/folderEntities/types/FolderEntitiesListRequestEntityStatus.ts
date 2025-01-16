@@ -3,7 +3,6 @@
  */
 
 export type FolderEntitiesListRequestEntityStatus = "ACTIVE" | "ARCHIVED";
-
 export const FolderEntitiesListRequestEntityStatus = {
     Active: "ACTIVE",
     Archived: "ARCHIVED",

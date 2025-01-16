@@ -19,7 +19,7 @@ export const NodeOutputCompiledFunctionCallValue: core.serialization.ObjectSchem
 });
 
 export declare namespace NodeOutputCompiledFunctionCallValue {
-    interface Raw {
+    export interface Raw {
         type: "FUNCTION_CALL";
         value?: FunctionCall.Raw | null;
         node_output_id: string;

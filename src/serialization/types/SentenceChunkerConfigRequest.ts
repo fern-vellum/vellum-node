@@ -15,7 +15,7 @@ export const SentenceChunkerConfigRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SentenceChunkerConfigRequest {
-    interface Raw {
+    export interface Raw {
         character_limit?: number | null;
         min_overlap_ratio?: number | null;
     }

@@ -19,7 +19,7 @@ export const SearchRequestBodyRequest: core.serialization.Schema<
 });
 
 export declare namespace SearchRequestBodyRequest {
-    interface Raw {
+    export interface Raw {
         index_id?: string | null;
         index_name?: string | null;
         query: string;

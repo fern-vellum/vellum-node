@@ -18,7 +18,7 @@ export const PaginatedTestSuiteTestCaseList: core.serialization.ObjectSchema<
 });
 
 export declare namespace PaginatedTestSuiteTestCaseList {
-    interface Raw {
+    export interface Raw {
         count: number;
         next?: string | null;
         previous?: string | null;

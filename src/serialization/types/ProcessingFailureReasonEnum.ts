@@ -12,5 +12,5 @@ export const ProcessingFailureReasonEnum: core.serialization.Schema<
 > = core.serialization.enum_(["EXCEEDED_CHARACTER_LIMIT", "INVALID_FILE"]);
 
 export declare namespace ProcessingFailureReasonEnum {
-    type Raw = "EXCEEDED_CHARACTER_LIMIT" | "INVALID_FILE";
+    export type Raw = "EXCEEDED_CHARACTER_LIMIT" | "INVALID_FILE";
 }

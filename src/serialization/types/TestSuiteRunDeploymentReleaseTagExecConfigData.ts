@@ -15,7 +15,7 @@ export const TestSuiteRunDeploymentReleaseTagExecConfigData: core.serialization.
 });
 
 export declare namespace TestSuiteRunDeploymentReleaseTagExecConfigData {
-    interface Raw {
+    export interface Raw {
         deployment_id: string;
         tag?: string | null;
     }

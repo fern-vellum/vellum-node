@@ -14,7 +14,7 @@ export const AddEntityToFolderRequest: core.serialization.Schema<
 });
 
 export declare namespace AddEntityToFolderRequest {
-    interface Raw {
+    export interface Raw {
         entity_id: string;
     }
 }

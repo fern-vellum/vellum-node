@@ -10,18 +10,22 @@ import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 
 export declare namespace WorkflowSandboxes {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         apiKey?: core.Supplier<string | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -41,23 +45,25 @@ export class WorkflowSandboxes {
         id: string,
         workflowId: string,
         request: Vellum.DeploySandboxWorkflowRequest = {},
-        requestOptions?: WorkflowSandboxes.RequestOptions
+        requestOptions?: WorkflowSandboxes.RequestOptions,
     ): Promise<Vellum.WorkflowDeploymentRead> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
-                `v1/workflow-sandboxes/${encodeURIComponent(id)}/workflows/${encodeURIComponent(workflowId)}/deploy`
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .default,
+                `v1/workflow-sandboxes/${encodeURIComponent(id)}/workflows/${encodeURIComponent(workflowId)}/deploy`,
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -89,7 +95,9 @@ export class WorkflowSandboxes {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError(
+                    "Timeout exceeded when calling POST /v1/workflow-sandboxes/{id}/workflows/{workflow_id}/deploy.",
+                );
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,

@@ -17,7 +17,7 @@ export const WorkflowRequestChatHistoryInputRequest: core.serialization.ObjectSc
 });
 
 export declare namespace WorkflowRequestChatHistoryInputRequest {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "CHAT_HISTORY";
         value: ChatMessageRequest.Raw[];

@@ -17,7 +17,7 @@ export const ChatMessage: core.serialization.ObjectSchema<serializers.ChatMessag
     });
 
 export declare namespace ChatMessage {
-    interface Raw {
+    export interface Raw {
         text?: string | null;
         role: ChatMessageRole.Raw;
         content?: ChatMessageContent.Raw | null;

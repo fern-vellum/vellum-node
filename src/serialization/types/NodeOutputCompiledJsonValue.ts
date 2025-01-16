@@ -18,7 +18,7 @@ export const NodeOutputCompiledJsonValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NodeOutputCompiledJsonValue {
-    interface Raw {
+    export interface Raw {
         type: "JSON";
         value?: unknown;
         node_output_id: string;

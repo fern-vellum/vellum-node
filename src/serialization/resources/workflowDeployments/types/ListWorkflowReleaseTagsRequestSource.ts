@@ -12,5 +12,5 @@ export const ListWorkflowReleaseTagsRequestSource: core.serialization.Schema<
 > = core.serialization.enum_(["SYSTEM", "USER"]);
 
 export declare namespace ListWorkflowReleaseTagsRequestSource {
-    type Raw = "SYSTEM" | "USER";
+    export type Raw = "SYSTEM" | "USER";
 }

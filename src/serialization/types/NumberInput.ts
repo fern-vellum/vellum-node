@@ -14,7 +14,7 @@ export const NumberInput: core.serialization.ObjectSchema<serializers.NumberInpu
     });
 
 export declare namespace NumberInput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "NUMBER";
         value: number;

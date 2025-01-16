@@ -16,7 +16,7 @@ export const CodeExecutorSecretInput: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutorSecretInput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "SECRET";
         value: string;

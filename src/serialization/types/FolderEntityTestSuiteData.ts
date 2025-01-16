@@ -19,7 +19,7 @@ export const FolderEntityTestSuiteData: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityTestSuiteData {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         created: string;

@@ -15,7 +15,7 @@ export const SearchResultMetaRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchResultMetaRequest {
-    interface Raw {
+    export interface Raw {
         source?: ComponentsSchemasPdfSearchResultMetaSourceRequest.Raw | null;
     }
 }

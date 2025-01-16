@@ -16,7 +16,7 @@ export const ImageVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace ImageVellumValue {
-    interface Raw {
+    export interface Raw {
         type: "IMAGE";
         value?: VellumImage.Raw | null;
     }

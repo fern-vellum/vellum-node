@@ -29,7 +29,7 @@ export const NodeOutputCompiledValue: core.serialization.Schema<
 ]);
 
 export declare namespace NodeOutputCompiledValue {
-    type Raw =
+    export type Raw =
         | NodeOutputCompiledStringValue.Raw
         | NodeOutputCompiledNumberValue.Raw
         | NodeOutputCompiledJsonValue.Raw

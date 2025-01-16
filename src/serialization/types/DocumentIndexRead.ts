@@ -23,7 +23,7 @@ export const DocumentIndexRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace DocumentIndexRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         created: string;
         label: string;

@@ -21,7 +21,7 @@ export const TestSuiteTestCaseBulkResult: core.serialization.Schema<
 ]);
 
 export declare namespace TestSuiteTestCaseBulkResult {
-    type Raw =
+    export type Raw =
         | TestSuiteTestCaseCreatedBulkResult.Raw
         | TestSuiteTestCaseReplacedBulkResult.Raw
         | TestSuiteTestCaseDeletedBulkResult.Raw

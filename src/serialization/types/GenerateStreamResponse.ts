@@ -15,7 +15,7 @@ export const GenerateStreamResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace GenerateStreamResponse {
-    interface Raw {
+    export interface Raw {
         delta: GenerateStreamResult.Raw;
     }
 }

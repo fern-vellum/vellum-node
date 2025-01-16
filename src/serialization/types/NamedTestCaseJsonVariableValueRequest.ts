@@ -16,7 +16,7 @@ export const NamedTestCaseJsonVariableValueRequest: core.serialization.ObjectSch
 });
 
 export declare namespace NamedTestCaseJsonVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "JSON";
         value?: unknown;
         name: string;

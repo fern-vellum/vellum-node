@@ -20,7 +20,7 @@ export const ImagePromptBlock: core.serialization.ObjectSchema<
 });
 
 export declare namespace ImagePromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "IMAGE";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

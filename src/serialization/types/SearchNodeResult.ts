@@ -16,7 +16,7 @@ export const SearchNodeResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "SEARCH";
         data: SearchNodeResultData.Raw;
     }

@@ -19,7 +19,7 @@ export const NodeOutputCompiledSearchResultsValue: core.serialization.ObjectSche
 });
 
 export declare namespace NodeOutputCompiledSearchResultsValue {
-    interface Raw {
+    export interface Raw {
         type: "SEARCH_RESULTS";
         value?: SearchResult.Raw[] | null;
         node_output_id: string;

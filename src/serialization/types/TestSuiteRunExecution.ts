@@ -17,12 +17,12 @@ export const TestSuiteRunExecution: core.serialization.ObjectSchema<
     outputs: core.serialization.list(TestSuiteRunExecutionOutput),
     metricResults: core.serialization.property(
         "metric_results",
-        core.serialization.list(TestSuiteRunExecutionMetricResult)
+        core.serialization.list(TestSuiteRunExecutionMetricResult),
     ),
 });
 
 export declare namespace TestSuiteRunExecution {
-    interface Raw {
+    export interface Raw {
         id: string;
         test_case_id: string;
         outputs: TestSuiteRunExecutionOutput.Raw[];

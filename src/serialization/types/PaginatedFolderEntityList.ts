@@ -18,7 +18,7 @@ export const PaginatedFolderEntityList: core.serialization.ObjectSchema<
 });
 
 export declare namespace PaginatedFolderEntityList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;

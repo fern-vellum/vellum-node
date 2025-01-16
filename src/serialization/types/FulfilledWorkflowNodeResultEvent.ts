@@ -24,7 +24,7 @@ export const FulfilledWorkflowNodeResultEvent: core.serialization.ObjectSchema<
 });
 
 export declare namespace FulfilledWorkflowNodeResultEvent {
-    interface Raw {
+    export interface Raw {
         id: string;
         node_id: string;
         node_result_id: string;

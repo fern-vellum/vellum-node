@@ -20,7 +20,7 @@ export const MetricDefinitionHistoryItem: core.serialization.ObjectSchema<
 });
 
 export declare namespace MetricDefinitionHistoryItem {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         name: string;

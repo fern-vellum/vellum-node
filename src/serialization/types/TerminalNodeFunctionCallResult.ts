@@ -18,7 +18,7 @@ export const TerminalNodeFunctionCallResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TerminalNodeFunctionCallResult {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         name: string;
         type: "FUNCTION_CALL";

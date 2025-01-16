@@ -14,7 +14,7 @@ export const TestSuiteTestCaseDeleteBulkOperationDataRequest: core.serialization
 });
 
 export declare namespace TestSuiteTestCaseDeleteBulkOperationDataRequest {
-    interface Raw {
+    export interface Raw {
         id: string;
     }
 }

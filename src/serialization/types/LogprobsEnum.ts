@@ -10,5 +10,5 @@ export const LogprobsEnum: core.serialization.Schema<serializers.LogprobsEnum.Ra
     core.serialization.enum_(["ALL", "NONE"]);
 
 export declare namespace LogprobsEnum {
-    type Raw = "ALL" | "NONE";
+    export type Raw = "ALL" | "NONE";
 }

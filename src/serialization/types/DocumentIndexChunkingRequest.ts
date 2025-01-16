@@ -19,5 +19,8 @@ export const DocumentIndexChunkingRequest: core.serialization.Schema<
 ]);
 
 export declare namespace DocumentIndexChunkingRequest {
-    type Raw = ReductoChunkingRequest.Raw | SentenceChunkingRequest.Raw | TokenOverlappingWindowChunkingRequest.Raw;
+    export type Raw =
+        | ReductoChunkingRequest.Raw
+        | SentenceChunkingRequest.Raw
+        | TokenOverlappingWindowChunkingRequest.Raw;
 }

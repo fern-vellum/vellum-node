@@ -31,7 +31,7 @@ export const IndexingConfigVectorizerRequest: core.serialization.Schema<
 ]);
 
 export declare namespace IndexingConfigVectorizerRequest {
-    type Raw =
+    export type Raw =
         | OpenAiVectorizerTextEmbedding3SmallRequest.Raw
         | OpenAiVectorizerTextEmbedding3LargeRequest.Raw
         | OpenAiVectorizerTextEmbeddingAda002Request.Raw

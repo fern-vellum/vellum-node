@@ -15,7 +15,7 @@ export const GenerateOptionsRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace GenerateOptionsRequest {
-    interface Raw {
+    export interface Raw {
         logprobs?: LogprobsEnum.Raw | null;
     }
 }

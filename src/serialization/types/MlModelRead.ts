@@ -13,7 +13,7 @@ export const MlModelRead: core.serialization.ObjectSchema<serializers.MlModelRea
     });
 
 export declare namespace MlModelRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
     }

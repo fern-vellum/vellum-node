@@ -18,7 +18,7 @@ export const TestSuiteRunExecutionFunctionCallOutput: core.serialization.ObjectS
 });
 
 export declare namespace TestSuiteRunExecutionFunctionCallOutput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "FUNCTION_CALL";
         value?: FunctionCall.Raw | null;

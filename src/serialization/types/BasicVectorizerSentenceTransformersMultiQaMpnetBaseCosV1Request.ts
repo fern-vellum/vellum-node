@@ -13,12 +13,12 @@ export const BasicVectorizerSentenceTransformersMultiQaMpnetBaseCosV1Request: co
     config: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     modelName: core.serialization.property(
         "model_name",
-        core.serialization.stringLiteral("sentence-transformers/multi-qa-mpnet-base-cos-v1")
+        core.serialization.stringLiteral("sentence-transformers/multi-qa-mpnet-base-cos-v1"),
     ),
 });
 
 export declare namespace BasicVectorizerSentenceTransformersMultiQaMpnetBaseCosV1Request {
-    interface Raw {
+    export interface Raw {
         config?: Record<string, unknown> | null;
         model_name: "sentence-transformers/multi-qa-mpnet-base-cos-v1";
     }

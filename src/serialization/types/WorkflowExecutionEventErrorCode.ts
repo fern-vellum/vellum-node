@@ -21,7 +21,7 @@ export const WorkflowExecutionEventErrorCode: core.serialization.Schema<
 ]);
 
 export declare namespace WorkflowExecutionEventErrorCode {
-    type Raw =
+    export type Raw =
         | "WORKFLOW_INITIALIZATION"
         | "WORKFLOW_CANCELLED"
         | "NODE_EXECUTION_COUNT_LIMIT_REACHED"

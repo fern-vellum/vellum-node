@@ -16,7 +16,7 @@ export const ScenarioInputJsonVariableValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace ScenarioInputJsonVariableValue {
-    interface Raw {
+    export interface Raw {
         type: "JSON";
         value?: unknown;
         input_variable_id: string;

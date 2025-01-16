@@ -20,12 +20,12 @@ export const DocumentIndexCreateRequest: core.serialization.Schema<
     indexingConfig: core.serialization.property("indexing_config", DocumentIndexIndexingConfigRequest),
     copyDocumentsFromIndexId: core.serialization.property(
         "copy_documents_from_index_id",
-        core.serialization.string().optional()
+        core.serialization.string().optional(),
     ),
 });
 
 export declare namespace DocumentIndexCreateRequest {
-    interface Raw {
+    export interface Raw {
         label: string;
         name: string;
         status?: EntityStatus.Raw | null;

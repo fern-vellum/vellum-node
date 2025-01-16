@@ -18,7 +18,7 @@ export const WorkflowOutputSearchResults: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowOutputSearchResults {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "SEARCH_RESULTS";

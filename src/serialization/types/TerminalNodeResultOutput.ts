@@ -29,7 +29,7 @@ export const TerminalNodeResultOutput: core.serialization.Schema<
 ]);
 
 export declare namespace TerminalNodeResultOutput {
-    type Raw =
+    export type Raw =
         | TerminalNodeStringResult.Raw
         | TerminalNodeNumberResult.Raw
         | TerminalNodeJsonResult.Raw

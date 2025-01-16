@@ -23,7 +23,7 @@ export const RejectedWorkflowNodeResultEvent: core.serialization.ObjectSchema<
 });
 
 export declare namespace RejectedWorkflowNodeResultEvent {
-    interface Raw {
+    export interface Raw {
         id: string;
         node_id: string;
         node_result_id: string;

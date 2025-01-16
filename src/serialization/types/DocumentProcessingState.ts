@@ -12,5 +12,5 @@ export const DocumentProcessingState: core.serialization.Schema<
 > = core.serialization.enum_(["QUEUED", "PROCESSING", "PROCESSED", "FAILED", "UNKNOWN"]);
 
 export declare namespace DocumentProcessingState {
-    type Raw = "QUEUED" | "PROCESSING" | "PROCESSED" | "FAILED" | "UNKNOWN";
+    export type Raw = "QUEUED" | "PROCESSING" | "PROCESSED" | "FAILED" | "UNKNOWN";
 }

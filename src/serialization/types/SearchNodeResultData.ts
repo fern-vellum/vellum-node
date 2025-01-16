@@ -18,7 +18,7 @@ export const SearchNodeResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchNodeResultData {
-    interface Raw {
+    export interface Raw {
         results_output_id: string;
         results: SearchResult.Raw[];
         text_output_id: string;

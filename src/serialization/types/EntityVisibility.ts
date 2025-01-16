@@ -10,5 +10,5 @@ export const EntityVisibility: core.serialization.Schema<serializers.EntityVisib
     core.serialization.enum_(["DEFAULT", "PUBLIC", "PRIVATE", "DISABLED"]);
 
 export declare namespace EntityVisibility {
-    type Raw = "DEFAULT" | "PUBLIC" | "PRIVATE" | "DISABLED";
+    export type Raw = "DEFAULT" | "PUBLIC" | "PRIVATE" | "DISABLED";
 }

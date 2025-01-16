@@ -16,7 +16,7 @@ export const SearchResultsVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchResultsVellumValue {
-    interface Raw {
+    export interface Raw {
         type: "SEARCH_RESULTS";
         value?: SearchResult.Raw[] | null;
     }

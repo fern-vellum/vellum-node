@@ -13,17 +13,17 @@ export const DeploySandboxWorkflowRequest: core.serialization.Schema<
     workflowDeploymentId: core.serialization.property("workflow_deployment_id", core.serialization.string().optional()),
     workflowDeploymentName: core.serialization.property(
         "workflow_deployment_name",
-        core.serialization.string().optional()
+        core.serialization.string().optional(),
     ),
     label: core.serialization.string().optional(),
     releaseTags: core.serialization.property(
         "release_tags",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
 });
 
 export declare namespace DeploySandboxWorkflowRequest {
-    interface Raw {
+    export interface Raw {
         workflow_deployment_id?: string | null;
         workflow_deployment_name?: string | null;
         label?: string | null;

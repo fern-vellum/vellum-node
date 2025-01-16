@@ -12,18 +12,22 @@ import * as fs from "fs";
 import { Blob } from "buffer";
 
 export declare namespace Documents {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         apiKey?: core.Supplier<string | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -41,10 +45,10 @@ export class Documents {
      */
     public async list(
         request: Vellum.DocumentsListRequest = {},
-        requestOptions?: Documents.RequestOptions
+        requestOptions?: Documents.RequestOptions,
     ): Promise<Vellum.PaginatedSlimDocumentList> {
         const { documentIndexId, limit, offset, ordering } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (documentIndexId != null) {
             _queryParams["document_index_id"] = documentIndexId;
         }
@@ -63,19 +67,21 @@ export class Documents {
 
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
-                "v1/documents"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .default,
+                "v1/documents",
             ),
             method: "GET",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -107,7 +113,7 @@ export class Documents {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling GET /v1/documents.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -127,19 +133,21 @@ export class Documents {
     public async retrieve(id: string, requestOptions?: Documents.RequestOptions): Promise<Vellum.DocumentRead> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
-                `v1/documents/${encodeURIComponent(id)}`
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .default,
+                `v1/documents/${encodeURIComponent(id)}`,
             ),
             method: "GET",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -170,7 +178,7 @@ export class Documents {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling GET /v1/documents/{id}.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -190,19 +198,21 @@ export class Documents {
     public async destroy(id: string, requestOptions?: Documents.RequestOptions): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .documents,
-                `v1/documents/${encodeURIComponent(id)}`
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .documents,
+                `v1/documents/${encodeURIComponent(id)}`,
             ),
             method: "DELETE",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -228,7 +238,7 @@ export class Documents {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling DELETE /v1/documents/{id}.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -249,23 +259,25 @@ export class Documents {
     public async partialUpdate(
         id: string,
         request: Vellum.PatchedDocumentUpdateRequest = {},
-        requestOptions?: Documents.RequestOptions
+        requestOptions?: Documents.RequestOptions,
     ): Promise<Vellum.DocumentRead> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
-                `v1/documents/${encodeURIComponent(id)}`
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .default,
+                `v1/documents/${encodeURIComponent(id)}`,
             ),
             method: "PATCH",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -297,7 +309,7 @@ export class Documents {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling PATCH /v1/documents/{id}.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -334,48 +346,50 @@ export class Documents {
     public async upload(
         contents: File | fs.ReadStream | Blob,
         request: Vellum.UploadDocumentBodyRequest,
-        requestOptions?: Documents.RequestOptions
+        requestOptions?: Documents.RequestOptions,
     ): Promise<Vellum.UploadDocumentResponse> {
         const _request = await core.newFormData();
         if (request.addToIndexNames != null) {
             for (const _item of request.addToIndexNames) {
-                await _request.append("add_to_index_names", _item);
+                _request.append("add_to_index_names", _item);
             }
         }
 
         if (request.externalId != null) {
-            await _request.append("external_id", request.externalId);
+            _request.append("external_id", request.externalId);
         }
 
-        await _request.append("label", request.label);
+        _request.append("label", request.label);
         await _request.appendFile("contents", contents);
         if (request.keywords != null) {
             for (const _item of request.keywords) {
-                await _request.append("keywords", _item);
+                _request.append("keywords", _item);
             }
         }
 
         if (request.metadata != null) {
-            await _request.append("metadata", request.metadata);
+            _request.append("metadata", request.metadata);
         }
 
         const _maybeEncodedRequest = await _request.getRequest();
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .documents,
-                "v1/upload-document"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .documents,
+                "v1/upload-document",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
                 ..._maybeEncodedRequest.headers,
+                ...requestOptions?.headers,
             },
             requestType: "file",
             duplex: _maybeEncodedRequest.duplex,
@@ -416,7 +430,7 @@ export class Documents {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/upload-document.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,

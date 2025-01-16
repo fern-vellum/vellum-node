@@ -13,13 +13,13 @@ export const SearchFiltersRequest: core.serialization.ObjectSchema<
 > = core.serialization.object({
     externalIds: core.serialization.property(
         "external_ids",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     metadata: MetadataFiltersRequest.optional(),
 });
 
 export declare namespace SearchFiltersRequest {
-    interface Raw {
+    export interface Raw {
         external_ids?: string[] | null;
         metadata?: MetadataFiltersRequest.Raw | null;
     }

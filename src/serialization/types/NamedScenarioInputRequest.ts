@@ -19,7 +19,7 @@ export const NamedScenarioInputRequest: core.serialization.Schema<
 ]);
 
 export declare namespace NamedScenarioInputRequest {
-    type Raw =
+    export type Raw =
         | NamedScenarioInputStringVariableValueRequest.Raw
         | NamedScenarioInputJsonVariableValueRequest.Raw
         | NamedScenarioInputChatHistoryVariableValueRequest.Raw;

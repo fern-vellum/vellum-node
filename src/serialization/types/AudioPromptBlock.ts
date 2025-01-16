@@ -20,7 +20,7 @@ export const AudioPromptBlock: core.serialization.ObjectSchema<
 });
 
 export declare namespace AudioPromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "AUDIO";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

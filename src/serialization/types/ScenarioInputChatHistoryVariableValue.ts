@@ -17,7 +17,7 @@ export const ScenarioInputChatHistoryVariableValue: core.serialization.ObjectSch
 });
 
 export declare namespace ScenarioInputChatHistoryVariableValue {
-    interface Raw {
+    export interface Raw {
         type: "CHAT_HISTORY";
         value?: ChatMessage.Raw[] | null;
         input_variable_id: string;

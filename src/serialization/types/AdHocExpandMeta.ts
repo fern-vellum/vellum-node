@@ -15,7 +15,7 @@ export const AdHocExpandMeta: core.serialization.ObjectSchema<serializers.AdHocE
     });
 
 export declare namespace AdHocExpandMeta {
-    interface Raw {
+    export interface Raw {
         cost?: boolean | null;
         model_name?: boolean | null;
         usage?: boolean | null;

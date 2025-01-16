@@ -15,12 +15,12 @@ export const TestSuiteRunWorkflowReleaseTagExecConfigRequest: core.serialization
     data: TestSuiteRunWorkflowReleaseTagExecConfigDataRequest,
     testCaseIds: core.serialization.property(
         "test_case_ids",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
 });
 
 export declare namespace TestSuiteRunWorkflowReleaseTagExecConfigRequest {
-    interface Raw {
+    export interface Raw {
         type: "WORKFLOW_RELEASE_TAG";
         data: TestSuiteRunWorkflowReleaseTagExecConfigDataRequest.Raw;
         test_case_ids?: string[] | null;

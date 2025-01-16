@@ -18,7 +18,7 @@ export const PaginatedTestSuiteRunExecutionList: core.serialization.ObjectSchema
 });
 
 export declare namespace PaginatedTestSuiteRunExecutionList {
-    interface Raw {
+    export interface Raw {
         count: number;
         next?: string | null;
         previous?: string | null;

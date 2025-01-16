@@ -19,7 +19,7 @@ export const NodeOutputCompiledChatHistoryValue: core.serialization.ObjectSchema
 });
 
 export declare namespace NodeOutputCompiledChatHistoryValue {
-    interface Raw {
+    export interface Raw {
         type: "CHAT_HISTORY";
         value?: ChatMessage.Raw[] | null;
         node_output_id: string;

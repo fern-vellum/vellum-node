@@ -18,7 +18,7 @@ export const TestCaseFunctionCallVariableValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestCaseFunctionCallVariableValue {
-    interface Raw {
+    export interface Raw {
         variable_id: string;
         name: string;
         type: "FUNCTION_CALL";

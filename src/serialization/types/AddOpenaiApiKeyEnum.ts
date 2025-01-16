@@ -12,5 +12,5 @@ export const AddOpenaiApiKeyEnum: core.serialization.Schema<
 > = core.serialization.boolean();
 
 export declare namespace AddOpenaiApiKeyEnum {
-    type Raw = boolean;
+    export type Raw = boolean;
 }

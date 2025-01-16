@@ -15,7 +15,7 @@ export const MetricDefinitionExecution: core.serialization.ObjectSchema<
 });
 
 export declare namespace MetricDefinitionExecution {
-    interface Raw {
+    export interface Raw {
         outputs: TestSuiteRunMetricOutput.Raw[];
     }
 }

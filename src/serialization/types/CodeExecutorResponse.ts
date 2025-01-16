@@ -15,7 +15,7 @@ export const CodeExecutorResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutorResponse {
-    interface Raw {
+    export interface Raw {
         log: string;
         output: serializers.VellumValue.Raw;
     }

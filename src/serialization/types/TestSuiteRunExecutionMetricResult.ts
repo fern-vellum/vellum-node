@@ -17,12 +17,12 @@ export const TestSuiteRunExecutionMetricResult: core.serialization.ObjectSchema<
     metricLabel: core.serialization.property("metric_label", core.serialization.string().optional()),
     metricDefinition: core.serialization.property(
         "metric_definition",
-        TestSuiteRunExecutionMetricDefinition.optional()
+        TestSuiteRunExecutionMetricDefinition.optional(),
     ),
 });
 
 export declare namespace TestSuiteRunExecutionMetricResult {
-    interface Raw {
+    export interface Raw {
         metric_id: string;
         outputs: TestSuiteRunMetricOutput.Raw[];
         metric_label?: string | null;

@@ -7,7 +7,6 @@
  * - `or` - OR
  */
 export type MetadataFilterRuleCombinator = "and" | "or";
-
 export const MetadataFilterRuleCombinator = {
     And: "and",
     Or: "or",

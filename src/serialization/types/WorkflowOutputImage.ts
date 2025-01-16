@@ -18,7 +18,7 @@ export const WorkflowOutputImage: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowOutputImage {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "IMAGE";

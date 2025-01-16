@@ -14,7 +14,7 @@ export const ConditionalNodeResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace ConditionalNodeResultData {
-    interface Raw {
+    export interface Raw {
         source_handle_id?: string | null;
     }
 }

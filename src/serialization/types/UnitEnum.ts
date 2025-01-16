@@ -10,5 +10,5 @@ export const UnitEnum: core.serialization.Schema<serializers.UnitEnum.Raw, Vellu
     core.serialization.stringLiteral("USD");
 
 export declare namespace UnitEnum {
-    type Raw = "USD";
+    export type Raw = "USD";
 }

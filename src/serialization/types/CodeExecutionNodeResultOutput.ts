@@ -29,7 +29,7 @@ export const CodeExecutionNodeResultOutput: core.serialization.Schema<
 ]);
 
 export declare namespace CodeExecutionNodeResultOutput {
-    type Raw =
+    export type Raw =
         | CodeExecutionNodeStringResult.Raw
         | CodeExecutionNodeNumberResult.Raw
         | CodeExecutionNodeJsonResult.Raw

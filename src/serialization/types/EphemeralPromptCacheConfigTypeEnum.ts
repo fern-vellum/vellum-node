@@ -12,5 +12,5 @@ export const EphemeralPromptCacheConfigTypeEnum: core.serialization.Schema<
 > = core.serialization.stringLiteral("EPHEMERAL");
 
 export declare namespace EphemeralPromptCacheConfigTypeEnum {
-    type Raw = "EPHEMERAL";
+    export type Raw = "EPHEMERAL";
 }

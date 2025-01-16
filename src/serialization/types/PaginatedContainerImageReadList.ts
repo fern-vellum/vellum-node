@@ -18,7 +18,7 @@ export const PaginatedContainerImageReadList: core.serialization.ObjectSchema<
 });
 
 export declare namespace PaginatedContainerImageReadList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;

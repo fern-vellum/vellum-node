@@ -13,7 +13,7 @@ export const JsonVellumValue: core.serialization.ObjectSchema<serializers.JsonVe
     });
 
 export declare namespace JsonVellumValue {
-    interface Raw {
+    export interface Raw {
         type: "JSON";
         value?: unknown;
     }

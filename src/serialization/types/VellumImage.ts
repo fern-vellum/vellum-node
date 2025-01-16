@@ -13,7 +13,7 @@ export const VellumImage: core.serialization.ObjectSchema<serializers.VellumImag
     });
 
 export declare namespace VellumImage {
-    interface Raw {
+    export interface Raw {
         src: string;
         metadata?: Record<string, unknown> | null;
     }

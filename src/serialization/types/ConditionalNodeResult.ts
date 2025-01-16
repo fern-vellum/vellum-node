@@ -16,7 +16,7 @@ export const ConditionalNodeResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace ConditionalNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "CONDITIONAL";
         data: ConditionalNodeResultData.Raw;
     }

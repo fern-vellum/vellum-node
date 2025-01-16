@@ -11,20 +11,20 @@ export const GenerateRequest: core.serialization.ObjectSchema<serializers.Genera
     core.serialization.object({
         inputValues: core.serialization.property(
             "input_values",
-            core.serialization.record(core.serialization.string(), core.serialization.unknown())
+            core.serialization.record(core.serialization.string(), core.serialization.unknown()),
         ),
         chatHistory: core.serialization.property(
             "chat_history",
-            core.serialization.list(ChatMessageRequest).optional()
+            core.serialization.list(ChatMessageRequest).optional(),
         ),
         externalIds: core.serialization.property(
             "external_ids",
-            core.serialization.list(core.serialization.string()).optional()
+            core.serialization.list(core.serialization.string()).optional(),
         ),
     });
 
 export declare namespace GenerateRequest {
-    interface Raw {
+    export interface Raw {
         input_values: Record<string, unknown>;
         chat_history?: ChatMessageRequest.Raw[] | null;
         external_ids?: string[] | null;

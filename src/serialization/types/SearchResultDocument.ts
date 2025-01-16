@@ -17,7 +17,7 @@ export const SearchResultDocument: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchResultDocument {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         label: string;
         external_id?: string | null;

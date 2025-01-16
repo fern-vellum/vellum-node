@@ -14,14 +14,14 @@ export declare namespace Fetcher {
         method: string;
         contentType?: string;
         headers?: Record<string, string | undefined>;
-        queryParameters?: Record<string, string | string[] | object | object[]>;
+        queryParameters?: Record<string, string | string[] | object | object[] | null>;
         body?: unknown;
         timeoutMs?: number;
         maxRetries?: number;
         withCredentials?: boolean;
         abortSignal?: AbortSignal;
         requestType?: "json" | "file" | "bytes";
-        responseType?: "json" | "blob" | "sse" | "streaming" | "text";
+        responseType?: "json" | "blob" | "sse" | "streaming" | "text" | "arrayBuffer";
         duplex?: "half";
     }
 
@@ -82,9 +82,9 @@ export async function fetcherImpl<R = unknown>(args: Fetcher.Args): Promise<APIR
                     args.timeoutMs,
                     args.abortSignal,
                     args.withCredentials,
-                    args.duplex
+                    args.duplex,
                 ),
-            args.maxRetries
+            args.maxRetries,
         );
         let responseBody = await getResponseBody(response, args.responseType);
 

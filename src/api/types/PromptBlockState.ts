@@ -7,7 +7,6 @@
  * - `DISABLED` - Disabled
  */
 export type PromptBlockState = "ENABLED" | "DISABLED";
-
 export const PromptBlockState = {
     Enabled: "ENABLED",
     Disabled: "DISABLED",

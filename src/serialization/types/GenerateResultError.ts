@@ -14,7 +14,7 @@ export const GenerateResultError: core.serialization.ObjectSchema<
 });
 
 export declare namespace GenerateResultError {
-    interface Raw {
+    export interface Raw {
         message: string;
     }
 }

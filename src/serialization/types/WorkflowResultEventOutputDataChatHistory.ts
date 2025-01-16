@@ -22,7 +22,7 @@ export const WorkflowResultEventOutputDataChatHistory: core.serialization.Object
 });
 
 export declare namespace WorkflowResultEventOutputDataChatHistory {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         name: string;
         state: WorkflowNodeResultEventState.Raw;

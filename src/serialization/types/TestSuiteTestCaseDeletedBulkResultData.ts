@@ -14,7 +14,7 @@ export const TestSuiteTestCaseDeletedBulkResultData: core.serialization.ObjectSc
 });
 
 export declare namespace TestSuiteTestCaseDeletedBulkResultData {
-    interface Raw {
+    export interface Raw {
         id: string;
     }
 }

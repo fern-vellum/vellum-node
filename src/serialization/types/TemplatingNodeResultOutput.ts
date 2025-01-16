@@ -29,7 +29,7 @@ export const TemplatingNodeResultOutput: core.serialization.Schema<
 ]);
 
 export declare namespace TemplatingNodeResultOutput {
-    type Raw =
+    export type Raw =
         | TemplatingNodeStringResult.Raw
         | TemplatingNodeNumberResult.Raw
         | TemplatingNodeJsonResult.Raw

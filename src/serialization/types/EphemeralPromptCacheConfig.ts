@@ -15,7 +15,7 @@ export const EphemeralPromptCacheConfig: core.serialization.ObjectSchema<
 });
 
 export declare namespace EphemeralPromptCacheConfig {
-    interface Raw {
+    export interface Raw {
         type?: EphemeralPromptCacheConfigTypeEnum.Raw | null;
     }
 }

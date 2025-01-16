@@ -16,7 +16,7 @@ export const TestSuiteRunExecutionMetricDefinition: core.serialization.ObjectSch
 });
 
 export declare namespace TestSuiteRunExecutionMetricDefinition {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         label?: string | null;
         name?: string | null;

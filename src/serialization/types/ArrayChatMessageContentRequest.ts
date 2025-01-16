@@ -16,7 +16,7 @@ export const ArrayChatMessageContentRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace ArrayChatMessageContentRequest {
-    interface Raw {
+    export interface Raw {
         type: "ARRAY";
         value: ArrayChatMessageContentItemRequest.Raw[];
     }

@@ -14,7 +14,7 @@ export const MapNodeResult: core.serialization.ObjectSchema<serializers.MapNodeR
     });
 
 export declare namespace MapNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "MAP";
         data?: MapNodeResultData.Raw | null;
     }

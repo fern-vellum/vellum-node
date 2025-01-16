@@ -17,7 +17,7 @@ export const TestCaseArrayVariableValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestCaseArrayVariableValue {
-    interface Raw {
+    export interface Raw {
         variable_id: string;
         name: string;
         type: "ARRAY";

@@ -19,7 +19,7 @@ export const GenerateStreamBodyRequest: core.serialization.Schema<
 });
 
 export declare namespace GenerateStreamBodyRequest {
-    interface Raw {
+    export interface Raw {
         deployment_id?: string | null;
         deployment_name?: string | null;
         requests: GenerateRequest.Raw[];

@@ -23,7 +23,7 @@ export const TestSuiteRunMetricOutput: core.serialization.Schema<
 ]);
 
 export declare namespace TestSuiteRunMetricOutput {
-    type Raw =
+    export type Raw =
         | TestSuiteRunMetricStringOutput.Raw
         | TestSuiteRunMetricNumberOutput.Raw
         | TestSuiteRunMetricJsonOutput.Raw

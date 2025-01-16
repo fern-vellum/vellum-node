@@ -21,12 +21,12 @@ export const InitiatedWorkflowNodeResultEvent: core.serialization.ObjectSchema<
     sourceExecutionId: core.serialization.property("source_execution_id", core.serialization.string().optional()),
     inputValues: core.serialization.property(
         "input_values",
-        core.serialization.list(NodeInputVariableCompiledValue).optional()
+        core.serialization.list(NodeInputVariableCompiledValue).optional(),
     ),
 });
 
 export declare namespace InitiatedWorkflowNodeResultEvent {
-    interface Raw {
+    export interface Raw {
         id: string;
         node_id: string;
         node_result_id: string;

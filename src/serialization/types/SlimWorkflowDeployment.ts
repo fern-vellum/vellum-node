@@ -26,7 +26,7 @@ export const SlimWorkflowDeployment: core.serialization.ObjectSchema<
 });
 
 export declare namespace SlimWorkflowDeployment {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         label: string;

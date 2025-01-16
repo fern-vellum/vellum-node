@@ -18,7 +18,7 @@ export const DocumentIndexUpdateRequest: core.serialization.Schema<
 });
 
 export declare namespace DocumentIndexUpdateRequest {
-    interface Raw {
+    export interface Raw {
         label: string;
         status?: EntityStatus.Raw | null;
         environment?: EnvironmentEnum.Raw | null;

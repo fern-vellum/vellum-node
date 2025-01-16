@@ -11,7 +11,6 @@ export type NewMemberJoinBehaviorEnum =
     | "AUTO_ACCEPT_FROM_SHARED_DOMAIN"
     | "ALLOW_REQUESTS_FROM_SHARED_DOMAIN"
     | "REQUIRE_EXPLICIT_INVITE";
-
 export const NewMemberJoinBehaviorEnum = {
     AutoAcceptFromSharedDomain: "AUTO_ACCEPT_FROM_SHARED_DOMAIN",
     AllowRequestsFromSharedDomain: "ALLOW_REQUESTS_FROM_SHARED_DOMAIN",

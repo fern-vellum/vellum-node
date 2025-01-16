@@ -16,7 +16,7 @@ export const RawPromptExecutionOverridesRequest: core.serialization.ObjectSchema
 });
 
 export declare namespace RawPromptExecutionOverridesRequest {
-    interface Raw {
+    export interface Raw {
         body?: Record<string, unknown> | null;
         headers?: Record<string, string | null | undefined> | null;
         url?: string | null;

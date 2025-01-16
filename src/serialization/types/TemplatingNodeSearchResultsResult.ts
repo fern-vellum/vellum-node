@@ -17,7 +17,7 @@ export const TemplatingNodeSearchResultsResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TemplatingNodeSearchResultsResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "SEARCH_RESULTS";
         value?: SearchResult.Raw[] | null;

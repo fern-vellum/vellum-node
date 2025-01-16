@@ -16,7 +16,7 @@ export const JsonInputRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace JsonInputRequest {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "JSON";
         value?: unknown;

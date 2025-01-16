@@ -16,7 +16,7 @@ export const TemplatingNodeArrayResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TemplatingNodeArrayResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "ARRAY";
         value?: serializers.VellumValue.Raw[] | null;

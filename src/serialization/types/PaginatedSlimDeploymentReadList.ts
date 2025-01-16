@@ -18,7 +18,7 @@ export const PaginatedSlimDeploymentReadList: core.serialization.ObjectSchema<
 });
 
 export declare namespace PaginatedSlimDeploymentReadList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;

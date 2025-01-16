@@ -22,7 +22,7 @@ export const ContainerImageRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace ContainerImageRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         visibility: EntityVisibility.Raw;

@@ -17,7 +17,7 @@ export const TestSuiteRunCreateRequest: core.serialization.Schema<
 });
 
 export declare namespace TestSuiteRunCreateRequest {
-    interface Raw {
+    export interface Raw {
         test_suite_id?: string | null;
         test_suite_name?: string | null;
         exec_config: TestSuiteRunExecConfigRequest.Raw;

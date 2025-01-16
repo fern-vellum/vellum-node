@@ -16,7 +16,7 @@ export const PromptNodeResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace PromptNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "PROMPT";
         data: PromptNodeResultData.Raw;
     }

@@ -18,7 +18,7 @@ export const NodeInputCompiledSearchResultsValue: core.serialization.ObjectSchem
 });
 
 export declare namespace NodeInputCompiledSearchResultsValue {
-    interface Raw {
+    export interface Raw {
         node_input_id: string;
         key: string;
         type: "SEARCH_RESULTS";

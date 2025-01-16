@@ -21,7 +21,7 @@ export const StreamingExecutePromptEvent: core.serialization.ObjectSchema<
 });
 
 export declare namespace StreamingExecutePromptEvent {
-    interface Raw {
+    export interface Raw {
         state: "STREAMING";
         output: PromptOutput.Raw;
         output_index: number;

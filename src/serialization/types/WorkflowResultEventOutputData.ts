@@ -29,7 +29,7 @@ export const WorkflowResultEventOutputData: core.serialization.Schema<
 ]);
 
 export declare namespace WorkflowResultEventOutputData {
-    type Raw =
+    export type Raw =
         | WorkflowResultEventOutputDataString.Raw
         | WorkflowResultEventOutputDataNumber.Raw
         | WorkflowResultEventOutputDataJson.Raw

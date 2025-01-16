@@ -16,7 +16,7 @@ export const NamedTestCaseNumberVariableValueRequest: core.serialization.ObjectS
 });
 
 export declare namespace NamedTestCaseNumberVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "NUMBER";
         value?: number | null;
         name: string;

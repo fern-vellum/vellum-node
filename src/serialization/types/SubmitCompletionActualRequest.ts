@@ -19,7 +19,7 @@ export const SubmitCompletionActualRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SubmitCompletionActualRequest {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         external_id?: string | null;
         text?: string | null;

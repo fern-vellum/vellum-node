@@ -15,7 +15,7 @@ export const PatchedWorkspaceSecretUpdateRequest: core.serialization.Schema<
 });
 
 export declare namespace PatchedWorkspaceSecretUpdateRequest {
-    interface Raw {
+    export interface Raw {
         label?: string | null;
         value?: string | null;
     }

@@ -21,7 +21,7 @@ export const TestSuiteTestCaseBulkOperationRequest: core.serialization.Schema<
 ]);
 
 export declare namespace TestSuiteTestCaseBulkOperationRequest {
-    type Raw =
+    export type Raw =
         | TestSuiteTestCaseCreateBulkOperationRequest.Raw
         | TestSuiteTestCaseReplaceBulkOperationRequest.Raw
         | TestSuiteTestCaseUpsertBulkOperationRequest.Raw

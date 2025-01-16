@@ -16,7 +16,7 @@ export const OpenAiVectorizerTextEmbedding3Small: core.serialization.ObjectSchem
 });
 
 export declare namespace OpenAiVectorizerTextEmbedding3Small {
-    interface Raw {
+    export interface Raw {
         config: OpenAiVectorizerConfig.Raw;
         model_name: "text-embedding-3-small";
     }

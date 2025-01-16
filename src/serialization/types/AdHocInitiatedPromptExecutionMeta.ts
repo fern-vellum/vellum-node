@@ -15,7 +15,7 @@ export const AdHocInitiatedPromptExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace AdHocInitiatedPromptExecutionMeta {
-    interface Raw {
+    export interface Raw {
         model_name?: string | null;
         latency?: number | null;
     }

@@ -15,7 +15,7 @@ export const GenerateResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace GenerateResultData {
-    interface Raw {
+    export interface Raw {
         completions: EnrichedNormalizedCompletion.Raw[];
     }
 }

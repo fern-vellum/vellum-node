@@ -16,7 +16,7 @@ export const TestSuiteRunMetricStringOutput: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestSuiteRunMetricStringOutput {
-    interface Raw {
+    export interface Raw {
         value?: string | null;
         type: "STRING";
         name: string;

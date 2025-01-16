@@ -16,7 +16,7 @@ export const FunctionCallRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace FunctionCallRequest {
-    interface Raw {
+    export interface Raw {
         arguments: Record<string, unknown>;
         id?: string | null;
         name: string;

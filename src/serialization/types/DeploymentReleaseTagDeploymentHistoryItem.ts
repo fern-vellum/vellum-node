@@ -15,7 +15,7 @@ export const DeploymentReleaseTagDeploymentHistoryItem: core.serialization.Objec
 });
 
 export declare namespace DeploymentReleaseTagDeploymentHistoryItem {
-    interface Raw {
+    export interface Raw {
         id: string;
         timestamp: string;
     }

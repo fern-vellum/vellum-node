@@ -20,7 +20,7 @@ export const SearchRequestOptionsRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchRequestOptionsRequest {
-    interface Raw {
+    export interface Raw {
         limit?: number | null;
         weights?: SearchWeightsRequest.Raw | null;
         result_merging?: SearchResultMergingRequest.Raw | null;

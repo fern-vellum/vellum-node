@@ -3,7 +3,6 @@
  */
 
 export type WorkflowDeploymentsListRequestStatus = "ACTIVE" | "ARCHIVED";
-
 export const WorkflowDeploymentsListRequestStatus = {
     Active: "ACTIVE",
     Archived: "ARCHIVED",

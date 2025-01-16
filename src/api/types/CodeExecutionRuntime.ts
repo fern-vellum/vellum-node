@@ -7,7 +7,6 @@
  * - `TYPESCRIPT_5_3_3` - TYPESCRIPT_5_3_3
  */
 export type CodeExecutionRuntime = "PYTHON_3_11_6" | "TYPESCRIPT_5_3_3";
-
 export const CodeExecutionRuntime = {
     Python3116: "PYTHON_3_11_6",
     Typescript533: "TYPESCRIPT_5_3_3",

@@ -14,13 +14,13 @@ export const NormalizedTokenLogProbs: core.serialization.ObjectSchema<
     logprob: core.serialization.number().optional(),
     topLogprobs: core.serialization.property(
         "top_logprobs",
-        core.serialization.record(core.serialization.string(), core.serialization.number().optional()).optional()
+        core.serialization.record(core.serialization.string(), core.serialization.number().optional()).optional(),
     ),
     textOffset: core.serialization.property("text_offset", core.serialization.number()),
 });
 
 export declare namespace NormalizedTokenLogProbs {
-    interface Raw {
+    export interface Raw {
         token: string;
         logprob?: number | null;
         top_logprobs?: Record<string, number | null | undefined> | null;

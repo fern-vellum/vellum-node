@@ -13,7 +13,7 @@ export const Price: core.serialization.ObjectSchema<serializers.Price.Raw, Vellu
 });
 
 export declare namespace Price {
-    interface Raw {
+    export interface Raw {
         value: number;
         unit: UnitEnum.Raw;
     }

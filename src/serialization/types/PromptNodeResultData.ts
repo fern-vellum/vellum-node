@@ -20,7 +20,7 @@ export const PromptNodeResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace PromptNodeResultData {
-    interface Raw {
+    export interface Raw {
         execution_meta?: PromptNodeExecutionMeta.Raw | null;
         output_id: string;
         array_output_id?: string | null;

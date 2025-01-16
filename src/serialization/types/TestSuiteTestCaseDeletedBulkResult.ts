@@ -17,7 +17,7 @@ export const TestSuiteTestCaseDeletedBulkResult: core.serialization.ObjectSchema
 });
 
 export declare namespace TestSuiteTestCaseDeletedBulkResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "DELETED";
         data: TestSuiteTestCaseDeletedBulkResultData.Raw;

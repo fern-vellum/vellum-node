@@ -15,16 +15,16 @@ export const MlModelUsage: core.serialization.ObjectSchema<serializers.MlModelUs
         computeNanos: core.serialization.property("compute_nanos", core.serialization.number().optional()),
         cacheCreationInputTokens: core.serialization.property(
             "cache_creation_input_tokens",
-            core.serialization.number().optional()
+            core.serialization.number().optional(),
         ),
         cacheReadInputTokens: core.serialization.property(
             "cache_read_input_tokens",
-            core.serialization.number().optional()
+            core.serialization.number().optional(),
         ),
     });
 
 export declare namespace MlModelUsage {
-    interface Raw {
+    export interface Raw {
         output_token_count?: number | null;
         input_token_count?: number | null;
         input_char_count?: number | null;

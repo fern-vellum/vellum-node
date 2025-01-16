@@ -7,7 +7,6 @@
  * - `NONE` - NONE
  */
 export type LogprobsEnum = "ALL" | "NONE";
-
 export const LogprobsEnum = {
     All: "ALL",
     None: "NONE",

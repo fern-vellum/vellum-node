@@ -17,7 +17,7 @@ export const FolderEntityFolder: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityFolder {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "FOLDER";
         data: FolderEntityFolderData.Raw;

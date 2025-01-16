@@ -10,7 +10,6 @@
  * - `CANCELLED` - Cancelled
  */
 export type TestSuiteRunState = "QUEUED" | "RUNNING" | "COMPLETE" | "FAILED" | "CANCELLED";
-
 export const TestSuiteRunState = {
     Queued: "QUEUED",
     Running: "RUNNING",

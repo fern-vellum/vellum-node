@@ -15,7 +15,7 @@ export const TestSuiteRunWorkflowReleaseTagExecConfigDataRequest: core.serializa
 });
 
 export declare namespace TestSuiteRunWorkflowReleaseTagExecConfigDataRequest {
-    interface Raw {
+    export interface Raw {
         workflow_deployment_id: string;
         tag?: string | null;
     }

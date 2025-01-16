@@ -16,7 +16,7 @@ export const ImageChatMessageContent: core.serialization.ObjectSchema<
 });
 
 export declare namespace ImageChatMessageContent {
-    interface Raw {
+    export interface Raw {
         type: "IMAGE";
         value: VellumImage.Raw;
     }

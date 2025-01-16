@@ -17,7 +17,7 @@ export const CodeExecutionNodeChatHistoryResult: core.serialization.ObjectSchema
 });
 
 export declare namespace CodeExecutionNodeChatHistoryResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "CHAT_HISTORY";
         value?: ChatMessage.Raw[] | null;

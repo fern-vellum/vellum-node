@@ -10,7 +10,6 @@
  * - `FAILED` - Failed
  */
 export type IndexingStateEnum = "AWAITING_PROCESSING" | "QUEUED" | "INDEXING" | "INDEXED" | "FAILED";
-
 export const IndexingStateEnum = {
     AwaitingProcessing: "AWAITING_PROCESSING",
     Queued: "QUEUED",

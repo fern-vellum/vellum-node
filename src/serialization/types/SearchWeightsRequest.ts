@@ -15,7 +15,7 @@ export const SearchWeightsRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchWeightsRequest {
-    interface Raw {
+    export interface Raw {
         semantic_similarity?: number | null;
         keywords?: number | null;
     }

@@ -15,7 +15,7 @@ export const StringVellumValueRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace StringVellumValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "STRING";
         value?: string | null;
     }

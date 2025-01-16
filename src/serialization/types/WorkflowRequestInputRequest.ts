@@ -21,7 +21,7 @@ export const WorkflowRequestInputRequest: core.serialization.Schema<
 ]);
 
 export declare namespace WorkflowRequestInputRequest {
-    type Raw =
+    export type Raw =
         | WorkflowRequestStringInputRequest.Raw
         | WorkflowRequestJsonInputRequest.Raw
         | WorkflowRequestChatHistoryInputRequest.Raw

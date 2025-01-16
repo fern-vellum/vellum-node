@@ -17,7 +17,7 @@ export const FolderEntityDocumentIndex: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityDocumentIndex {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "DOCUMENT_INDEX";
         data: FolderEntityDocumentIndexData.Raw;

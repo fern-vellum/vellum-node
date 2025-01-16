@@ -12,5 +12,5 @@ export const WorkflowsPullRequestFormat: core.serialization.Schema<
 > = core.serialization.enum_(["json", "zip"]);
 
 export declare namespace WorkflowsPullRequestFormat {
-    type Raw = "json" | "zip";
+    export type Raw = "json" | "zip";
 }

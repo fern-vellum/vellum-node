@@ -28,23 +28,113 @@ import { WorkspaceSecrets } from "./api/resources/workspaceSecrets/client/Client
 import { Workspaces } from "./api/resources/workspaces/client/Client";
 
 export declare namespace VellumClient {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         apiKey?: core.Supplier<string | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
 export class VellumClient {
+    protected _adHoc: AdHoc | undefined;
+    protected _containerImages: ContainerImages | undefined;
+    protected _deployments: Deployments | undefined;
+    protected _documentIndexes: DocumentIndexes | undefined;
+    protected _documents: Documents | undefined;
+    protected _folderEntities: FolderEntities | undefined;
+    protected _metricDefinitions: MetricDefinitions | undefined;
+    protected _mlModels: MlModels | undefined;
+    protected _organizations: Organizations | undefined;
+    protected _sandboxes: Sandboxes | undefined;
+    protected _testSuiteRuns: TestSuiteRuns | undefined;
+    protected _testSuites: TestSuites | undefined;
+    protected _workflowDeployments: WorkflowDeployments | undefined;
+    protected _workflowSandboxes: WorkflowSandboxes | undefined;
+    protected _workflows: Workflows | undefined;
+    protected _workspaceSecrets: WorkspaceSecrets | undefined;
+    protected _workspaces: Workspaces | undefined;
+
     constructor(protected readonly _options: VellumClient.Options = {}) {}
+
+    public get adHoc(): AdHoc {
+        return (this._adHoc ??= new AdHoc(this._options));
+    }
+
+    public get containerImages(): ContainerImages {
+        return (this._containerImages ??= new ContainerImages(this._options));
+    }
+
+    public get deployments(): Deployments {
+        return (this._deployments ??= new Deployments(this._options));
+    }
+
+    public get documentIndexes(): DocumentIndexes {
+        return (this._documentIndexes ??= new DocumentIndexes(this._options));
+    }
+
+    public get documents(): Documents {
+        return (this._documents ??= new Documents(this._options));
+    }
+
+    public get folderEntities(): FolderEntities {
+        return (this._folderEntities ??= new FolderEntities(this._options));
+    }
+
+    public get metricDefinitions(): MetricDefinitions {
+        return (this._metricDefinitions ??= new MetricDefinitions(this._options));
+    }
+
+    public get mlModels(): MlModels {
+        return (this._mlModels ??= new MlModels(this._options));
+    }
+
+    public get organizations(): Organizations {
+        return (this._organizations ??= new Organizations(this._options));
+    }
+
+    public get sandboxes(): Sandboxes {
+        return (this._sandboxes ??= new Sandboxes(this._options));
+    }
+
+    public get testSuiteRuns(): TestSuiteRuns {
+        return (this._testSuiteRuns ??= new TestSuiteRuns(this._options));
+    }
+
+    public get testSuites(): TestSuites {
+        return (this._testSuites ??= new TestSuites(this._options));
+    }
+
+    public get workflowDeployments(): WorkflowDeployments {
+        return (this._workflowDeployments ??= new WorkflowDeployments(this._options));
+    }
+
+    public get workflowSandboxes(): WorkflowSandboxes {
+        return (this._workflowSandboxes ??= new WorkflowSandboxes(this._options));
+    }
+
+    public get workflows(): Workflows {
+        return (this._workflows ??= new Workflows(this._options));
+    }
+
+    public get workspaceSecrets(): WorkspaceSecrets {
+        return (this._workspaceSecrets ??= new WorkspaceSecrets(this._options));
+    }
+
+    public get workspaces(): Workspaces {
+        return (this._workspaces ??= new Workspaces(this._options));
+    }
 
     /**
      * @param {Vellum.CodeExecutor} request
@@ -70,23 +160,25 @@ export class VellumClient {
      */
     public async executeCode(
         request: Vellum.CodeExecutor,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<Vellum.CodeExecutorResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/execute-code"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/execute-code",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -123,7 +215,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/execute-code.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -153,23 +245,25 @@ export class VellumClient {
      */
     public async executePrompt(
         request: Vellum.ExecutePromptRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<Vellum.ExecutePromptResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/execute-prompt"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/execute-prompt",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -212,7 +306,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/execute-prompt.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -225,23 +319,25 @@ export class VellumClient {
      */
     public async executePromptStream(
         request: Vellum.ExecutePromptStreamRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<core.Stream<Vellum.ExecutePromptEvent>> {
         const _response = await core.fetcher<stream.Readable>({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/execute-prompt-stream"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/execute-prompt-stream",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -295,7 +391,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/execute-prompt-stream.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -324,23 +420,25 @@ export class VellumClient {
      */
     public async executeWorkflow(
         request: Vellum.ExecuteWorkflowRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<Vellum.ExecuteWorkflowResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/execute-workflow"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/execute-workflow",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -381,7 +479,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/execute-workflow.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -394,23 +492,25 @@ export class VellumClient {
      */
     public async executeWorkflowStream(
         request: Vellum.ExecuteWorkflowStreamRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<core.Stream<Vellum.WorkflowStreamEvent>> {
         const _response = await core.fetcher<stream.Readable>({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/execute-workflow-stream"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/execute-workflow-stream",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -462,7 +562,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/execute-workflow-stream.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -495,23 +595,25 @@ export class VellumClient {
      */
     public async generate(
         request: Vellum.GenerateBodyRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<Vellum.GenerateResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/generate"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/generate",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -554,7 +656,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/generate.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -570,23 +672,25 @@ export class VellumClient {
      */
     public async generateStream(
         request: Vellum.GenerateStreamBodyRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<core.Stream<Vellum.GenerateStreamResponse>> {
         const _response = await core.fetcher<stream.Readable>({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/generate-stream"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/generate-stream",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -640,7 +744,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/generate-stream.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -665,23 +769,25 @@ export class VellumClient {
      */
     public async search(
         request: Vellum.SearchRequestBodyRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<Vellum.SearchResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/search"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/search",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -722,7 +828,7 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/search.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -747,23 +853,25 @@ export class VellumClient {
      */
     public async submitCompletionActuals(
         request: Vellum.SubmitCompletionActualsRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/submit-completion-actuals"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/submit-completion-actuals",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -799,7 +907,9 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError(
+                    "Timeout exceeded when calling POST /v1/submit-completion-actuals.",
+                );
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -824,23 +934,25 @@ export class VellumClient {
      */
     public async submitWorkflowExecutionActuals(
         request: Vellum.SubmitWorkflowExecutionActualsRequest,
-        requestOptions?: VellumClient.RequestOptions
+        requestOptions?: VellumClient.RequestOptions,
     ): Promise<void> {
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/submit-workflow-execution-actuals"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/submit-workflow-execution-actuals",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -869,114 +981,14 @@ export class VellumClient {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError(
+                    "Timeout exceeded when calling POST /v1/submit-workflow-execution-actuals.",
+                );
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
                 });
         }
-    }
-
-    protected _adHoc: AdHoc | undefined;
-
-    public get adHoc(): AdHoc {
-        return (this._adHoc ??= new AdHoc(this._options));
-    }
-
-    protected _containerImages: ContainerImages | undefined;
-
-    public get containerImages(): ContainerImages {
-        return (this._containerImages ??= new ContainerImages(this._options));
-    }
-
-    protected _deployments: Deployments | undefined;
-
-    public get deployments(): Deployments {
-        return (this._deployments ??= new Deployments(this._options));
-    }
-
-    protected _documentIndexes: DocumentIndexes | undefined;
-
-    public get documentIndexes(): DocumentIndexes {
-        return (this._documentIndexes ??= new DocumentIndexes(this._options));
-    }
-
-    protected _documents: Documents | undefined;
-
-    public get documents(): Documents {
-        return (this._documents ??= new Documents(this._options));
-    }
-
-    protected _folderEntities: FolderEntities | undefined;
-
-    public get folderEntities(): FolderEntities {
-        return (this._folderEntities ??= new FolderEntities(this._options));
-    }
-
-    protected _metricDefinitions: MetricDefinitions | undefined;
-
-    public get metricDefinitions(): MetricDefinitions {
-        return (this._metricDefinitions ??= new MetricDefinitions(this._options));
-    }
-
-    protected _mlModels: MlModels | undefined;
-
-    public get mlModels(): MlModels {
-        return (this._mlModels ??= new MlModels(this._options));
-    }
-
-    protected _organizations: Organizations | undefined;
-
-    public get organizations(): Organizations {
-        return (this._organizations ??= new Organizations(this._options));
-    }
-
-    protected _sandboxes: Sandboxes | undefined;
-
-    public get sandboxes(): Sandboxes {
-        return (this._sandboxes ??= new Sandboxes(this._options));
-    }
-
-    protected _testSuiteRuns: TestSuiteRuns | undefined;
-
-    public get testSuiteRuns(): TestSuiteRuns {
-        return (this._testSuiteRuns ??= new TestSuiteRuns(this._options));
-    }
-
-    protected _testSuites: TestSuites | undefined;
-
-    public get testSuites(): TestSuites {
-        return (this._testSuites ??= new TestSuites(this._options));
-    }
-
-    protected _workflowDeployments: WorkflowDeployments | undefined;
-
-    public get workflowDeployments(): WorkflowDeployments {
-        return (this._workflowDeployments ??= new WorkflowDeployments(this._options));
-    }
-
-    protected _workflowSandboxes: WorkflowSandboxes | undefined;
-
-    public get workflowSandboxes(): WorkflowSandboxes {
-        return (this._workflowSandboxes ??= new WorkflowSandboxes(this._options));
-    }
-
-    protected _workflows: Workflows | undefined;
-
-    public get workflows(): Workflows {
-        return (this._workflows ??= new Workflows(this._options));
-    }
-
-    protected _workspaceSecrets: WorkspaceSecrets | undefined;
-
-    public get workspaceSecrets(): WorkspaceSecrets {
-        return (this._workspaceSecrets ??= new WorkspaceSecrets(this._options));
-    }
-
-    protected _workspaces: Workspaces | undefined;
-
-    public get workspaces(): Workspaces {
-        return (this._workspaces ??= new Workspaces(this._options));
     }
 
     protected async _getCustomAuthorizationHeaders() {

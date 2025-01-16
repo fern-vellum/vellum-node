@@ -12,7 +12,7 @@ export const PromptSettings: core.serialization.ObjectSchema<serializers.PromptS
     });
 
 export declare namespace PromptSettings {
-    interface Raw {
+    export interface Raw {
         timeout?: number | null;
     }
 }

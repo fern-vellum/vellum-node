@@ -16,7 +16,7 @@ export const SentenceChunking: core.serialization.ObjectSchema<
 });
 
 export declare namespace SentenceChunking {
-    interface Raw {
+    export interface Raw {
         chunker_name: "sentence-chunker";
         chunker_config?: SentenceChunkerConfig.Raw | null;
     }

@@ -16,7 +16,7 @@ export const GoogleVertexAiVectorizerTextEmbedding004: core.serialization.Object
 });
 
 export declare namespace GoogleVertexAiVectorizerTextEmbedding004 {
-    interface Raw {
+    export interface Raw {
         model_name: "text-embedding-004";
         config: GoogleVertexAiVectorizerConfig.Raw;
     }

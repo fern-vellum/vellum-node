@@ -18,7 +18,7 @@ export const TestSuiteRunExecutionErrorOutput: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestSuiteRunExecutionErrorOutput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "ERROR";
         value?: VellumError.Raw | null;

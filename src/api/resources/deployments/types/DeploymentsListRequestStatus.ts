@@ -3,7 +3,6 @@
  */
 
 export type DeploymentsListRequestStatus = "ACTIVE" | "ARCHIVED";
-
 export const DeploymentsListRequestStatus = {
     Active: "ACTIVE",
     Archived: "ARCHIVED",

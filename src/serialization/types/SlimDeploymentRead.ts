@@ -25,7 +25,7 @@ export const SlimDeploymentRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace SlimDeploymentRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         created: string;
         label: string;

@@ -17,7 +17,7 @@ export const SlimDocumentDocumentToDocumentIndex: core.serialization.ObjectSchem
 });
 
 export declare namespace SlimDocumentDocumentToDocumentIndex {
-    interface Raw {
+    export interface Raw {
         id: string;
         document_index_id: string;
         indexing_state?: IndexingStateEnum.Raw | null;

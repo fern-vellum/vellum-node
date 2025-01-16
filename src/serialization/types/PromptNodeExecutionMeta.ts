@@ -15,7 +15,7 @@ export const PromptNodeExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace PromptNodeExecutionMeta {
-    interface Raw {
+    export interface Raw {
         usage?: MlModelUsage.Raw | null;
     }
 }

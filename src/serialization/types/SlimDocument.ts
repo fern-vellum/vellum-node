@@ -19,19 +19,19 @@ export const SlimDocument: core.serialization.ObjectSchema<serializers.SlimDocum
         processingState: core.serialization.property("processing_state", DocumentProcessingState),
         processingFailureReason: core.serialization.property(
             "processing_failure_reason",
-            ProcessingFailureReasonEnum.optional()
+            ProcessingFailureReasonEnum.optional(),
         ),
         status: DocumentStatus.optional(),
         keywords: core.serialization.list(core.serialization.string()).optional(),
         metadata: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
         documentToDocumentIndexes: core.serialization.property(
             "document_to_document_indexes",
-            core.serialization.list(SlimDocumentDocumentToDocumentIndex)
+            core.serialization.list(SlimDocumentDocumentToDocumentIndex),
         ),
     });
 
 export declare namespace SlimDocument {
-    interface Raw {
+    export interface Raw {
         id: string;
         external_id?: string | null;
         last_uploaded_at: string;

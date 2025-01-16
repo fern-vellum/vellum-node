@@ -18,7 +18,7 @@ export const AdHocFulfilledPromptExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace AdHocFulfilledPromptExecutionMeta {
-    interface Raw {
+    export interface Raw {
         latency?: number | null;
         finish_reason?: FinishReasonEnum.Raw | null;
         usage?: MlModelUsage.Raw | null;

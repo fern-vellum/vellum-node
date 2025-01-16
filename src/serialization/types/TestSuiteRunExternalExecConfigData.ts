@@ -15,7 +15,7 @@ export const TestSuiteRunExternalExecConfigData: core.serialization.ObjectSchema
 });
 
 export declare namespace TestSuiteRunExternalExecConfigData {
-    interface Raw {
+    export interface Raw {
         executions: ExternalTestCaseExecution.Raw[];
     }
 }

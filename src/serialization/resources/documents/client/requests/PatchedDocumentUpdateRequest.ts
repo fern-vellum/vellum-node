@@ -17,7 +17,7 @@ export const PatchedDocumentUpdateRequest: core.serialization.Schema<
 });
 
 export declare namespace PatchedDocumentUpdateRequest {
-    interface Raw {
+    export interface Raw {
         label?: string | null;
         status?: DocumentStatus.Raw | null;
         metadata?: Record<string, unknown> | null;

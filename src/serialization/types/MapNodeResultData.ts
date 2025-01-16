@@ -16,7 +16,7 @@ export const MapNodeResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace MapNodeResultData {
-    interface Raw {
+    export interface Raw {
         execution_ids: string[];
         iteration_state?: IterationStateEnum.Raw | null;
     }

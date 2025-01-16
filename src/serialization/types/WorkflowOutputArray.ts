@@ -17,7 +17,7 @@ export const WorkflowOutputArray: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowOutputArray {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "ARRAY";

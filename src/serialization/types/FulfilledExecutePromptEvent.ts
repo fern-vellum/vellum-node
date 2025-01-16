@@ -19,7 +19,7 @@ export const FulfilledExecutePromptEvent: core.serialization.ObjectSchema<
 });
 
 export declare namespace FulfilledExecutePromptEvent {
-    interface Raw {
+    export interface Raw {
         state: "FULFILLED";
         outputs: PromptOutput.Raw[];
         execution_id: string;

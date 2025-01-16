@@ -16,7 +16,7 @@ export const PdfSearchResultMetaSource: core.serialization.ObjectSchema<
 });
 
 export declare namespace PdfSearchResultMetaSource {
-    interface Raw {
+    export interface Raw {
         document_type: "PDF";
         start_page_num?: number | null;
         end_page_num?: number | null;

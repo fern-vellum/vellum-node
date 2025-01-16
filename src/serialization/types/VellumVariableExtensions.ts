@@ -14,7 +14,7 @@ export const VellumVariableExtensions: core.serialization.ObjectSchema<
 });
 
 export declare namespace VellumVariableExtensions {
-    interface Raw {
+    export interface Raw {
         color?: string | null;
     }
 }

@@ -21,7 +21,7 @@ export const ArrayChatMessageContentItem: core.serialization.Schema<
 ]);
 
 export declare namespace ArrayChatMessageContentItem {
-    type Raw =
+    export type Raw =
         | StringChatMessageContent.Raw
         | FunctionCallChatMessageContent.Raw
         | ImageChatMessageContent.Raw

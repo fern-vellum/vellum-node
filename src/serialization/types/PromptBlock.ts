@@ -24,7 +24,7 @@ export const PromptBlock: core.serialization.Schema<serializers.PromptBlock.Raw,
     ]);
 
 export declare namespace PromptBlock {
-    type Raw =
+    export type Raw =
         | JinjaPromptBlock.Raw
         | serializers.ChatMessagePromptBlock.Raw
         | VariablePromptBlock.Raw

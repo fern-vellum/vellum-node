@@ -18,7 +18,7 @@ export const TestCaseErrorVariableValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestCaseErrorVariableValue {
-    interface Raw {
+    export interface Raw {
         variable_id: string;
         name: string;
         type: "ERROR";

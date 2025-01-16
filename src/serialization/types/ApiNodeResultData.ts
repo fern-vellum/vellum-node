@@ -19,7 +19,7 @@ export const ApiNodeResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace ApiNodeResultData {
-    interface Raw {
+    export interface Raw {
         json?: Record<string, unknown> | null;
         text_output_id: string;
         text?: string | null;

@@ -14,12 +14,12 @@ export const InstructorVectorizerConfigRequest: core.serialization.ObjectSchema<
     instructionQueryTextType: core.serialization.property("instruction_query_text_type", core.serialization.string()),
     instructionDocumentTextType: core.serialization.property(
         "instruction_document_text_type",
-        core.serialization.string()
+        core.serialization.string(),
     ),
 });
 
 export declare namespace InstructorVectorizerConfigRequest {
-    interface Raw {
+    export interface Raw {
         instruction_domain: string;
         instruction_query_text_type: string;
         instruction_document_text_type: string;

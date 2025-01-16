@@ -17,7 +17,7 @@ export const FolderEntityWorkflowSandbox: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityWorkflowSandbox {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "WORKFLOW_SANDBOX";
         data: FolderEntityWorkflowSandboxData.Raw;

@@ -18,7 +18,7 @@ export const WorkflowOutputFunctionCall: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowOutputFunctionCall {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "FUNCTION_CALL";

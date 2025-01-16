@@ -18,7 +18,7 @@ export const NodeOutputCompiledArrayValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NodeOutputCompiledArrayValue {
-    interface Raw {
+    export interface Raw {
         type: "ARRAY";
         value?: serializers.VellumValue.Raw[] | null;
         node_output_id: string;

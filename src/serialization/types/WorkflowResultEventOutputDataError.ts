@@ -22,7 +22,7 @@ export const WorkflowResultEventOutputDataError: core.serialization.ObjectSchema
 });
 
 export declare namespace WorkflowResultEventOutputDataError {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         name: string;
         state: WorkflowNodeResultEventState.Raw;

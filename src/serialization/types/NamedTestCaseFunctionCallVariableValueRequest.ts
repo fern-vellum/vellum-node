@@ -17,7 +17,7 @@ export const NamedTestCaseFunctionCallVariableValueRequest: core.serialization.O
 });
 
 export declare namespace NamedTestCaseFunctionCallVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "FUNCTION_CALL";
         value?: FunctionCallRequest.Raw | null;
         name: string;

@@ -16,7 +16,7 @@ export const CodeExecutionNodeJsonResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutionNodeJsonResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "JSON";
         value?: unknown;

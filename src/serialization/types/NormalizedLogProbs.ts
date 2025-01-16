@@ -16,7 +16,7 @@ export const NormalizedLogProbs: core.serialization.ObjectSchema<
 });
 
 export declare namespace NormalizedLogProbs {
-    interface Raw {
+    export interface Raw {
         tokens: NormalizedTokenLogProbs.Raw[];
         likelihood?: number | null;
     }

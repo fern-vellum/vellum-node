@@ -14,7 +14,7 @@ export const WorkflowExpandMetaRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowExpandMetaRequest {
-    interface Raw {
+    export interface Raw {
         usage?: boolean | null;
     }
 }

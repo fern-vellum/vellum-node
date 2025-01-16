@@ -19,7 +19,7 @@ export const WorkspaceSecretRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkspaceSecretRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         modified: string;
         name: string;

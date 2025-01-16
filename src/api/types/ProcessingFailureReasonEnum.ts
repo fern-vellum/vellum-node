@@ -7,7 +7,6 @@
  * - `INVALID_FILE` - Invalid File
  */
 export type ProcessingFailureReasonEnum = "EXCEEDED_CHARACTER_LIMIT" | "INVALID_FILE";
-
 export const ProcessingFailureReasonEnum = {
     ExceededCharacterLimit: "EXCEEDED_CHARACTER_LIMIT",
     InvalidFile: "INVALID_FILE",

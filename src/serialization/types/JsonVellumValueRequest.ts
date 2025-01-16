@@ -15,7 +15,7 @@ export const JsonVellumValueRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace JsonVellumValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "JSON";
         value?: unknown;
     }

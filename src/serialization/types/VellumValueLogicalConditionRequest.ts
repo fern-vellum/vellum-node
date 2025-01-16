@@ -14,17 +14,17 @@ export const VellumValueLogicalConditionRequest: core.serialization.ObjectSchema
     type: core.serialization.stringLiteral("LOGICAL_CONDITION"),
     lhsVariable: core.serialization.property(
         "lhs_variable",
-        core.serialization.lazy(() => serializers.VellumValueRequest)
+        core.serialization.lazy(() => serializers.VellumValueRequest),
     ),
     operator: LogicalOperator,
     rhsVariable: core.serialization.property(
         "rhs_variable",
-        core.serialization.lazy(() => serializers.VellumValueRequest)
+        core.serialization.lazy(() => serializers.VellumValueRequest),
     ),
 });
 
 export declare namespace VellumValueLogicalConditionRequest {
-    interface Raw {
+    export interface Raw {
         type: "LOGICAL_CONDITION";
         lhs_variable: serializers.VellumValueRequest.Raw;
         operator: LogicalOperator.Raw;

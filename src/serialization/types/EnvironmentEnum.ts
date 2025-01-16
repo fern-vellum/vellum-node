@@ -10,5 +10,5 @@ export const EnvironmentEnum: core.serialization.Schema<serializers.EnvironmentE
     core.serialization.enum_(["DEVELOPMENT", "STAGING", "PRODUCTION"]);
 
 export declare namespace EnvironmentEnum {
-    type Raw = "DEVELOPMENT" | "STAGING" | "PRODUCTION";
+    export type Raw = "DEVELOPMENT" | "STAGING" | "PRODUCTION";
 }

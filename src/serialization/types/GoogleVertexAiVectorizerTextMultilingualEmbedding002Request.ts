@@ -13,13 +13,13 @@ export const GoogleVertexAiVectorizerTextMultilingualEmbedding002Request: core.s
 > = core.serialization.object({
     modelName: core.serialization.property(
         "model_name",
-        core.serialization.stringLiteral("text-multilingual-embedding-002")
+        core.serialization.stringLiteral("text-multilingual-embedding-002"),
     ),
     config: GoogleVertexAiVectorizerConfigRequest,
 });
 
 export declare namespace GoogleVertexAiVectorizerTextMultilingualEmbedding002Request {
-    interface Raw {
+    export interface Raw {
         model_name: "text-multilingual-embedding-002";
         config: GoogleVertexAiVectorizerConfigRequest.Raw;
     }

@@ -14,7 +14,7 @@ export const Request: core.serialization.Schema<
 > = core.serialization.list(TestSuiteTestCaseBulkOperationRequest);
 
 export declare namespace Request {
-    type Raw = TestSuiteTestCaseBulkOperationRequest.Raw[];
+    export type Raw = TestSuiteTestCaseBulkOperationRequest.Raw[];
 }
 
 export const StreamData: core.serialization.Schema<
@@ -23,5 +23,5 @@ export const StreamData: core.serialization.Schema<
 > = core.serialization.list(TestSuiteTestCaseBulkResult);
 
 export declare namespace StreamData {
-    type Raw = TestSuiteTestCaseBulkResult.Raw[];
+    export type Raw = TestSuiteTestCaseBulkResult.Raw[];
 }

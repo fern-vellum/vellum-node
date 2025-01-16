@@ -17,7 +17,7 @@ export const ExecutionJsonVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace ExecutionJsonVellumValue {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "JSON";

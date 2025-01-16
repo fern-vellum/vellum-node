@@ -3,7 +3,6 @@
  */
 
 export type WorkflowsPullRequestFormat = "json" | "zip";
-
 export const WorkflowsPullRequestFormat = {
     Json: "json",
     Zip: "zip",

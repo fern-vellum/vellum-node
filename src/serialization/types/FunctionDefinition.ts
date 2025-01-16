@@ -22,7 +22,7 @@ export const FunctionDefinition: core.serialization.ObjectSchema<
 });
 
 export declare namespace FunctionDefinition {
-    interface Raw {
+    export interface Raw {
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;
         name?: string | null;

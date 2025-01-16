@@ -21,7 +21,7 @@ export const WorkflowResultEventOutputDataNumber: core.serialization.ObjectSchem
 });
 
 export declare namespace WorkflowResultEventOutputDataNumber {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         name: string;
         state: WorkflowNodeResultEventState.Raw;

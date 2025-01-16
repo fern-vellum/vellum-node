@@ -27,7 +27,6 @@ export type VellumVariableType =
     | "IMAGE"
     | "AUDIO"
     | "NULL";
-
 export const VellumVariableType = {
     String: "STRING",
     Number: "NUMBER",

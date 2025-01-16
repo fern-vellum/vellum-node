@@ -13,13 +13,13 @@ export const TokenOverlappingWindowChunking: core.serialization.ObjectSchema<
 > = core.serialization.object({
     chunkerName: core.serialization.property(
         "chunker_name",
-        core.serialization.stringLiteral("token-overlapping-window-chunker")
+        core.serialization.stringLiteral("token-overlapping-window-chunker"),
     ),
     chunkerConfig: core.serialization.property("chunker_config", TokenOverlappingWindowChunkerConfig.optional()),
 });
 
 export declare namespace TokenOverlappingWindowChunking {
-    interface Raw {
+    export interface Raw {
         chunker_name: "token-overlapping-window-chunker";
         chunker_config?: TokenOverlappingWindowChunkerConfig.Raw | null;
     }

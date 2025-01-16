@@ -18,7 +18,7 @@ export const PaginatedDocumentIndexReadList: core.serialization.ObjectSchema<
 });
 
 export declare namespace PaginatedDocumentIndexReadList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;

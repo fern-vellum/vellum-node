@@ -14,7 +14,7 @@ export const StreamingPromptExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace StreamingPromptExecutionMeta {
-    interface Raw {
+    export interface Raw {
         latency?: number | null;
     }
 }

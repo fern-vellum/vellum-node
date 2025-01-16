@@ -16,7 +16,7 @@ export const DockerServiceToken: core.serialization.ObjectSchema<
 });
 
 export declare namespace DockerServiceToken {
-    interface Raw {
+    export interface Raw {
         access_token: string;
         organization_id: string;
         repository: string;

@@ -11,18 +11,22 @@ import * as stream from "stream";
 import * as errors from "../../../../errors/index";
 
 export declare namespace AdHoc {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         apiKey?: core.Supplier<string | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -31,23 +35,25 @@ export class AdHoc {
 
     public async adhocExecutePromptStream(
         request: Vellum.AdHocExecutePromptStream,
-        requestOptions?: AdHoc.RequestOptions
+        requestOptions?: AdHoc.RequestOptions,
     ): Promise<core.Stream<Vellum.AdHocExecutePromptEvent>> {
         const _response = await core.fetcher<stream.Readable>({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .predict,
-                "v1/ad-hoc/execute-prompt-stream"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .predict,
+                "v1/ad-hoc/execute-prompt-stream",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             requestType: "json",
@@ -99,7 +105,9 @@ export class AdHoc {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError(
+                    "Timeout exceeded when calling POST /v1/ad-hoc/execute-prompt-stream.",
+                );
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,

@@ -16,7 +16,7 @@ export const ChatHistoryVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace ChatHistoryVellumValue {
-    interface Raw {
+    export interface Raw {
         type: "CHAT_HISTORY";
         value?: ChatMessage.Raw[] | null;
     }

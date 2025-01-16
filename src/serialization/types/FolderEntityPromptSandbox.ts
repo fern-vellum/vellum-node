@@ -17,7 +17,7 @@ export const FolderEntityPromptSandbox: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityPromptSandbox {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "PROMPT_SANDBOX";
         data: FolderEntityPromptSandboxData.Raw;

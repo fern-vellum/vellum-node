@@ -12,12 +12,12 @@ export const MergeNodeResultData: core.serialization.ObjectSchema<
 > = core.serialization.object({
     pausedNodeData: core.serialization.property(
         "paused_node_data",
-        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional()
+        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     ),
 });
 
 export declare namespace MergeNodeResultData {
-    interface Raw {
+    export interface Raw {
         paused_node_data?: Record<string, unknown> | null;
     }
 }

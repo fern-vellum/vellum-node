@@ -17,7 +17,7 @@ export const NamedScenarioInputChatHistoryVariableValueRequest: core.serializati
 });
 
 export declare namespace NamedScenarioInputChatHistoryVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "CHAT_HISTORY";
         value?: ChatMessageRequest.Raw[] | null;
         name: string;

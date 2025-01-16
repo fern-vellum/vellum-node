@@ -17,7 +17,7 @@ export const NamedTestCaseSearchResultsVariableValueRequest: core.serialization.
 });
 
 export declare namespace NamedTestCaseSearchResultsVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "SEARCH_RESULTS";
         value?: SearchResultRequest.Raw[] | null;
         name: string;

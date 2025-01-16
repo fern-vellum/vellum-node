@@ -18,7 +18,7 @@ export const PatchedDocumentIndexUpdateRequest: core.serialization.Schema<
 });
 
 export declare namespace PatchedDocumentIndexUpdateRequest {
-    interface Raw {
+    export interface Raw {
         label?: string | null;
         status?: EntityStatus.Raw | null;
         environment?: EnvironmentEnum.Raw | null;

@@ -20,7 +20,7 @@ export const SearchResultRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchResultRequest {
-    interface Raw {
+    export interface Raw {
         text: string;
         score: number;
         keywords: string[];

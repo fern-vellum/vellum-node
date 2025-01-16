@@ -16,16 +16,16 @@ export const ReplaceTestSuiteTestCaseRequest: core.serialization.ObjectSchema<
     label: core.serialization.string().optional(),
     inputValues: core.serialization.property(
         "input_values",
-        core.serialization.list(NamedTestCaseVariableValueRequest)
+        core.serialization.list(NamedTestCaseVariableValueRequest),
     ),
     evaluationValues: core.serialization.property(
         "evaluation_values",
-        core.serialization.list(NamedTestCaseVariableValueRequest)
+        core.serialization.list(NamedTestCaseVariableValueRequest),
     ),
 });
 
 export declare namespace ReplaceTestSuiteTestCaseRequest {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         external_id?: string | null;
         label?: string | null;

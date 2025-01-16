@@ -17,7 +17,7 @@ export const TestSuiteTestCaseCreateBulkOperationRequest: core.serialization.Obj
 });
 
 export declare namespace TestSuiteTestCaseCreateBulkOperationRequest {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "CREATE";
         data: CreateTestSuiteTestCaseRequest.Raw;

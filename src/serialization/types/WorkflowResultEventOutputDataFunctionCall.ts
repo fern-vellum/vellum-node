@@ -22,7 +22,7 @@ export const WorkflowResultEventOutputDataFunctionCall: core.serialization.Objec
 });
 
 export declare namespace WorkflowResultEventOutputDataFunctionCall {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         name: string;
         state: WorkflowNodeResultEventState.Raw;

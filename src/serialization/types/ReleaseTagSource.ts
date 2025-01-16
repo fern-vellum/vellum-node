@@ -10,5 +10,5 @@ export const ReleaseTagSource: core.serialization.Schema<serializers.ReleaseTagS
     core.serialization.enum_(["SYSTEM", "USER"]);
 
 export declare namespace ReleaseTagSource {
-    type Raw = "SYSTEM" | "USER";
+    export type Raw = "SYSTEM" | "USER";
 }

@@ -19,7 +19,7 @@ export const VellumErrorCodeEnum: core.serialization.Schema<
 ]);
 
 export declare namespace VellumErrorCodeEnum {
-    type Raw =
+    export type Raw =
         | "INVALID_REQUEST"
         | "INVALID_INPUTS"
         | "PROVIDER_ERROR"

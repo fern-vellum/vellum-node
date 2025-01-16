@@ -21,13 +21,13 @@ export const DocumentRead: core.serialization.ObjectSchema<serializers.DocumentR
         processedFileUrl: core.serialization.property("processed_file_url", core.serialization.string().optional()),
         documentToDocumentIndexes: core.serialization.property(
             "document_to_document_indexes",
-            core.serialization.list(DocumentDocumentToDocumentIndex)
+            core.serialization.list(DocumentDocumentToDocumentIndex),
         ),
         metadata: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     });
 
 export declare namespace DocumentRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         external_id?: string | null;
         last_uploaded_at: string;

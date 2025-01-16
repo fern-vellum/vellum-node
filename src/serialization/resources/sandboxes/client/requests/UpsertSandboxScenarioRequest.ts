@@ -17,7 +17,7 @@ export const UpsertSandboxScenarioRequest: core.serialization.Schema<
 });
 
 export declare namespace UpsertSandboxScenarioRequest {
-    interface Raw {
+    export interface Raw {
         label?: string | null;
         inputs: NamedScenarioInputRequest.Raw[];
         scenario_id?: string | null;

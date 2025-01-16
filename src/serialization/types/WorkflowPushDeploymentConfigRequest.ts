@@ -15,12 +15,12 @@ export const WorkflowPushDeploymentConfigRequest: core.serialization.ObjectSchem
     description: core.serialization.string().optional(),
     releaseTags: core.serialization.property(
         "release_tags",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
 });
 
 export declare namespace WorkflowPushDeploymentConfigRequest {
-    interface Raw {
+    export interface Raw {
         label?: string | null;
         name?: string | null;
         description?: string | null;

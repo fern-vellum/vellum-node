@@ -19,7 +19,7 @@ export const SubmitWorkflowExecutionActualRequest: core.serialization.Schema<
 ]);
 
 export declare namespace SubmitWorkflowExecutionActualRequest {
-    type Raw =
+    export type Raw =
         | WorkflowExecutionActualStringRequest.Raw
         | WorkflowExecutionActualJsonRequest.Raw
         | WorkflowExecutionActualChatHistoryRequest.Raw;

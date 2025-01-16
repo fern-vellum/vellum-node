@@ -13,13 +13,13 @@ export const CompilePromptDeploymentExpandMetaRequest: core.serialization.Object
     modelName: core.serialization.property("model_name", core.serialization.boolean().optional()),
     deploymentReleaseTag: core.serialization.property(
         "deployment_release_tag",
-        core.serialization.boolean().optional()
+        core.serialization.boolean().optional(),
     ),
     promptVersionId: core.serialization.property("prompt_version_id", core.serialization.boolean().optional()),
 });
 
 export declare namespace CompilePromptDeploymentExpandMetaRequest {
-    interface Raw {
+    export interface Raw {
         model_name?: boolean | null;
         deployment_release_tag?: boolean | null;
         prompt_version_id?: boolean | null;

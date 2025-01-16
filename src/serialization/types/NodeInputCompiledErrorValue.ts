@@ -18,7 +18,7 @@ export const NodeInputCompiledErrorValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NodeInputCompiledErrorValue {
-    interface Raw {
+    export interface Raw {
         node_input_id: string;
         key: string;
         type: "ERROR";

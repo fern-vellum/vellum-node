@@ -35,7 +35,7 @@ export const WorkflowNodeResultData: core.serialization.Schema<
 ]);
 
 export declare namespace WorkflowNodeResultData {
-    type Raw =
+    export type Raw =
         | PromptNodeResult.Raw
         | SearchNodeResult.Raw
         | TemplatingNodeResult.Raw

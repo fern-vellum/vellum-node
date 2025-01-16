@@ -17,7 +17,7 @@ export const TestSuiteTestCaseDeleteBulkOperationRequest: core.serialization.Obj
 });
 
 export declare namespace TestSuiteTestCaseDeleteBulkOperationRequest {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "DELETE";
         data: TestSuiteTestCaseDeleteBulkOperationDataRequest.Raw;

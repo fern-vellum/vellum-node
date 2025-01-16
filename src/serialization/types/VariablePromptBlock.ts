@@ -19,7 +19,7 @@ export const VariablePromptBlock: core.serialization.ObjectSchema<
 });
 
 export declare namespace VariablePromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "VARIABLE";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

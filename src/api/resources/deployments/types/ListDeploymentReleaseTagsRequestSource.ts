@@ -3,7 +3,6 @@
  */
 
 export type ListDeploymentReleaseTagsRequestSource = "SYSTEM" | "USER";
-
 export const ListDeploymentReleaseTagsRequestSource = {
     System: "SYSTEM",
     User: "USER",

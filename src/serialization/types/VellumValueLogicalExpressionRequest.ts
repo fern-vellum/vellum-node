@@ -16,5 +16,5 @@ export const VellumValueLogicalExpressionRequest: core.serialization.Schema<
 ]);
 
 export declare namespace VellumValueLogicalExpressionRequest {
-    type Raw = VellumValueLogicalConditionRequest.Raw | serializers.VellumValueLogicalConditionGroupRequest.Raw;
+    export type Raw = VellumValueLogicalConditionRequest.Raw | serializers.VellumValueLogicalConditionGroupRequest.Raw;
 }

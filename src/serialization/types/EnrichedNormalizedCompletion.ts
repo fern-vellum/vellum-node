@@ -26,7 +26,7 @@ export const EnrichedNormalizedCompletion: core.serialization.ObjectSchema<
 });
 
 export declare namespace EnrichedNormalizedCompletion {
-    interface Raw {
+    export interface Raw {
         id: string;
         external_id?: string | null;
         text: string;

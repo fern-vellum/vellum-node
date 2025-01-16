@@ -18,7 +18,7 @@ export const PaginatedSlimDocumentList: core.serialization.ObjectSchema<
 });
 
 export declare namespace PaginatedSlimDocumentList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;

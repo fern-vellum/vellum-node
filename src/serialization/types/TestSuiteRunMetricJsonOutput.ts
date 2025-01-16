@@ -16,7 +16,7 @@ export const TestSuiteRunMetricJsonOutput: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestSuiteRunMetricJsonOutput {
-    interface Raw {
+    export interface Raw {
         value?: unknown;
         type: "JSON";
         name: string;

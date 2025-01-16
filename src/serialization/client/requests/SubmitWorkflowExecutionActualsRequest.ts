@@ -17,7 +17,7 @@ export const SubmitWorkflowExecutionActualsRequest: core.serialization.Schema<
 });
 
 export declare namespace SubmitWorkflowExecutionActualsRequest {
-    interface Raw {
+    export interface Raw {
         actuals: SubmitWorkflowExecutionActualRequest.Raw[];
         execution_id?: string | null;
         external_id?: string | null;

@@ -10,5 +10,5 @@ export const ChatMessageRole: core.serialization.Schema<serializers.ChatMessageR
     core.serialization.enum_(["SYSTEM", "ASSISTANT", "USER", "FUNCTION"]);
 
 export declare namespace ChatMessageRole {
-    type Raw = "SYSTEM" | "ASSISTANT" | "USER" | "FUNCTION";
+    export type Raw = "SYSTEM" | "ASSISTANT" | "USER" | "FUNCTION";
 }

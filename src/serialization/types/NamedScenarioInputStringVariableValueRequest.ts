@@ -16,7 +16,7 @@ export const NamedScenarioInputStringVariableValueRequest: core.serialization.Ob
 });
 
 export declare namespace NamedScenarioInputStringVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "STRING";
         value?: string | null;
         name: string;

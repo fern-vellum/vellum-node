@@ -15,7 +15,7 @@ export const WorkspaceRead: core.serialization.ObjectSchema<serializers.Workspac
     });
 
 export declare namespace WorkspaceRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         label: string;

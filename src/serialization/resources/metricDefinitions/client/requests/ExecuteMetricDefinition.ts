@@ -16,7 +16,7 @@ export const ExecuteMetricDefinition: core.serialization.Schema<
 });
 
 export declare namespace ExecuteMetricDefinition {
-    interface Raw {
+    export interface Raw {
         inputs: MetricDefinitionInput.Raw[];
         release_tag?: string | null;
     }

@@ -18,7 +18,7 @@ export const VellumValueLogicalConditionGroupRequest: core.serialization.ObjectS
 });
 
 export declare namespace VellumValueLogicalConditionGroupRequest {
-    interface Raw {
+    export interface Raw {
         type: "LOGICAL_CONDITION_GROUP";
         conditions: serializers.VellumValueLogicalExpressionRequest.Raw[];
         combinator: ConditionCombinator.Raw;

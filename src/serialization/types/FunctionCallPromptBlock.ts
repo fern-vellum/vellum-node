@@ -21,7 +21,7 @@ export const FunctionCallPromptBlock: core.serialization.ObjectSchema<
 });
 
 export declare namespace FunctionCallPromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "FUNCTION_CALL";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

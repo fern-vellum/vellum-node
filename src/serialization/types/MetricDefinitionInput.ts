@@ -16,5 +16,5 @@ export const MetricDefinitionInput: core.serialization.Schema<
 > = core.serialization.undiscriminatedUnion([StringInput, JsonInput, ChatHistoryInput, NumberInput]);
 
 export declare namespace MetricDefinitionInput {
-    type Raw = StringInput.Raw | JsonInput.Raw | ChatHistoryInput.Raw | NumberInput.Raw;
+    export type Raw = StringInput.Raw | JsonInput.Raw | ChatHistoryInput.Raw | NumberInput.Raw;
 }

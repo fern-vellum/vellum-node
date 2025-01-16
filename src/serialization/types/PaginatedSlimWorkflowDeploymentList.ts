@@ -18,7 +18,7 @@ export const PaginatedSlimWorkflowDeploymentList: core.serialization.ObjectSchem
 });
 
 export declare namespace PaginatedSlimWorkflowDeploymentList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;

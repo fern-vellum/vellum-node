@@ -15,7 +15,7 @@ export const TestSuiteRunWorkflowSandboxHistoryItemExecConfigData: core.serializ
 });
 
 export declare namespace TestSuiteRunWorkflowSandboxHistoryItemExecConfigData {
-    interface Raw {
+    export interface Raw {
         history_item_id: string;
         workflow_variant_id: string;
     }

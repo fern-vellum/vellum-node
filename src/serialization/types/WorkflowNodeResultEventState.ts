@@ -12,5 +12,5 @@ export const WorkflowNodeResultEventState: core.serialization.Schema<
 > = core.serialization.enum_(["INITIATED", "STREAMING", "FULFILLED", "REJECTED"]);
 
 export declare namespace WorkflowNodeResultEventState {
-    type Raw = "INITIATED" | "STREAMING" | "FULFILLED" | "REJECTED";
+    export type Raw = "INITIATED" | "STREAMING" | "FULFILLED" | "REJECTED";
 }

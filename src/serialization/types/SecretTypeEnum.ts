@@ -10,5 +10,5 @@ export const SecretTypeEnum: core.serialization.Schema<serializers.SecretTypeEnu
     core.serialization.enum_(["USER_DEFINED", "HMAC", "INTERNAL_API_KEY"]);
 
 export declare namespace SecretTypeEnum {
-    type Raw = "USER_DEFINED" | "HMAC" | "INTERNAL_API_KEY";
+    export type Raw = "USER_DEFINED" | "HMAC" | "INTERNAL_API_KEY";
 }

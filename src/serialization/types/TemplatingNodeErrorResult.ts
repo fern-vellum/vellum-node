@@ -17,7 +17,7 @@ export const TemplatingNodeErrorResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TemplatingNodeErrorResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "ERROR";
         value?: VellumError.Raw | null;

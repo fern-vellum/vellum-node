@@ -16,7 +16,7 @@ export const GenerateStreamResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace GenerateStreamResultData {
-    interface Raw {
+    export interface Raw {
         completion_index: number;
         completion: EnrichedNormalizedCompletion.Raw;
     }

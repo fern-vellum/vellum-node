@@ -18,12 +18,12 @@ export const WorkflowExecutionActualJsonRequest: core.serialization.ObjectSchema
     outputType: core.serialization.property("output_type", core.serialization.stringLiteral("JSON")),
     desiredOutputValue: core.serialization.property(
         "desired_output_value",
-        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional()
+        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     ),
 });
 
 export declare namespace WorkflowExecutionActualJsonRequest {
-    interface Raw {
+    export interface Raw {
         output_id?: string | null;
         output_key?: string | null;
         quality?: number | null;

@@ -19,16 +19,16 @@ export const PromptParameters: core.serialization.ObjectSchema<
     presencePenalty: core.serialization.property("presence_penalty", core.serialization.number().optional()),
     logitBias: core.serialization.property(
         "logit_bias",
-        core.serialization.record(core.serialization.string(), core.serialization.number().optional()).optional()
+        core.serialization.record(core.serialization.string(), core.serialization.number().optional()).optional(),
     ),
     customParameters: core.serialization.property(
         "custom_parameters",
-        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional()
+        core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     ),
 });
 
 export declare namespace PromptParameters {
-    interface Raw {
+    export interface Raw {
         stop?: string[] | null;
         temperature?: number | null;
         max_tokens?: number | null;

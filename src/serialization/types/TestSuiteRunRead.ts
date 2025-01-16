@@ -21,7 +21,7 @@ export const TestSuiteRunRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestSuiteRunRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         created: string;
         test_suite: TestSuiteRunTestSuite.Raw;

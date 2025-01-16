@@ -22,16 +22,16 @@ export const DeploymentRead: core.serialization.ObjectSchema<serializers.Deploym
         description: core.serialization.string().optional(),
         activeModelVersionIds: core.serialization.property(
             "active_model_version_ids",
-            core.serialization.list(core.serialization.string())
+            core.serialization.list(core.serialization.string()),
         ),
         lastDeployedHistoryItemId: core.serialization.property(
             "last_deployed_history_item_id",
-            core.serialization.string()
+            core.serialization.string(),
         ),
     });
 
 export declare namespace DeploymentRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         created: string;
         label: string;

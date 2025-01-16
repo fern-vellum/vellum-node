@@ -15,12 +15,12 @@ export const TestSuiteRunPromptSandboxHistoryItemExecConfig: core.serialization.
     data: TestSuiteRunPromptSandboxHistoryItemExecConfigData,
     testCaseIds: core.serialization.property(
         "test_case_ids",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
 });
 
 export declare namespace TestSuiteRunPromptSandboxHistoryItemExecConfig {
-    interface Raw {
+    export interface Raw {
         type: "PROMPT_SANDBOX_HISTORY_ITEM";
         data: TestSuiteRunPromptSandboxHistoryItemExecConfigData.Raw;
         test_case_ids?: string[] | null;

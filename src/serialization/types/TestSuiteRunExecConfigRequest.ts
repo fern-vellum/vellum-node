@@ -23,7 +23,7 @@ export const TestSuiteRunExecConfigRequest: core.serialization.Schema<
 ]);
 
 export declare namespace TestSuiteRunExecConfigRequest {
-    type Raw =
+    export type Raw =
         | TestSuiteRunDeploymentReleaseTagExecConfigRequest.Raw
         | TestSuiteRunPromptSandboxHistoryItemExecConfigRequest.Raw
         | TestSuiteRunWorkflowReleaseTagExecConfigRequest.Raw

@@ -23,7 +23,7 @@ export const MetadataFilterConfigRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace MetadataFilterConfigRequest {
-    interface Raw {
+    export interface Raw {
         combinator?: MetadataFilterRuleCombinator.Raw | null;
         negated?: boolean | null;
         rules?: serializers.MetadataFilterRuleRequest.Raw[] | null;

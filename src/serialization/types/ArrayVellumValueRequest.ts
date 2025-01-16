@@ -15,7 +15,7 @@ export const ArrayVellumValueRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace ArrayVellumValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "ARRAY";
         value?: serializers.VellumValueRequest.Raw[] | null;
     }

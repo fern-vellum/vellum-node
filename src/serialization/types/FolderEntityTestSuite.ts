@@ -17,7 +17,7 @@ export const FolderEntityTestSuite: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityTestSuite {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "TEST_SUITE";
         data: FolderEntityTestSuiteData.Raw;

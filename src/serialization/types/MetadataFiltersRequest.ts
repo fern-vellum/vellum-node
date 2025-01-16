@@ -16,5 +16,5 @@ export const MetadataFiltersRequest: core.serialization.Schema<
 ]);
 
 export declare namespace MetadataFiltersRequest {
-    type Raw = MetadataFilterConfigRequest.Raw | serializers.VellumValueLogicalExpressionRequest.Raw;
+    export type Raw = MetadataFilterConfigRequest.Raw | serializers.VellumValueLogicalExpressionRequest.Raw;
 }

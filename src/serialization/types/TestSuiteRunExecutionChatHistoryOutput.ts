@@ -18,7 +18,7 @@ export const TestSuiteRunExecutionChatHistoryOutput: core.serialization.ObjectSc
 });
 
 export declare namespace TestSuiteRunExecutionChatHistoryOutput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "CHAT_HISTORY";
         value?: ChatMessage.Raw[] | null;

@@ -17,7 +17,7 @@ export const DeploymentProviderPayloadResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace DeploymentProviderPayloadResponse {
-    interface Raw {
+    export interface Raw {
         payload: DeploymentProviderPayloadResponsePayload.Raw;
         meta?: CompilePromptMeta.Raw | null;
     }

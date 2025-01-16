@@ -15,7 +15,7 @@ export const VellumAudioRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace VellumAudioRequest {
-    interface Raw {
+    export interface Raw {
         src: string;
         metadata?: Record<string, unknown> | null;
     }

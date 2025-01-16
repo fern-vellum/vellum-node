@@ -3,7 +3,6 @@
  */
 
 export type ListWorkflowReleaseTagsRequestSource = "SYSTEM" | "USER";
-
 export const ListWorkflowReleaseTagsRequestSource = {
     System: "SYSTEM",
     User: "USER",

@@ -16,7 +16,7 @@ export const OpenAiVectorizerTextEmbeddingAda002Request: core.serialization.Obje
 });
 
 export declare namespace OpenAiVectorizerTextEmbeddingAda002Request {
-    interface Raw {
+    export interface Raw {
         config: OpenAiVectorizerConfigRequest.Raw;
         model_name: "text-embedding-ada-002";
     }

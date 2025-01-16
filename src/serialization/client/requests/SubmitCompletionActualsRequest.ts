@@ -17,7 +17,7 @@ export const SubmitCompletionActualsRequest: core.serialization.Schema<
 });
 
 export declare namespace SubmitCompletionActualsRequest {
-    interface Raw {
+    export interface Raw {
         deployment_id?: string | null;
         deployment_name?: string | null;
         actuals: SubmitCompletionActualRequest.Raw[];

@@ -15,5 +15,5 @@ export const DocumentIndexChunking: core.serialization.Schema<
 > = core.serialization.undiscriminatedUnion([ReductoChunking, SentenceChunking, TokenOverlappingWindowChunking]);
 
 export declare namespace DocumentIndexChunking {
-    type Raw = ReductoChunking.Raw | SentenceChunking.Raw | TokenOverlappingWindowChunking.Raw;
+    export type Raw = ReductoChunking.Raw | SentenceChunking.Raw | TokenOverlappingWindowChunking.Raw;
 }

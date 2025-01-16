@@ -15,7 +15,7 @@ export const CodeExecutionPackage: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutionPackage {
-    interface Raw {
+    export interface Raw {
         version: string;
         name: string;
     }

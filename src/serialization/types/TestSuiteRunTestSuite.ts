@@ -16,7 +16,7 @@ export const TestSuiteRunTestSuite: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestSuiteRunTestSuite {
-    interface Raw {
+    export interface Raw {
         id: string;
         history_item_id: string;
         label: string;

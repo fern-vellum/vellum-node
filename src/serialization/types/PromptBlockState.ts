@@ -10,5 +10,5 @@ export const PromptBlockState: core.serialization.Schema<serializers.PromptBlock
     core.serialization.enum_(["ENABLED", "DISABLED"]);
 
 export declare namespace PromptBlockState {
-    type Raw = "ENABLED" | "DISABLED";
+    export type Raw = "ENABLED" | "DISABLED";
 }

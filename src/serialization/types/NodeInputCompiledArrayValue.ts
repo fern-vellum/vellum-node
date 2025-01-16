@@ -17,7 +17,7 @@ export const NodeInputCompiledArrayValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NodeInputCompiledArrayValue {
-    interface Raw {
+    export interface Raw {
         node_input_id: string;
         key: string;
         type: "ARRAY";

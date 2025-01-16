@@ -12,5 +12,5 @@ export const IterationStateEnum: core.serialization.Schema<
 > = core.serialization.enum_(["INITIATED", "FULFILLED", "REJECTED"]);
 
 export declare namespace IterationStateEnum {
-    type Raw = "INITIATED" | "FULFILLED" | "REJECTED";
+    export type Raw = "INITIATED" | "FULFILLED" | "REJECTED";
 }

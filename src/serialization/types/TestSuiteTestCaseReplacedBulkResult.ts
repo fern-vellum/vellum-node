@@ -17,7 +17,7 @@ export const TestSuiteTestCaseReplacedBulkResult: core.serialization.ObjectSchem
 });
 
 export declare namespace TestSuiteTestCaseReplacedBulkResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "REPLACED";
         data: TestSuiteTestCaseReplacedBulkResultData.Raw;

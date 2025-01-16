@@ -15,7 +15,7 @@ export const TestSuiteRunPromptSandboxHistoryItemExecConfigDataRequest: core.ser
 });
 
 export declare namespace TestSuiteRunPromptSandboxHistoryItemExecConfigDataRequest {
-    interface Raw {
+    export interface Raw {
         history_item_id: string;
         prompt_variant_id: string;
     }

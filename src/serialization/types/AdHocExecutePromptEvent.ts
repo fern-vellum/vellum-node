@@ -21,7 +21,7 @@ export const AdHocExecutePromptEvent: core.serialization.Schema<
 ]);
 
 export declare namespace AdHocExecutePromptEvent {
-    type Raw =
+    export type Raw =
         | InitiatedAdHocExecutePromptEvent.Raw
         | StreamingAdHocExecutePromptEvent.Raw
         | FulfilledAdHocExecutePromptEvent.Raw

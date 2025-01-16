@@ -12,5 +12,5 @@ export const WorkflowDeploymentsListRequestStatus: core.serialization.Schema<
 > = core.serialization.enum_(["ACTIVE", "ARCHIVED"]);
 
 export declare namespace WorkflowDeploymentsListRequestStatus {
-    type Raw = "ACTIVE" | "ARCHIVED";
+    export type Raw = "ACTIVE" | "ARCHIVED";
 }

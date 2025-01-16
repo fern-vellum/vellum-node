@@ -16,7 +16,7 @@ export const StringInputRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace StringInputRequest {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "STRING";
         value: string;

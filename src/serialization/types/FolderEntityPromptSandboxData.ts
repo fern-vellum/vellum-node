@@ -20,7 +20,7 @@ export const FolderEntityPromptSandboxData: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityPromptSandboxData {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         created: string;

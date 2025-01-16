@@ -20,13 +20,13 @@ export const ChatMessagePromptBlock: core.serialization.ObjectSchema<
     chatSource: core.serialization.property("chat_source", core.serialization.string().optional()),
     chatMessageUnterminated: core.serialization.property(
         "chat_message_unterminated",
-        core.serialization.boolean().optional()
+        core.serialization.boolean().optional(),
     ),
     blocks: core.serialization.list(core.serialization.lazy(() => serializers.PromptBlock)),
 });
 
 export declare namespace ChatMessagePromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "CHAT_MESSAGE";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

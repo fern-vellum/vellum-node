@@ -16,7 +16,7 @@ export const NamedTestCaseArrayVariableValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NamedTestCaseArrayVariableValue {
-    interface Raw {
+    export interface Raw {
         type: "ARRAY";
         value?: serializers.VellumValue.Raw[] | null;
         name: string;

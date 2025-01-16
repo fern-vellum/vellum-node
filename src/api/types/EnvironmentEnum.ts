@@ -8,7 +8,6 @@
  * - `PRODUCTION` - Production
  */
 export type EnvironmentEnum = "DEVELOPMENT" | "STAGING" | "PRODUCTION";
-
 export const EnvironmentEnum = {
     Development: "DEVELOPMENT",
     Staging: "STAGING",

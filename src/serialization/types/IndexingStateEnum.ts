@@ -10,5 +10,5 @@ export const IndexingStateEnum: core.serialization.Schema<serializers.IndexingSt
     core.serialization.enum_(["AWAITING_PROCESSING", "QUEUED", "INDEXING", "INDEXED", "FAILED"]);
 
 export declare namespace IndexingStateEnum {
-    type Raw = "AWAITING_PROCESSING" | "QUEUED" | "INDEXING" | "INDEXED" | "FAILED";
+    export type Raw = "AWAITING_PROCESSING" | "QUEUED" | "INDEXING" | "INDEXED" | "FAILED";
 }

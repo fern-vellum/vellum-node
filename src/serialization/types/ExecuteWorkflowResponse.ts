@@ -18,7 +18,7 @@ export const ExecuteWorkflowResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace ExecuteWorkflowResponse {
-    interface Raw {
+    export interface Raw {
         execution_id: string;
         run_id?: string | null;
         external_id?: string | null;

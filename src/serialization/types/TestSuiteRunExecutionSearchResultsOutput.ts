@@ -18,7 +18,7 @@ export const TestSuiteRunExecutionSearchResultsOutput: core.serialization.Object
 });
 
 export declare namespace TestSuiteRunExecutionSearchResultsOutput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "SEARCH_RESULTS";
         value?: SearchResult.Raw[] | null;

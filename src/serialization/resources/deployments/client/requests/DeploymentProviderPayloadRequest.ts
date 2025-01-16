@@ -20,7 +20,7 @@ export const DeploymentProviderPayloadRequest: core.serialization.Schema<
 });
 
 export declare namespace DeploymentProviderPayloadRequest {
-    interface Raw {
+    export interface Raw {
         deployment_id?: string | null;
         deployment_name?: string | null;
         inputs: PromptDeploymentInputRequest.Raw[];

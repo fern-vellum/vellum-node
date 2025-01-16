@@ -16,7 +16,7 @@ export const OpenAiVectorizerTextEmbedding3LargeRequest: core.serialization.Obje
 });
 
 export declare namespace OpenAiVectorizerTextEmbedding3LargeRequest {
-    interface Raw {
+    export interface Raw {
         config: OpenAiVectorizerConfigRequest.Raw;
         model_name: "text-embedding-3-large";
     }

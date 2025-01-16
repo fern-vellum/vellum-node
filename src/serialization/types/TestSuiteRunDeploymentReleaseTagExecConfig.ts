@@ -15,12 +15,12 @@ export const TestSuiteRunDeploymentReleaseTagExecConfig: core.serialization.Obje
     data: TestSuiteRunDeploymentReleaseTagExecConfigData,
     testCaseIds: core.serialization.property(
         "test_case_ids",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
 });
 
 export declare namespace TestSuiteRunDeploymentReleaseTagExecConfig {
-    interface Raw {
+    export interface Raw {
         type: "DEPLOYMENT_RELEASE_TAG";
         data: TestSuiteRunDeploymentReleaseTagExecConfigData.Raw;
         test_case_ids?: string[] | null;

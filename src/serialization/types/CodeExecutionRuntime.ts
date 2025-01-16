@@ -12,5 +12,5 @@ export const CodeExecutionRuntime: core.serialization.Schema<
 > = core.serialization.enum_(["PYTHON_3_11_6", "TYPESCRIPT_5_3_3"]);
 
 export declare namespace CodeExecutionRuntime {
-    type Raw = "PYTHON_3_11_6" | "TYPESCRIPT_5_3_3";
+    export type Raw = "PYTHON_3_11_6" | "TYPESCRIPT_5_3_3";
 }

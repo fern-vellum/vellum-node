@@ -16,7 +16,7 @@ export const CodeExecutionNodeArrayResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutionNodeArrayResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "ARRAY";
         value?: serializers.VellumValue.Raw[] | null;

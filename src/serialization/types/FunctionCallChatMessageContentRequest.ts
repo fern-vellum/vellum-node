@@ -16,7 +16,7 @@ export const FunctionCallChatMessageContentRequest: core.serialization.ObjectSch
 });
 
 export declare namespace FunctionCallChatMessageContentRequest {
-    interface Raw {
+    export interface Raw {
         type: "FUNCTION_CALL";
         value: FunctionCallChatMessageContentValueRequest.Raw;
     }

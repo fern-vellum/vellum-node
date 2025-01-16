@@ -17,7 +17,7 @@ export const ScenarioInput: core.serialization.Schema<serializers.ScenarioInput.
     ]);
 
 export declare namespace ScenarioInput {
-    type Raw =
+    export type Raw =
         | ScenarioInputStringVariableValue.Raw
         | ScenarioInputJsonVariableValue.Raw
         | ScenarioInputChatHistoryVariableValue.Raw;

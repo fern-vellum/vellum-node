@@ -16,7 +16,7 @@ export const TestSuiteTestCaseRejectedBulkResult: core.serialization.ObjectSchem
 });
 
 export declare namespace TestSuiteTestCaseRejectedBulkResult {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         type: "REJECTED";
         data: Record<string, unknown>;

@@ -20,7 +20,7 @@ export const RichTextPromptBlock: core.serialization.ObjectSchema<
 });
 
 export declare namespace RichTextPromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "RICH_TEXT";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

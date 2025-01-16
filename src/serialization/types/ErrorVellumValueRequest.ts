@@ -16,7 +16,7 @@ export const ErrorVellumValueRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace ErrorVellumValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "ERROR";
         value?: VellumErrorRequest.Raw | null;
     }

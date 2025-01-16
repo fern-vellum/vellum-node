@@ -20,7 +20,7 @@ export const CodeExecutor: core.serialization.Schema<serializers.CodeExecutor.Ra
     });
 
 export declare namespace CodeExecutor {
-    interface Raw {
+    export interface Raw {
         code: string;
         runtime: CodeExecutionRuntime.Raw;
         input_values: CodeExecutorInput.Raw[];

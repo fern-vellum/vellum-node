@@ -14,7 +14,7 @@ export const PatchedWorkflowReleaseTagUpdateRequest: core.serialization.Schema<
 });
 
 export declare namespace PatchedWorkflowReleaseTagUpdateRequest {
-    interface Raw {
+    export interface Raw {
         history_item_id?: string | null;
     }
 }

@@ -15,7 +15,7 @@ export const OpenAiVectorizerConfigRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace OpenAiVectorizerConfigRequest {
-    interface Raw {
+    export interface Raw {
         add_openai_api_key?: AddOpenaiApiKeyEnum.Raw | null;
     }
 }

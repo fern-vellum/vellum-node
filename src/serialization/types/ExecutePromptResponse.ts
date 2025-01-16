@@ -14,5 +14,5 @@ export const ExecutePromptResponse: core.serialization.Schema<
 > = core.serialization.undiscriminatedUnion([FulfilledExecutePromptResponse, RejectedExecutePromptResponse]);
 
 export declare namespace ExecutePromptResponse {
-    type Raw = FulfilledExecutePromptResponse.Raw | RejectedExecutePromptResponse.Raw;
+    export type Raw = FulfilledExecutePromptResponse.Raw | RejectedExecutePromptResponse.Raw;
 }

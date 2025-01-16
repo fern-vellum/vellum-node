@@ -21,7 +21,6 @@ export type WorkflowExecutionEventErrorCode =
     | "LLM_PROVIDER"
     | "INVALID_TEMPLATE"
     | "USER_DEFINED_ERROR";
-
 export const WorkflowExecutionEventErrorCode = {
     WorkflowInitialization: "WORKFLOW_INITIALIZATION",
     WorkflowCancelled: "WORKFLOW_CANCELLED",

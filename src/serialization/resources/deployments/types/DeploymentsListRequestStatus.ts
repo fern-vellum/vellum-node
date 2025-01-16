@@ -12,5 +12,5 @@ export const DeploymentsListRequestStatus: core.serialization.Schema<
 > = core.serialization.enum_(["ACTIVE", "ARCHIVED"]);
 
 export declare namespace DeploymentsListRequestStatus {
-    type Raw = "ACTIVE" | "ARCHIVED";
+    export type Raw = "ACTIVE" | "ARCHIVED";
 }

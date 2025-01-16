@@ -15,7 +15,7 @@ export const GoogleVertexAiVectorizerConfig: core.serialization.ObjectSchema<
 });
 
 export declare namespace GoogleVertexAiVectorizerConfig {
-    interface Raw {
+    export interface Raw {
         project_id: string;
         region: string;
     }

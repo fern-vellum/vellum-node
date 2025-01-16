@@ -15,7 +15,7 @@ export const ErrorInput: core.serialization.ObjectSchema<serializers.ErrorInput.
     });
 
 export declare namespace ErrorInput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "ERROR";
         value: VellumError.Raw;

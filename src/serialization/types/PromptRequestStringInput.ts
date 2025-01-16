@@ -16,7 +16,7 @@ export const PromptRequestStringInput: core.serialization.ObjectSchema<
 });
 
 export declare namespace PromptRequestStringInput {
-    interface Raw {
+    export interface Raw {
         key: string;
         type: "STRING";
         value: string;

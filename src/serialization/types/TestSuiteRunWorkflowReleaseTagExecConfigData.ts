@@ -15,7 +15,7 @@ export const TestSuiteRunWorkflowReleaseTagExecConfigData: core.serialization.Ob
 });
 
 export declare namespace TestSuiteRunWorkflowReleaseTagExecConfigData {
-    interface Raw {
+    export interface Raw {
         workflow_deployment_id: string;
         tag?: string | null;
     }

@@ -18,7 +18,7 @@ export const TestCaseSearchResultsVariableValue: core.serialization.ObjectSchema
 });
 
 export declare namespace TestCaseSearchResultsVariableValue {
-    interface Raw {
+    export interface Raw {
         variable_id: string;
         name: string;
         type: "SEARCH_RESULTS";

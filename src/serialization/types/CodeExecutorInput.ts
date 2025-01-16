@@ -29,7 +29,7 @@ export const CodeExecutorInput: core.serialization.Schema<serializers.CodeExecut
     ]);
 
 export declare namespace CodeExecutorInput {
-    type Raw =
+    export type Raw =
         | StringInput.Raw
         | JsonInput.Raw
         | ChatHistoryInput.Raw

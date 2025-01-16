@@ -18,7 +18,7 @@ export const WorkflowOutputError: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowOutputError {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "ERROR";

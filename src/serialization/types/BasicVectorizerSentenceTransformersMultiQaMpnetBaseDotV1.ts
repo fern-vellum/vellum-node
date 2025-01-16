@@ -12,13 +12,13 @@ export const BasicVectorizerSentenceTransformersMultiQaMpnetBaseDotV1: core.seri
 > = core.serialization.object({
     modelName: core.serialization.property(
         "model_name",
-        core.serialization.stringLiteral("sentence-transformers/multi-qa-mpnet-base-dot-v1")
+        core.serialization.stringLiteral("sentence-transformers/multi-qa-mpnet-base-dot-v1"),
     ),
     config: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
 });
 
 export declare namespace BasicVectorizerSentenceTransformersMultiQaMpnetBaseDotV1 {
-    interface Raw {
+    export interface Raw {
         model_name: "sentence-transformers/multi-qa-mpnet-base-dot-v1";
         config?: Record<string, unknown> | null;
     }

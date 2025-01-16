@@ -20,7 +20,7 @@ export const WorkflowExecutionActualStringRequest: core.serialization.ObjectSche
 });
 
 export declare namespace WorkflowExecutionActualStringRequest {
-    interface Raw {
+    export interface Raw {
         output_id?: string | null;
         output_key?: string | null;
         quality?: number | null;

@@ -15,5 +15,5 @@ export const DeploymentProviderPayloadResponsePayload: core.serialization.Schema
 ]);
 
 export declare namespace DeploymentProviderPayloadResponsePayload {
-    type Raw = Record<string, unknown> | string;
+    export type Raw = Record<string, unknown> | string;
 }

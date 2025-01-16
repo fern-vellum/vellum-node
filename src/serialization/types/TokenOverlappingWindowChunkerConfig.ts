@@ -15,7 +15,7 @@ export const TokenOverlappingWindowChunkerConfig: core.serialization.ObjectSchem
 });
 
 export declare namespace TokenOverlappingWindowChunkerConfig {
-    interface Raw {
+    export interface Raw {
         token_limit?: number | null;
         overlap_ratio?: number | null;
     }

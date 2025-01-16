@@ -18,7 +18,7 @@ export const OrganizationRead: core.serialization.ObjectSchema<
 });
 
 export declare namespace OrganizationRead {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         allow_staff_access?: boolean | null;

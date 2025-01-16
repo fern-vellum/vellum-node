@@ -21,7 +21,7 @@ export const WorkflowNodeResultEvent: core.serialization.Schema<
 ]);
 
 export declare namespace WorkflowNodeResultEvent {
-    type Raw =
+    export type Raw =
         | InitiatedWorkflowNodeResultEvent.Raw
         | StreamingWorkflowNodeResultEvent.Raw
         | FulfilledWorkflowNodeResultEvent.Raw

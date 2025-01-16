@@ -15,7 +15,7 @@ export const WorkflowReleaseTagWorkflowDeploymentHistoryItem: core.serialization
 });
 
 export declare namespace WorkflowReleaseTagWorkflowDeploymentHistoryItem {
-    interface Raw {
+    export interface Raw {
         id: string;
         timestamp: string;
     }

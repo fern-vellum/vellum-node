@@ -19,7 +19,7 @@ export const NodeOutputCompiledErrorValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NodeOutputCompiledErrorValue {
-    interface Raw {
+    export interface Raw {
         type: "ERROR";
         value?: VellumError.Raw | null;
         node_output_id: string;

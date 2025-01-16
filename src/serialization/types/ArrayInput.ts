@@ -14,7 +14,7 @@ export const ArrayInput: core.serialization.ObjectSchema<serializers.ArrayInput.
     });
 
 export declare namespace ArrayInput {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "ARRAY";
         value: serializers.VellumValue.Raw[];

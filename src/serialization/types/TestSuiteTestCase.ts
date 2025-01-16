@@ -19,7 +19,7 @@ export const TestSuiteTestCase: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestSuiteTestCase {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         external_id?: string | null;
         label?: string | null;

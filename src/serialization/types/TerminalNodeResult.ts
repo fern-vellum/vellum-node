@@ -16,7 +16,7 @@ export const TerminalNodeResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TerminalNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "TERMINAL";
         data: TerminalNodeResultData.Raw;
     }

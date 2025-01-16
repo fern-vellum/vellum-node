@@ -18,19 +18,19 @@ export const ExecuteWorkflowStreamRequest: core.serialization.Schema<
     workflowDeploymentId: core.serialization.property("workflow_deployment_id", core.serialization.string().optional()),
     workflowDeploymentName: core.serialization.property(
         "workflow_deployment_name",
-        core.serialization.string().optional()
+        core.serialization.string().optional(),
     ),
     releaseTag: core.serialization.property("release_tag", core.serialization.string().optional()),
     externalId: core.serialization.property("external_id", core.serialization.string().optional()),
     eventTypes: core.serialization.property(
         "event_types",
-        core.serialization.list(WorkflowExecutionEventType).optional()
+        core.serialization.list(WorkflowExecutionEventType).optional(),
     ),
     metadata: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
 });
 
 export declare namespace ExecuteWorkflowStreamRequest {
-    interface Raw {
+    export interface Raw {
         inputs: WorkflowRequestInputRequest.Raw[];
         expand_meta?: WorkflowExpandMetaRequest.Raw | null;
         workflow_deployment_id?: string | null;

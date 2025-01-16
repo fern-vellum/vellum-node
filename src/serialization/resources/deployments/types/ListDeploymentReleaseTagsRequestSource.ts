@@ -12,5 +12,5 @@ export const ListDeploymentReleaseTagsRequestSource: core.serialization.Schema<
 > = core.serialization.enum_(["SYSTEM", "USER"]);
 
 export declare namespace ListDeploymentReleaseTagsRequestSource {
-    type Raw = "SYSTEM" | "USER";
+    export type Raw = "SYSTEM" | "USER";
 }

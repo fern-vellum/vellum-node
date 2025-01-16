@@ -17,7 +17,7 @@ export const WorkflowOutputNumber: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowOutputNumber {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "NUMBER";

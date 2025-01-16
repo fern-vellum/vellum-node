@@ -17,7 +17,7 @@ export const TestSuiteTestCaseReplaceBulkOperationRequest: core.serialization.Ob
 });
 
 export declare namespace TestSuiteTestCaseReplaceBulkOperationRequest {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "REPLACE";
         data: ReplaceTestSuiteTestCaseRequest.Raw;

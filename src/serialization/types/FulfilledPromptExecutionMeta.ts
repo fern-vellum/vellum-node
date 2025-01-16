@@ -18,7 +18,7 @@ export const FulfilledPromptExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace FulfilledPromptExecutionMeta {
-    interface Raw {
+    export interface Raw {
         latency?: number | null;
         finish_reason?: FinishReasonEnum.Raw | null;
         usage?: MlModelUsage.Raw | null;

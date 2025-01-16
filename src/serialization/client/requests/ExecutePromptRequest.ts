@@ -22,13 +22,13 @@ export const ExecutePromptRequest: core.serialization.Schema<
     rawOverrides: core.serialization.property("raw_overrides", RawPromptExecutionOverridesRequest.optional()),
     expandRaw: core.serialization.property(
         "expand_raw",
-        core.serialization.list(core.serialization.string()).optional()
+        core.serialization.list(core.serialization.string()).optional(),
     ),
     metadata: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
 });
 
 export declare namespace ExecutePromptRequest {
-    interface Raw {
+    export interface Raw {
         inputs: PromptDeploymentInputRequest.Raw[];
         prompt_deployment_id?: string | null;
         prompt_deployment_name?: string | null;

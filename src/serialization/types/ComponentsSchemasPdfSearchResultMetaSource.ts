@@ -13,5 +13,5 @@ export const ComponentsSchemasPdfSearchResultMetaSource: core.serialization.Obje
 > = PdfSearchResultMetaSource;
 
 export declare namespace ComponentsSchemasPdfSearchResultMetaSource {
-    type Raw = PdfSearchResultMetaSource.Raw;
+    export type Raw = PdfSearchResultMetaSource.Raw;
 }

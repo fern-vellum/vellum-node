@@ -19,7 +19,7 @@ export const WorkflowExecutionWorkflowResultEvent: core.serialization.ObjectSche
 });
 
 export declare namespace WorkflowExecutionWorkflowResultEvent {
-    interface Raw {
+    export interface Raw {
         execution_id: string;
         run_id?: string | null;
         external_id?: string | null;

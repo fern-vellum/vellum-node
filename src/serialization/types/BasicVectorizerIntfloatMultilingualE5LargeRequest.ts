@@ -13,12 +13,12 @@ export const BasicVectorizerIntfloatMultilingualE5LargeRequest: core.serializati
     config: core.serialization.record(core.serialization.string(), core.serialization.unknown()).optional(),
     modelName: core.serialization.property(
         "model_name",
-        core.serialization.stringLiteral("intfloat/multilingual-e5-large")
+        core.serialization.stringLiteral("intfloat/multilingual-e5-large"),
     ),
 });
 
 export declare namespace BasicVectorizerIntfloatMultilingualE5LargeRequest {
-    interface Raw {
+    export interface Raw {
         config?: Record<string, unknown> | null;
         model_name: "intfloat/multilingual-e5-large";
     }

@@ -16,7 +16,7 @@ export const FunctionCallChatMessageContentValueRequest: core.serialization.Obje
 });
 
 export declare namespace FunctionCallChatMessageContentValueRequest {
-    interface Raw {
+    export interface Raw {
         name: string;
         arguments: Record<string, unknown>;
         id?: string | null;

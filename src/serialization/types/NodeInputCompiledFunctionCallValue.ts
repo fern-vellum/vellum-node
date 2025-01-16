@@ -18,7 +18,7 @@ export const NodeInputCompiledFunctionCallValue: core.serialization.ObjectSchema
 });
 
 export declare namespace NodeInputCompiledFunctionCallValue {
-    interface Raw {
+    export interface Raw {
         node_input_id: string;
         key: string;
         type: "FUNCTION_CALL";

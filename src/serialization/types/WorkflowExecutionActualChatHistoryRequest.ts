@@ -19,12 +19,12 @@ export const WorkflowExecutionActualChatHistoryRequest: core.serialization.Objec
     outputType: core.serialization.property("output_type", core.serialization.stringLiteral("CHAT_HISTORY")),
     desiredOutputValue: core.serialization.property(
         "desired_output_value",
-        core.serialization.list(ChatMessageRequest).optional()
+        core.serialization.list(ChatMessageRequest).optional(),
     ),
 });
 
 export declare namespace WorkflowExecutionActualChatHistoryRequest {
-    interface Raw {
+    export interface Raw {
         output_id?: string | null;
         output_key?: string | null;
         quality?: number | null;

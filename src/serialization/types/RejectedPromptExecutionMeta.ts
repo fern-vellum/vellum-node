@@ -16,7 +16,7 @@ export const RejectedPromptExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace RejectedPromptExecutionMeta {
-    interface Raw {
+    export interface Raw {
         latency?: number | null;
         finish_reason?: FinishReasonEnum.Raw | null;
     }

@@ -17,7 +17,7 @@ export const TemplatingNodeFunctionCallResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TemplatingNodeFunctionCallResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "FUNCTION_CALL";
         value?: FunctionCall.Raw | null;

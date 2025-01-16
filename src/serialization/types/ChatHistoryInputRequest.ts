@@ -17,7 +17,7 @@ export const ChatHistoryInputRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace ChatHistoryInputRequest {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "CHAT_HISTORY";
         value: ChatMessageRequest.Raw[];

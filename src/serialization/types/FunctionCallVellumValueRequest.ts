@@ -16,7 +16,7 @@ export const FunctionCallVellumValueRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace FunctionCallVellumValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "FUNCTION_CALL";
         value?: FunctionCallRequest.Raw | null;
     }

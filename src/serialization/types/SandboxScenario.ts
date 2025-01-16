@@ -15,7 +15,7 @@ export const SandboxScenario: core.serialization.ObjectSchema<serializers.Sandbo
     });
 
 export declare namespace SandboxScenario {
-    interface Raw {
+    export interface Raw {
         label?: string | null;
         inputs: ScenarioInput.Raw[];
         id: string;

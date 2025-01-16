@@ -16,7 +16,7 @@ export const NamedScenarioInputJsonVariableValueRequest: core.serialization.Obje
 });
 
 export declare namespace NamedScenarioInputJsonVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "JSON";
         value?: unknown;
         name: string;

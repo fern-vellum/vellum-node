@@ -14,7 +14,7 @@ export const ApiNodeResult: core.serialization.ObjectSchema<serializers.ApiNodeR
     });
 
 export declare namespace ApiNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "API";
         data: ApiNodeResultData.Raw;
     }

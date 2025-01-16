@@ -15,7 +15,7 @@ export const NumberVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NumberVellumValue {
-    interface Raw {
+    export interface Raw {
         type: "NUMBER";
         value?: number | null;
     }

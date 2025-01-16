@@ -18,7 +18,7 @@ export const SearchResult: core.serialization.ObjectSchema<serializers.SearchRes
     });
 
 export declare namespace SearchResult {
-    interface Raw {
+    export interface Raw {
         text: string;
         score: number;
         keywords: string[];

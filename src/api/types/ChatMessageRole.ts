@@ -9,7 +9,6 @@
  * - `FUNCTION` - Function
  */
 export type ChatMessageRole = "SYSTEM" | "ASSISTANT" | "USER" | "FUNCTION";
-
 export const ChatMessageRole = {
     System: "SYSTEM",
     Assistant: "ASSISTANT",

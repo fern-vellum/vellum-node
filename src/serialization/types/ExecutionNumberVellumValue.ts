@@ -17,7 +17,7 @@ export const ExecutionNumberVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace ExecutionNumberVellumValue {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "NUMBER";

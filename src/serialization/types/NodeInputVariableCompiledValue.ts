@@ -29,7 +29,7 @@ export const NodeInputVariableCompiledValue: core.serialization.Schema<
 ]);
 
 export declare namespace NodeInputVariableCompiledValue {
-    type Raw =
+    export type Raw =
         | NodeInputCompiledStringValue.Raw
         | NodeInputCompiledNumberValue.Raw
         | NodeInputCompiledJsonValue.Raw

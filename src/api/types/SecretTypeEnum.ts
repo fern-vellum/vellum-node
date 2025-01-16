@@ -8,7 +8,6 @@
  * - `INTERNAL_API_KEY` - Internal Api Key
  */
 export type SecretTypeEnum = "USER_DEFINED" | "HMAC" | "INTERNAL_API_KEY";
-
 export const SecretTypeEnum = {
     UserDefined: "USER_DEFINED",
     Hmac: "HMAC",

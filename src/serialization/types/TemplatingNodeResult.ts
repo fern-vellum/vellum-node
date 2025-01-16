@@ -16,7 +16,7 @@ export const TemplatingNodeResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TemplatingNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "TEMPLATING";
         data: TemplatingNodeResultData.Raw;
     }

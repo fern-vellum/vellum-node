@@ -16,7 +16,7 @@ export const TemplatingNodeJsonResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TemplatingNodeJsonResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "JSON";
         value?: unknown;

@@ -12,5 +12,5 @@ export const WorkflowExecutionEventType: core.serialization.Schema<
 > = core.serialization.enum_(["NODE", "WORKFLOW"]);
 
 export declare namespace WorkflowExecutionEventType {
-    type Raw = "NODE" | "WORKFLOW";
+    export type Raw = "NODE" | "WORKFLOW";
 }

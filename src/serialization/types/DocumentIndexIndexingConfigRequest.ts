@@ -17,7 +17,7 @@ export const DocumentIndexIndexingConfigRequest: core.serialization.ObjectSchema
 });
 
 export declare namespace DocumentIndexIndexingConfigRequest {
-    interface Raw {
+    export interface Raw {
         vectorizer: IndexingConfigVectorizerRequest.Raw;
         chunking?: DocumentIndexChunkingRequest.Raw | null;
     }

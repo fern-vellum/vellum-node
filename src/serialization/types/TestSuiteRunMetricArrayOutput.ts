@@ -16,7 +16,7 @@ export const TestSuiteRunMetricArrayOutput: core.serialization.ObjectSchema<
 });
 
 export declare namespace TestSuiteRunMetricArrayOutput {
-    interface Raw {
+    export interface Raw {
         value?: serializers.VellumValue.Raw[] | null;
         type: "ARRAY";
         name: string;

@@ -14,7 +14,7 @@ export const AdHocStreamingPromptExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace AdHocStreamingPromptExecutionMeta {
-    interface Raw {
+    export interface Raw {
         latency?: number | null;
     }
 }

@@ -19,5 +19,5 @@ export const PromptOutput: core.serialization.Schema<serializers.PromptOutput.Ra
     ]);
 
 export declare namespace PromptOutput {
-    type Raw = StringVellumValue.Raw | JsonVellumValue.Raw | ErrorVellumValue.Raw | FunctionCallVellumValue.Raw;
+    export type Raw = StringVellumValue.Raw | JsonVellumValue.Raw | ErrorVellumValue.Raw | FunctionCallVellumValue.Raw;
 }

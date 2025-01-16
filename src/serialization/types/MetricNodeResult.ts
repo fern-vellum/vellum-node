@@ -14,7 +14,7 @@ export const MetricNodeResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace MetricNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "METRIC";
     }
 }

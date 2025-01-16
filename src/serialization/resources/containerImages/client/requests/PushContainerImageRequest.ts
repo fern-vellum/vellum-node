@@ -16,7 +16,7 @@ export const PushContainerImageRequest: core.serialization.Schema<
 });
 
 export declare namespace PushContainerImageRequest {
-    interface Raw {
+    export interface Raw {
         name: string;
         sha: string;
         tags: string[];

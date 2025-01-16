@@ -3,7 +3,6 @@
  */
 
 export type DocumentIndexesListRequestStatus = "ACTIVE" | "ARCHIVED";
-
 export const DocumentIndexesListRequestStatus = {
     Active: "ACTIVE",
     Archived: "ARCHIVED",

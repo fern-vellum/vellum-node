@@ -18,7 +18,7 @@ export const FulfilledExecuteWorkflowWorkflowResultEvent: core.serialization.Obj
 });
 
 export declare namespace FulfilledExecuteWorkflowWorkflowResultEvent {
-    interface Raw {
+    export interface Raw {
         id: string;
         state: "FULFILLED";
         ts: string;

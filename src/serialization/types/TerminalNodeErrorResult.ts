@@ -18,7 +18,7 @@ export const TerminalNodeErrorResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TerminalNodeErrorResult {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         name: string;
         type: "ERROR";

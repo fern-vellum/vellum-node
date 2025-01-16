@@ -21,7 +21,7 @@ export const ExecutePromptEvent: core.serialization.Schema<
 ]);
 
 export declare namespace ExecutePromptEvent {
-    type Raw =
+    export type Raw =
         | InitiatedExecutePromptEvent.Raw
         | StreamingExecutePromptEvent.Raw
         | FulfilledExecutePromptEvent.Raw

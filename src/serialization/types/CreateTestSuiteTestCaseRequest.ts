@@ -14,17 +14,17 @@ export const CreateTestSuiteTestCaseRequest: core.serialization.ObjectSchema<
     label: core.serialization.string().optional(),
     inputValues: core.serialization.property(
         "input_values",
-        core.serialization.list(NamedTestCaseVariableValueRequest)
+        core.serialization.list(NamedTestCaseVariableValueRequest),
     ),
     evaluationValues: core.serialization.property(
         "evaluation_values",
-        core.serialization.list(NamedTestCaseVariableValueRequest)
+        core.serialization.list(NamedTestCaseVariableValueRequest),
     ),
     externalId: core.serialization.property("external_id", core.serialization.string().optional()),
 });
 
 export declare namespace CreateTestSuiteTestCaseRequest {
-    interface Raw {
+    export interface Raw {
         label?: string | null;
         input_values: NamedTestCaseVariableValueRequest.Raw[];
         evaluation_values: NamedTestCaseVariableValueRequest.Raw[];

@@ -20,7 +20,7 @@ export const RejectedExecutePromptResponse: core.serialization.ObjectSchema<
 });
 
 export declare namespace RejectedExecutePromptResponse {
-    interface Raw {
+    export interface Raw {
         meta?: PromptExecutionMeta.Raw | null;
         raw?: Record<string, unknown> | null;
         execution_id: string;

@@ -16,7 +16,7 @@ export const AudioChatMessageContent: core.serialization.ObjectSchema<
 });
 
 export declare namespace AudioChatMessageContent {
-    interface Raw {
+    export interface Raw {
         type: "AUDIO";
         value: VellumAudio.Raw;
     }

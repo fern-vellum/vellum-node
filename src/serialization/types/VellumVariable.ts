@@ -19,7 +19,7 @@ export const VellumVariable: core.serialization.ObjectSchema<serializers.VellumV
     });
 
 export declare namespace VellumVariable {
-    interface Raw {
+    export interface Raw {
         id: string;
         key: string;
         type: VellumVariableType.Raw;

@@ -10,5 +10,5 @@ export const DocumentStatus: core.serialization.Schema<serializers.DocumentStatu
     core.serialization.stringLiteral("ACTIVE");
 
 export declare namespace DocumentStatus {
-    type Raw = "ACTIVE";
+    export type Raw = "ACTIVE";
 }

@@ -17,7 +17,7 @@ export const InitiatedPromptExecutionMeta: core.serialization.ObjectSchema<
 });
 
 export declare namespace InitiatedPromptExecutionMeta {
-    interface Raw {
+    export interface Raw {
         model_name?: string | null;
         latency?: number | null;
         deployment_release_tag?: string | null;

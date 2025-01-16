@@ -14,7 +14,7 @@ export const SearchResultMergingRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace SearchResultMergingRequest {
-    interface Raw {
+    export interface Raw {
         enabled?: boolean | null;
     }
 }

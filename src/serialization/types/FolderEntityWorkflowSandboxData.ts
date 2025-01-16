@@ -20,7 +20,7 @@ export const FolderEntityWorkflowSandboxData: core.serialization.ObjectSchema<
 });
 
 export declare namespace FolderEntityWorkflowSandboxData {
-    interface Raw {
+    export interface Raw {
         id: string;
         label: string;
         created: string;

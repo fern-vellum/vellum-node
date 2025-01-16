@@ -17,13 +17,13 @@ export const PromptDeploymentExpandMetaRequest: core.serialization.ObjectSchema<
     latency: core.serialization.boolean().optional(),
     deploymentReleaseTag: core.serialization.property(
         "deployment_release_tag",
-        core.serialization.boolean().optional()
+        core.serialization.boolean().optional(),
     ),
     promptVersionId: core.serialization.property("prompt_version_id", core.serialization.boolean().optional()),
 });
 
 export declare namespace PromptDeploymentExpandMetaRequest {
-    interface Raw {
+    export interface Raw {
         model_name?: boolean | null;
         usage?: boolean | null;
         cost?: boolean | null;

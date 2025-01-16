@@ -16,7 +16,7 @@ export const WorkflowRequestStringInputRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace WorkflowRequestStringInputRequest {
-    interface Raw {
+    export interface Raw {
         name: string;
         type: "STRING";
         value: string;

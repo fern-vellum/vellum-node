@@ -15,7 +15,7 @@ export const StringChatMessageContent: core.serialization.ObjectSchema<
 });
 
 export declare namespace StringChatMessageContent {
-    interface Raw {
+    export interface Raw {
         type: "STRING";
         value: string;
     }

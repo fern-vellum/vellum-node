@@ -17,7 +17,7 @@ export const ExecutionArrayVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace ExecutionArrayVellumValue {
-    interface Raw {
+    export interface Raw {
         id: string;
         name: string;
         type: "ARRAY";

@@ -19,7 +19,7 @@ export const RejectedExecutePromptEvent: core.serialization.ObjectSchema<
 });
 
 export declare namespace RejectedExecutePromptEvent {
-    interface Raw {
+    export interface Raw {
         state: "REJECTED";
         error: VellumError.Raw;
         execution_id: string;

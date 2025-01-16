@@ -88,7 +88,7 @@ await client.submitWorkflowExecutionActuals({
 <dd>
 
 ```typescript
-await client.adHoc.adhocExecutePromptStream({
+const response = await client.adHoc.adhocExecutePromptStream({
     mlModel: "ml_model",
     inputValues: [
         {
@@ -112,6 +112,9 @@ await client.adHoc.adhocExecutePromptStream({
         },
     ],
 });
+for await (const item of response) {
+    console.log(item);
+}
 ```
 
 </dd>
@@ -1706,15 +1709,15 @@ Upload a document to be indexed and used for search.
 
 This is a multipart/form-data request. The `contents` field should be a file upload. It also expects a JSON body with the following fields:
 
--   `add_to_index_names: list[str]` - Optionally include the names of all indexes that you'd like this document to be included in
--   `external_id: str | None` - Optionally include an external ID for this document. This is useful if you want to re-upload the same document later when its contents change and would like it to be re-indexed.
--   `label: str` - A human-friendly name for this document. Typically the filename.
--   `keywords: list[str] | None` - Optionally include a list of keywords that'll be associated with this document. Used when performing keyword searches.
--   `metadata: dict[str, Any]` - A stringified JSON object containing any metadata associated with the document that you'd like to filter upon later.
-</dd>
-</dl>
-</dd>
-</dl>
+- `add_to_index_names: list[str]` - Optionally include the names of all indexes that you'd like this document to be included in
+- `external_id: str | None` - Optionally include an external ID for this document. This is useful if you want to re-upload the same document later when its contents change and would like it to be re-indexed.
+- `label: str` - A human-friendly name for this document. Typically the filename.
+- `keywords: list[str] | None` - Optionally include a list of keywords that'll be associated with this document. Used when performing keyword searches.
+- `metadata: dict[str, Any]` - A stringified JSON object containing any metadata associated with the document that you'd like to filter upon later.
+  </dd>
+  </dl>
+  </dd>
+  </dl>
 
 #### 🔌 Usage
 
@@ -1890,10 +1893,10 @@ await client.folderEntities.addEntityToFolder("folder_id", {
 The ID of the folder to which the entity should be added. This can be a UUID of a folder, or the name of a root
 directory. Supported root directories include:
 
--   PROMPT_SANDBOX
--   WORKFLOW_SANDBOX
--   DOCUMENT_INDEX
--   TEST_SUITE
+- PROMPT_SANDBOX
+- WORKFLOW_SANDBOX
+- DOCUMENT_INDEX
+- TEST_SUITE
 
 </dd>
 </dl>
@@ -2774,7 +2777,7 @@ Created, replace, and delete Test Cases within the specified Test Suite in bulk
 <dd>
 
 ```typescript
-await client.testSuites.testSuiteTestCasesBulk("id", [
+const response = await client.testSuites.testSuiteTestCasesBulk("id", [
     {
         id: "id",
         type: "CREATE",
@@ -2794,6 +2797,9 @@ await client.testSuites.testSuiteTestCasesBulk("id", [
         },
     },
 ]);
+for await (const item of response) {
+    console.log(item);
+}
 ```
 
 </dd>

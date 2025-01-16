@@ -17,5 +17,5 @@ export const ExecuteWorkflowWorkflowResultEvent: core.serialization.Schema<
 ]);
 
 export declare namespace ExecuteWorkflowWorkflowResultEvent {
-    type Raw = FulfilledExecuteWorkflowWorkflowResultEvent.Raw | RejectedExecuteWorkflowWorkflowResultEvent.Raw;
+    export type Raw = FulfilledExecuteWorkflowWorkflowResultEvent.Raw | RejectedExecuteWorkflowWorkflowResultEvent.Raw;
 }

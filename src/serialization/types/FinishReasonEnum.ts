@@ -10,5 +10,5 @@ export const FinishReasonEnum: core.serialization.Schema<serializers.FinishReaso
     core.serialization.enum_(["LENGTH", "STOP", "UNKNOWN"]);
 
 export declare namespace FinishReasonEnum {
-    type Raw = "LENGTH" | "STOP" | "UNKNOWN";
+    export type Raw = "LENGTH" | "STOP" | "UNKNOWN";
 }

@@ -16,7 +16,7 @@ export const ReductoChunkingRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace ReductoChunkingRequest {
-    interface Raw {
+    export interface Raw {
         chunker_name: "reducto-chunker";
         chunker_config?: ReductoChunkerConfigRequest.Raw | null;
     }

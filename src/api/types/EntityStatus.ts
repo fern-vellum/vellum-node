@@ -7,7 +7,6 @@
  * - `ARCHIVED` - Archived
  */
 export type EntityStatus = "ACTIVE" | "ARCHIVED";
-
 export const EntityStatus = {
     Active: "ACTIVE",
     Archived: "ARCHIVED",

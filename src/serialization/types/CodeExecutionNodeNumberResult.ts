@@ -16,7 +16,7 @@ export const CodeExecutionNodeNumberResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutionNodeNumberResult {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "NUMBER";
         value?: number | null;

@@ -18,7 +18,7 @@ export const PaginatedDeploymentReleaseTagReadList: core.serialization.ObjectSch
 });
 
 export declare namespace PaginatedDeploymentReleaseTagReadList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;

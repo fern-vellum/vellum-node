@@ -15,7 +15,7 @@ export const GenerateResult: core.serialization.ObjectSchema<serializers.Generat
     });
 
 export declare namespace GenerateResult {
-    interface Raw {
+    export interface Raw {
         data?: GenerateResultData.Raw | null;
         error?: GenerateResultError.Raw | null;
     }

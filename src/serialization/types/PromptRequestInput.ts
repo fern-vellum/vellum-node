@@ -19,5 +19,5 @@ export const PromptRequestInput: core.serialization.Schema<
 ]);
 
 export declare namespace PromptRequestInput {
-    type Raw = PromptRequestStringInput.Raw | PromptRequestJsonInput.Raw | PromptRequestChatHistoryInput.Raw;
+    export type Raw = PromptRequestStringInput.Raw | PromptRequestJsonInput.Raw | PromptRequestChatHistoryInput.Raw;
 }

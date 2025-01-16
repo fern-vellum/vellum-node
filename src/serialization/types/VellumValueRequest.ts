@@ -32,7 +32,7 @@ export const VellumValueRequest: core.serialization.Schema<
 ]);
 
 export declare namespace VellumValueRequest {
-    type Raw =
+    export type Raw =
         | StringVellumValueRequest.Raw
         | NumberVellumValueRequest.Raw
         | JsonVellumValueRequest.Raw

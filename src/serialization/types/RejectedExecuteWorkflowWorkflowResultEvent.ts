@@ -18,7 +18,7 @@ export const RejectedExecuteWorkflowWorkflowResultEvent: core.serialization.Obje
 });
 
 export declare namespace RejectedExecuteWorkflowWorkflowResultEvent {
-    interface Raw {
+    export interface Raw {
         id: string;
         state: "REJECTED";
         ts: string;

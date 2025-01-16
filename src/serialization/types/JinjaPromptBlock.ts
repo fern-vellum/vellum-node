@@ -19,7 +19,7 @@ export const JinjaPromptBlock: core.serialization.ObjectSchema<
 });
 
 export declare namespace JinjaPromptBlock {
-    interface Raw {
+    export interface Raw {
         block_type: "JINJA";
         state?: PromptBlockState.Raw | null;
         cache_config?: EphemeralPromptCacheConfig.Raw | null;

@@ -16,7 +16,7 @@ export const AudioVellumValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace AudioVellumValue {
-    interface Raw {
+    export interface Raw {
         type: "AUDIO";
         value?: VellumAudio.Raw | null;
     }

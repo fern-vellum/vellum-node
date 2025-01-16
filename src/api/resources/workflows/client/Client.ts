@@ -6,25 +6,29 @@ import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import * as Vellum from "../../../index";
 import * as stream from "stream";
+import * as serializers from "../../../../serialization/index";
 import urlJoin from "url-join";
 import * as errors from "../../../../errors/index";
 import * as fs from "fs";
 import { Blob } from "buffer";
-import * as serializers from "../../../../serialization/index";
 
 export declare namespace Workflows {
-    interface Options {
+    export interface Options {
         environment?: core.Supplier<environments.VellumEnvironment | environments.VellumEnvironmentUrls>;
+        /** Specify a custom URL to connect the client to. */
+        baseUrl?: core.Supplier<string>;
         apiKey?: core.Supplier<string | undefined>;
     }
 
-    interface RequestOptions {
+    export interface RequestOptions {
         /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
         /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
         /** A hook to abort the request. */
         abortSignal?: AbortSignal;
+        /** Additional headers to include in the request. */
+        headers?: Record<string, string>;
     }
 }
 
@@ -37,16 +41,18 @@ export class Workflows {
     public async pull(
         id: string,
         request: Vellum.WorkflowsPullRequest = {},
-        requestOptions?: Workflows.RequestOptions
+        requestOptions?: Workflows.RequestOptions,
     ): Promise<stream.Readable> {
         const { excludeCode, format, includeJson, includeSandbox, strict } = request;
-        const _queryParams: Record<string, string | string[] | object | object[]> = {};
+        const _queryParams: Record<string, string | string[] | object | object[] | null> = {};
         if (excludeCode != null) {
             _queryParams["exclude_code"] = excludeCode.toString();
         }
 
         if (format != null) {
-            _queryParams["format"] = format;
+            _queryParams["format"] = serializers.WorkflowsPullRequestFormat.jsonOrThrow(format, {
+                unrecognizedObjectKeys: "strip",
+            });
         }
 
         if (includeJson != null) {
@@ -63,19 +69,21 @@ export class Workflows {
 
         const _response = await core.fetcher<stream.Readable>({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
-                `v1/workflows/${encodeURIComponent(id)}/pull`
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .default,
+                `v1/workflows/${encodeURIComponent(id)}/pull`,
             ),
             method: "GET",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
+                ...requestOptions?.headers,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
@@ -108,7 +116,7 @@ export class Workflows {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling GET /v1/workflows/{id}/pull.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,
@@ -130,17 +138,27 @@ export class Workflows {
     public async push(
         artifact: File | fs.ReadStream | Blob | undefined,
         request: Vellum.WorkflowPushRequest,
-        requestOptions?: Workflows.RequestOptions
+        requestOptions?: Workflows.RequestOptions,
     ): Promise<Vellum.WorkflowPushResponse> {
         const _request = await core.newFormData();
-        await _request.append("exec_config", request.execConfig);
-        await _request.append("label", request.label);
+        _request.append(
+            "exec_config",
+            serializers.WorkflowPushExecConfig.jsonOrThrow(request.execConfig, { unrecognizedObjectKeys: "strip" }),
+        );
+        _request.append("label", request.label);
         if (request.workflowSandboxId != null) {
-            await _request.append("workflow_sandbox_id", request.workflowSandboxId);
+            _request.append("workflow_sandbox_id", request.workflowSandboxId);
         }
 
         if (request.deploymentConfig != null) {
-            await _request.append("deployment_config", JSON.stringify(request.deploymentConfig));
+            _request.append(
+                "deployment_config",
+                JSON.stringify(
+                    serializers.WorkflowPushDeploymentConfigRequest.jsonOrThrow(request.deploymentConfig, {
+                        unrecognizedObjectKeys: "strip",
+                    }),
+                ),
+            );
         }
 
         if (artifact != null) {
@@ -148,30 +166,32 @@ export class Workflows {
         }
 
         if (request.dryRun != null) {
-            await _request.append("dry_run", request.dryRun.toString());
+            _request.append("dry_run", request.dryRun.toString());
         }
 
         if (request.strict != null) {
-            await _request.append("strict", request.strict.toString());
+            _request.append("strict", request.strict.toString());
         }
 
         const _maybeEncodedRequest = await _request.getRequest();
         const _response = await core.fetcher({
             url: urlJoin(
-                ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
-                    .default,
-                "v1/workflows/push"
+                (await core.Supplier.get(this._options.baseUrl)) ??
+                    ((await core.Supplier.get(this._options.environment)) ?? environments.VellumEnvironment.Production)
+                        .default,
+                "v1/workflows/push",
             ),
             method: "POST",
             headers: {
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "vellum-ai",
-                "X-Fern-SDK-Version": "0.13.3",
-                "User-Agent": "vellum-ai/0.13.3",
+                "X-Fern-SDK-Version": "0.13.4",
+                "User-Agent": "vellum-ai/0.13.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
                 ...(await this._getCustomAuthorizationHeaders()),
                 ..._maybeEncodedRequest.headers,
+                ...requestOptions?.headers,
             },
             requestType: "file",
             duplex: _maybeEncodedRequest.duplex,
@@ -203,7 +223,7 @@ export class Workflows {
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.VellumTimeoutError();
+                throw new errors.VellumTimeoutError("Timeout exceeded when calling POST /v1/workflows/push.");
             case "unknown":
                 throw new errors.VellumError({
                     message: _response.error.errorMessage,

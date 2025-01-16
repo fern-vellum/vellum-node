@@ -7,7 +7,6 @@
  * - `USER` - User
  */
 export type ReleaseTagSource = "SYSTEM" | "USER";
-
 export const ReleaseTagSource = {
     System: "SYSTEM",
     User: "USER",

@@ -12,5 +12,5 @@ export const MetadataFilterRuleCombinator: core.serialization.Schema<
 > = core.serialization.enum_(["and", "or"]);
 
 export declare namespace MetadataFilterRuleCombinator {
-    type Raw = "and" | "or";
+    export type Raw = "and" | "or";
 }

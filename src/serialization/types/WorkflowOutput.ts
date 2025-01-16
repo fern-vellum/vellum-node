@@ -29,7 +29,7 @@ export const WorkflowOutput: core.serialization.Schema<serializers.WorkflowOutpu
     ]);
 
 export declare namespace WorkflowOutput {
-    type Raw =
+    export type Raw =
         | WorkflowOutputString.Raw
         | WorkflowOutputNumber.Raw
         | WorkflowOutputJson.Raw

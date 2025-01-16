@@ -29,7 +29,7 @@ export const NamedTestCaseVariableValue: core.serialization.Schema<
 ]);
 
 export declare namespace NamedTestCaseVariableValue {
-    type Raw =
+    export type Raw =
         | NamedTestCaseStringVariableValue.Raw
         | NamedTestCaseNumberVariableValue.Raw
         | NamedTestCaseJsonVariableValue.Raw

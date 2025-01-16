@@ -10,7 +10,6 @@
  * - `UNKNOWN` - Unknown
  */
 export type DocumentProcessingState = "QUEUED" | "PROCESSING" | "PROCESSED" | "FAILED" | "UNKNOWN";
-
 export const DocumentProcessingState = {
     Queued: "QUEUED",
     Processing: "PROCESSING",

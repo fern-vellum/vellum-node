@@ -17,7 +17,6 @@ export type VellumErrorCodeEnum =
     | "REQUEST_TIMEOUT"
     | "INTERNAL_SERVER_ERROR"
     | "USER_DEFINED_ERROR";
-
 export const VellumErrorCodeEnum = {
     InvalidRequest: "INVALID_REQUEST",
     InvalidInputs: "INVALID_INPUTS",

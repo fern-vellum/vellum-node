@@ -27,7 +27,7 @@ export const AdHocExecutePromptStream: core.serialization.Schema<
 });
 
 export declare namespace AdHocExecutePromptStream {
-    interface Raw {
+    export interface Raw {
         ml_model: string;
         input_values: PromptRequestInput.Raw[];
         input_variables: VellumVariable.Raw[];

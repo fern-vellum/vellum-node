@@ -17,7 +17,7 @@ export const NodeInputCompiledNumberValue: core.serialization.ObjectSchema<
 });
 
 export declare namespace NodeInputCompiledNumberValue {
-    interface Raw {
+    export interface Raw {
         node_input_id: string;
         key: string;
         type: "NUMBER";

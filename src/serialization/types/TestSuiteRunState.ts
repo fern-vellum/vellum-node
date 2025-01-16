@@ -10,5 +10,5 @@ export const TestSuiteRunState: core.serialization.Schema<serializers.TestSuiteR
     core.serialization.enum_(["QUEUED", "RUNNING", "COMPLETE", "FAILED", "CANCELLED"]);
 
 export declare namespace TestSuiteRunState {
-    type Raw = "QUEUED" | "RUNNING" | "COMPLETE" | "FAILED" | "CANCELLED";
+    export type Raw = "QUEUED" | "RUNNING" | "COMPLETE" | "FAILED" | "CANCELLED";
 }

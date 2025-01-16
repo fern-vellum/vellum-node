@@ -14,7 +14,7 @@ export const SubworkflowNodeResultData: core.serialization.ObjectSchema<
 });
 
 export declare namespace SubworkflowNodeResultData {
-    interface Raw {
+    export interface Raw {
         execution_id?: string | null;
     }
 }

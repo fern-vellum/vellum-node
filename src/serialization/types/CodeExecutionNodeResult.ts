@@ -16,7 +16,7 @@ export const CodeExecutionNodeResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace CodeExecutionNodeResult {
-    interface Raw {
+    export interface Raw {
         type: "CODE_EXECUTION";
         data: CodeExecutionNodeResultData.Raw;
     }

@@ -14,5 +14,5 @@ export const RichTextChildBlock: core.serialization.Schema<
 > = core.serialization.undiscriminatedUnion([VariablePromptBlock, PlainTextPromptBlock]);
 
 export declare namespace RichTextChildBlock {
-    type Raw = VariablePromptBlock.Raw | PlainTextPromptBlock.Raw;
+    export type Raw = VariablePromptBlock.Raw | PlainTextPromptBlock.Raw;
 }

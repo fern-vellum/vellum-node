@@ -12,5 +12,5 @@ export const WorkflowPushExecConfig: core.serialization.Schema<
 > = core.serialization.string();
 
 export declare namespace WorkflowPushExecConfig {
-    type Raw = string;
+    export type Raw = string;
 }

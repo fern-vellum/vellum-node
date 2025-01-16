@@ -14,5 +14,5 @@ export const WorkflowStreamEvent: core.serialization.Schema<
 > = core.serialization.undiscriminatedUnion([WorkflowExecutionWorkflowResultEvent, WorkflowExecutionNodeResultEvent]);
 
 export declare namespace WorkflowStreamEvent {
-    type Raw = WorkflowExecutionWorkflowResultEvent.Raw | WorkflowExecutionNodeResultEvent.Raw;
+    export type Raw = WorkflowExecutionWorkflowResultEvent.Raw | WorkflowExecutionNodeResultEvent.Raw;
 }

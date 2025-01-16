@@ -17,7 +17,7 @@ export const NamedTestCaseErrorVariableValueRequest: core.serialization.ObjectSc
 });
 
 export declare namespace NamedTestCaseErrorVariableValueRequest {
-    interface Raw {
+    export interface Raw {
         type: "ERROR";
         value?: VellumErrorRequest.Raw | null;
         name: string;

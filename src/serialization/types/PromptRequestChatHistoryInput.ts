@@ -17,7 +17,7 @@ export const PromptRequestChatHistoryInput: core.serialization.ObjectSchema<
 });
 
 export declare namespace PromptRequestChatHistoryInput {
-    interface Raw {
+    export interface Raw {
         key: string;
         type: "CHAT_HISTORY";
         value: ChatMessage.Raw[];

@@ -29,7 +29,7 @@ export const ExecutionVellumValue: core.serialization.Schema<
 ]);
 
 export declare namespace ExecutionVellumValue {
-    type Raw =
+    export type Raw =
         | ExecutionStringVellumValue.Raw
         | ExecutionNumberVellumValue.Raw
         | ExecutionJsonVellumValue.Raw

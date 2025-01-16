@@ -14,7 +14,7 @@ export const ReductoChunkerConfigRequest: core.serialization.ObjectSchema<
 });
 
 export declare namespace ReductoChunkerConfigRequest {
-    interface Raw {
+    export interface Raw {
         character_limit?: number | null;
     }
 }

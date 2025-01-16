@@ -9,7 +9,6 @@
  * - `REJECTED` - REJECTED
  */
 export type WorkflowNodeResultEventState = "INITIATED" | "STREAMING" | "FULFILLED" | "REJECTED";
-
 export const WorkflowNodeResultEventState = {
     Initiated: "INITIATED",
     Streaming: "STREAMING",

@@ -7,7 +7,6 @@
  * - `WORKFLOW` - WORKFLOW
  */
 export type WorkflowExecutionEventType = "NODE" | "WORKFLOW";
-
 export const WorkflowExecutionEventType = {
     Node: "NODE",
     Workflow: "WORKFLOW",

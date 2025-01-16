@@ -17,7 +17,7 @@ export const TestSuiteTestCaseUpsertBulkOperationRequest: core.serialization.Obj
 });
 
 export declare namespace TestSuiteTestCaseUpsertBulkOperationRequest {
-    interface Raw {
+    export interface Raw {
         id: string;
         type: "UPSERT";
         data: UpsertTestSuiteTestCaseRequest.Raw;

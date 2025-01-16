@@ -18,7 +18,7 @@ export const TerminalNodeChatHistoryResult: core.serialization.ObjectSchema<
 });
 
 export declare namespace TerminalNodeChatHistoryResult {
-    interface Raw {
+    export interface Raw {
         id?: string | null;
         name: string;
         type: "CHAT_HISTORY";

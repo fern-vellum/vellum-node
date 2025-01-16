@@ -35,7 +35,7 @@ export const LogicalOperator: core.serialization.Schema<serializers.LogicalOpera
     ]);
 
 export declare namespace LogicalOperator {
-    type Raw =
+    export type Raw =
         | "="
         | "!="
         | "<"

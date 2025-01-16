@@ -18,7 +18,7 @@ export const PaginatedWorkflowReleaseTagReadList: core.serialization.ObjectSchem
 });
 
 export declare namespace PaginatedWorkflowReleaseTagReadList {
-    interface Raw {
+    export interface Raw {
         count?: number | null;
         next?: string | null;
         previous?: string | null;
