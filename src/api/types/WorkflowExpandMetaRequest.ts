@@ -5,4 +5,8 @@
 export interface WorkflowExpandMetaRequest {
     /** If enabled, the Prompt Node FULFILLED events will include model host usage tracking. This may increase latency for some model hosts. */
     usage?: boolean;
+    /** If enabled, the Prompt Node FULFILLED events will include model host cost tracking. This may increase latency for some model hosts. */
+    cost?: boolean;
+    /** If enabled, the Prompt Node FULFILLED events will include model host name */
+    modelName?: boolean;
 }
